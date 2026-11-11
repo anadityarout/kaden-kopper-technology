@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useCallback } from "react";
-import "./SEO.css";
+import "./Seo.css";
 
 // =====================================================
 // AWS API CONFIGURATION
