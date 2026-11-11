@@ -4,7 +4,7 @@ import React, { useState } from "react";
 // HOME COMPONENTS
 // =====================================================
 
-import Homebanner from "./Components/HomeBanner/HomeBanner.jsx";
+import Homebanner from "./Components/Homebanner/Homebanner.jsx";
 import HomeAbout from "./Components/Homeabout/Homeabout.jsx";
 import WhyChoose from "./Components/WhyChoose/WhyChoose.jsx";
 

@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import "./HomeBanner.css";
+import "./Homebanner.css";
 
 const API_URL =
   "https://66ou0fp7m1.execute-api.ap-south-1.amazonaws.com/prod/banner";

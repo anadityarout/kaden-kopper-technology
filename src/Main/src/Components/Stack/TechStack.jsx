@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./Techstack.css";
+import "./TechStack.css";
 
 import {
   FaCode,
