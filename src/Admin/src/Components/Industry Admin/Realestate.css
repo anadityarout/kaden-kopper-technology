@@ -1,0 +1,887 @@
+/* =====================================================
+   REAL ESTATE ADMIN
+===================================================== */
+
+.realestate-admin {
+  width: 100%;
+  min-height: 100vh;
+
+  padding: 20px 14px;
+
+  background: #f5f7fa;
+
+  box-sizing: border-box;
+
+  font-family: "Segoe UI", Arial, sans-serif;
+}
+
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+.realestate-header {
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-bottom: 28px;
+
+  box-sizing: border-box;
+}
+
+.realestate-header h1 {
+  margin: 0;
+
+  color: #172033;
+
+  font-size: 28px;
+  font-weight: 700;
+
+  line-height: 1.3;
+}
+
+
+/* =====================================================
+   ADD BUTTON
+===================================================== */
+
+.realestate-add-btn {
+  border: none;
+  outline: none;
+
+  background: #1769f5;
+  color: #ffffff;
+
+  padding: 13px 23px;
+
+  border-radius: 9px;
+
+  font-family: "Segoe UI", Arial, sans-serif;
+
+  font-size: 14px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition:
+    background-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.realestate-add-btn:hover {
+  background: #0d5de0;
+
+  transform: translateY(-1px);
+}
+
+
+/* =====================================================
+   FORM CARD
+===================================================== */
+
+.realestate-form-card {
+  width: 100%;
+  max-width: 720px;
+
+  padding: 30px;
+
+  margin-bottom: 30px;
+
+  background: #ffffff;
+
+  border-radius: 12px;
+
+  box-shadow:
+    0 5px 20px rgba(0, 0, 0, 0.07);
+
+  box-sizing: border-box;
+}
+
+
+/* =====================================================
+   FORM FIELD
+===================================================== */
+
+.realestate-field {
+  width: 100%;
+
+  margin-bottom: 20px;
+
+  box-sizing: border-box;
+}
+
+
+/* =====================================================
+   LABEL
+===================================================== */
+
+.realestate-label {
+  display: block;
+
+  margin-bottom: 8px;
+
+  color: #273142;
+
+  font-size: 14px;
+  font-weight: 600;
+}
+
+
+/* =====================================================
+   SELECT
+===================================================== */
+
+.realestate-select {
+  width: 100%;
+  height: 50px;
+
+  padding: 0 15px;
+
+  border: 1px solid #d9d9d9;
+  border-radius: 8px;
+
+  background: #ffffff;
+
+  color: #273142;
+
+  font-family: "Segoe UI", Arial, sans-serif;
+
+  font-size: 15px;
+
+  outline: none;
+
+  cursor: pointer;
+
+  box-sizing: border-box;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.realestate-select:focus {
+  border-color: #1769f5;
+
+  box-shadow:
+    0 0 0 3px rgba(23, 105, 245, 0.08);
+}
+
+
+/* =====================================================
+   UPLOAD BOX
+===================================================== */
+
+.realestate-upload-box {
+  width: 100%;
+  min-height: 170px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 2px dashed #d5d5d5;
+
+  border-radius: 9px;
+
+  background: #fafafa;
+
+  overflow: hidden;
+
+  cursor: pointer;
+
+  box-sizing: border-box;
+
+  transition:
+    border-color 0.2s ease,
+    background-color 0.2s ease;
+}
+
+.realestate-upload-box:hover {
+  border-color: #1769f5;
+
+  background: #f8fbff;
+}
+
+.realestate-upload-box input {
+  display: none;
+}
+
+
+/* =====================================================
+   UPLOAD PLACEHOLDER
+===================================================== */
+
+.realestate-upload-placeholder {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 10px;
+
+  color: #687386;
+
+  font-size: 15px;
+  font-weight: 500;
+}
+
+
+/* =====================================================
+   UPLOAD ICON
+===================================================== */
+
+.realestate-upload-icon {
+  width: 34px;
+  height: 34px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: #1769f5;
+
+  color: #ffffff;
+
+  font-size: 22px;
+  font-weight: 500;
+}
+
+
+/* =====================================================
+   IMAGE PREVIEW
+===================================================== */
+
+.realestate-preview-wrapper {
+  position: relative;
+
+  width: 100%;
+  height: 200px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #f3f4f6;
+
+  overflow: hidden;
+}
+
+.realestate-image-preview {
+  width: 100%;
+  height: 200px;
+
+  display: block;
+
+  object-fit: contain;
+}
+
+
+/* =====================================================
+   CHANGE IMAGE
+===================================================== */
+
+.realestate-change-text {
+  position: absolute;
+
+  left: 50%;
+  bottom: 12px;
+
+  transform: translateX(-50%);
+
+  padding: 7px 14px;
+
+  border-radius: 5px;
+
+  background: rgba(0, 0, 0, 0.72);
+
+  color: #ffffff;
+
+  font-size: 12px;
+  font-weight: 500;
+
+  white-space: nowrap;
+}
+
+
+/* =====================================================
+   INPUT
+===================================================== */
+
+.realestate-input {
+  width: 100%;
+  height: 50px;
+
+  padding: 0 16px;
+
+  border: 1px solid #d9d9d9;
+
+  border-radius: 8px;
+
+  outline: none;
+
+  background: #ffffff;
+
+  color: #273142;
+
+  font-family: "Segoe UI", Arial, sans-serif;
+
+  font-size: 15px;
+
+  box-sizing: border-box;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.realestate-input::placeholder {
+  color: #7b8491;
+}
+
+.realestate-input:focus {
+  border-color: #1769f5;
+
+  box-shadow:
+    0 0 0 3px rgba(23, 105, 245, 0.08);
+}
+
+
+/* =====================================================
+   TEXTAREA
+===================================================== */
+
+.realestate-textarea {
+  width: 100%;
+  min-height: 130px;
+
+  padding: 14px 16px;
+
+  border: 1px solid #d9d9d9;
+
+  border-radius: 8px;
+
+  outline: none;
+
+  resize: vertical;
+
+  background: #ffffff;
+
+  color: #273142;
+
+  font-family: "Segoe UI", Arial, sans-serif;
+
+  font-size: 15px;
+
+  line-height: 1.6;
+
+  box-sizing: border-box;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.realestate-textarea::placeholder {
+  color: #7b8491;
+}
+
+.realestate-textarea:focus {
+  border-color: #1769f5;
+
+  box-shadow:
+    0 0 0 3px rgba(23, 105, 245, 0.08);
+}
+
+
+/* =====================================================
+   FORM ACTIONS
+===================================================== */
+
+.realestate-form-actions {
+  display: flex;
+
+  align-items: center;
+
+  gap: 15px;
+
+  margin-top: 28px;
+}
+
+
+/* =====================================================
+   SAVE BUTTON
+===================================================== */
+
+.realestate-save-btn {
+  min-width: 110px;
+
+  padding: 12px 25px;
+
+  border: none;
+
+  border-radius: 8px;
+
+  background: #168f5a;
+
+  color: #ffffff;
+
+  font-family: "Segoe UI", Arial, sans-serif;
+
+  font-size: 14px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition:
+    background-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.realestate-save-btn:hover {
+  background: #117b4d;
+
+  transform: translateY(-1px);
+}
+
+
+/* =====================================================
+   CANCEL BUTTON
+===================================================== */
+
+.realestate-cancel-btn {
+  min-width: 110px;
+
+  padding: 12px 25px;
+
+  border: none;
+
+  border-radius: 8px;
+
+  background: #df3045;
+
+  color: #ffffff;
+
+  font-family: "Segoe UI", Arial, sans-serif;
+
+  font-size: 14px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition:
+    background-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.realestate-cancel-btn:hover {
+  background: #c92338;
+
+  transform: translateY(-1px);
+}
+
+
+/* =====================================================
+   TABLE WRAPPER
+===================================================== */
+
+.realestate-table-wrapper {
+  width: 100%;
+
+  background: #ffffff;
+
+  border-radius: 12px;
+
+  overflow-x: auto;
+
+  box-shadow:
+    0 5px 18px rgba(0, 0, 0, 0.07);
+
+  box-sizing: border-box;
+}
+
+
+/* =====================================================
+   TABLE
+===================================================== */
+
+.realestate-table {
+  width: 100%;
+
+  min-width: 1100px;
+
+  border-collapse: collapse;
+
+  table-layout: fixed;
+}
+
+
+/* =====================================================
+   TABLE HEADER
+===================================================== */
+
+.realestate-table thead {
+  background: #1769f5;
+}
+
+.realestate-table th {
+  padding: 17px 15px;
+
+  color: #ffffff;
+
+  font-size: 14px;
+  font-weight: 700;
+
+  text-align: center;
+
+  white-space: nowrap;
+}
+
+
+/* =====================================================
+   COLUMN WIDTHS
+===================================================== */
+
+.realestate-table th:nth-child(1) {
+  width: 5%;
+}
+
+.realestate-table th:nth-child(2) {
+  width: 13%;
+}
+
+.realestate-table th:nth-child(3) {
+  width: 9%;
+}
+
+.realestate-table th:nth-child(4) {
+  width: 13%;
+}
+
+.realestate-table th:nth-child(5) {
+  width: 25%;
+}
+
+.realestate-table th:nth-child(6) {
+  width: 15%;
+}
+
+.realestate-table th:nth-child(7) {
+  width: 11%;
+}
+
+.realestate-table th:nth-child(8) {
+  width: 14%;
+}
+
+
+/* =====================================================
+   TABLE ROW
+===================================================== */
+
+.realestate-table tbody tr {
+  border-bottom: 1px solid #e3e7ed;
+
+  transition:
+    background-color 0.2s ease;
+}
+
+.realestate-table tbody tr:hover {
+  background: #fafcff;
+}
+
+.realestate-table tbody tr:last-child {
+  border-bottom: none;
+}
+
+
+/* =====================================================
+   TABLE CELL
+===================================================== */
+
+.realestate-table td {
+  padding: 22px 15px;
+
+  color: #273142;
+
+  font-size: 14px;
+
+  text-align: center;
+
+  vertical-align: middle;
+}
+
+
+/* =====================================================
+   TABLE IMAGE
+===================================================== */
+
+.realestate-table-image {
+  width: 90px;
+  height: 70px;
+
+  display: block;
+
+  margin: 0 auto;
+
+  object-fit: cover;
+
+  border-radius: 8px;
+
+  border: 1px solid #e0e4e9;
+}
+
+
+/* =====================================================
+   NO PREVIEW
+===================================================== */
+
+.realestate-no-preview {
+  color: #6b7280;
+
+  font-size: 14px;
+}
+
+
+/* =====================================================
+   NAME
+===================================================== */
+
+.realestate-name {
+  font-size: 14px;
+
+  line-height: 1.5;
+
+  word-break: break-word;
+}
+
+
+/* =====================================================
+   DESCRIPTION
+===================================================== */
+
+.realestate-description {
+  max-width: 280px;
+
+  margin: 0 auto;
+
+  font-size: 14px;
+
+  line-height: 1.55;
+
+  word-break: break-word;
+}
+
+
+/* =====================================================
+   CATEGORY
+===================================================== */
+
+.realestate-category {
+  font-size: 14px;
+
+  font-weight: 500;
+
+  line-height: 1.5;
+
+  word-break: break-word;
+}
+
+
+/* =====================================================
+   DELETE BUTTON
+===================================================== */
+
+.realestate-delete-btn {
+  border: none;
+
+  outline: none;
+
+  padding: 10px 19px;
+
+  border-radius: 5px;
+
+  background: #e91e48;
+
+  color: #ffffff;
+
+  font-family: "Segoe UI", Arial, sans-serif;
+
+  font-size: 13px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition:
+    background-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.realestate-delete-btn:hover {
+  background: #cf173d;
+
+  transform: translateY(-1px);
+}
+
+
+/* =====================================================
+   PAGINATION
+===================================================== */
+
+.realestate-pagination {
+  width: 100%;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 8px;
+
+  padding: 20px;
+
+  border-top: 1px solid #e5e7eb;
+
+  box-sizing: border-box;
+}
+
+
+/* =====================================================
+   PAGE BUTTON
+===================================================== */
+
+.realestate-page-btn {
+  min-width: 40px;
+  height: 40px;
+
+  padding: 0 12px;
+
+  border: 1px solid #d5dce5;
+
+  border-radius: 6px;
+
+  background: #ffffff;
+
+  color: #172033;
+
+  font-family: "Segoe UI", Arial, sans-serif;
+
+  font-size: 14px;
+  font-weight: 500;
+
+  cursor: pointer;
+
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.realestate-page-btn:hover:not(:disabled) {
+  border-color: #1769f5;
+
+  color: #1769f5;
+}
+
+
+/* =====================================================
+   ACTIVE PAGE
+===================================================== */
+
+.realestate-page-btn.active {
+  border-color: #1769f5;
+
+  background: #1769f5;
+
+  color: #ffffff;
+}
+
+
+/* =====================================================
+   DISABLED
+===================================================== */
+
+.realestate-page-btn:disabled {
+  background: #f1f3f5;
+
+  color: #9aa4b2;
+
+  border-color: #dfe3e8;
+
+  cursor: not-allowed;
+}
+
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 900px) {
+
+  .realestate-admin {
+    padding: 18px 12px;
+  }
+
+  .realestate-form-card {
+    max-width: 100%;
+
+    padding: 24px;
+  }
+
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 600px) {
+
+  .realestate-header {
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 15px;
+  }
+
+  .realestate-header h1 {
+    font-size: 24px;
+  }
+
+  .realestate-add-btn {
+    width: 100%;
+  }
+
+  .realestate-form-card {
+    padding: 18px;
+  }
+
+  .realestate-form-actions {
+    flex-direction: column;
+
+    width: 100%;
+  }
+
+  .realestate-save-btn,
+  .realestate-cancel-btn {
+    width: 100%;
+  }
+
+  .realestate-pagination {
+    gap: 5px;
+
+    padding: 16px 10px;
+  }
+
+  .realestate-page-btn {
+    min-width: 38px;
+
+    padding: 0 9px;
+  }
+
+}

@@ -1,0 +1,857 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@700;800&display=swap");
+
+/* =========================================
+   BASE
+========================================= */
+
+.bc-overlay,
+.bc-overlay * {
+  box-sizing: border-box;
+}
+
+.bc-overlay {
+  --bc-blue: #0866f5;
+  --bc-blue-light: #3187ff;
+  --bc-navy: #101f45;
+  --bc-muted: #60739a;
+
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  overflow: auto;
+
+  background:
+    radial-gradient(ellipse at 8% 5%, rgba(97, 170, 255, 0.22), transparent 34%),
+    radial-gradient(ellipse at 95% 95%, rgba(97, 170, 255, 0.19), transparent 32%),
+    rgba(9, 23, 49, 0.72);
+
+  backdrop-filter: blur(7px);
+  -webkit-backdrop-filter: blur(7px);
+  font-family: "Inter", Arial, sans-serif;
+
+  animation: bc-fade-in 0.2s ease-out both;
+}
+
+.bc-modal {
+  position: relative;
+  flex: 0 1 auto;
+  width: min(100%, 900px);
+  max-height: calc(100dvh - 32px);
+  min-width: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+
+  border: 1px solid rgba(255, 255, 255, 0.95);
+  border-radius: 22px;
+
+  background:
+    radial-gradient(ellipse at 0% 0%, rgba(221, 239, 255, 0.76), transparent 34%),
+    radial-gradient(ellipse at 100% 100%, rgba(222, 239, 255, 0.7), transparent 34%),
+    #ffffff;
+
+  box-shadow:
+    0 24px 70px rgba(4, 26, 67, 0.28),
+    0 0 0 5px rgba(173, 215, 255, 0.16);
+
+  animation: bc-rise-in 0.28s ease-out both;
+}
+
+/* Keep scrollbars unobtrusive when the form needs scrolling. */
+
+.bc-modal {
+  scrollbar-width: thin;
+  scrollbar-color: #a7b9d3 transparent;
+}
+
+.bc-modal::-webkit-scrollbar {
+  width: 6px;
+}
+
+.bc-modal::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.bc-modal::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background: #a7b9d3;
+}
+
+/* =========================================
+   CLOSE BUTTON
+========================================= */
+
+.bc-close {
+  position: absolute;
+  z-index: 5;
+  top: 12px;
+  right: 12px;
+
+  display: grid;
+  place-items: center;
+
+  width: 40px;
+  height: 40px;
+  padding: 0;
+
+  border: 0;
+  border-radius: 50%;
+  color: #33415c;
+  background: rgba(229, 235, 244, 0.95);
+
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.bc-close:hover {
+  transform: rotate(90deg);
+  background: #dbe8fb;
+}
+
+.bc-close:focus-visible {
+  outline: 3px solid #3985ff;
+  outline-offset: 3px;
+}
+
+/* =========================================
+   FORM PANEL
+========================================= */
+
+.bc-form-panel {
+  padding: 28px 32px 22px;
+}
+
+.bc-heading {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  margin: 0 48px 22px 0;
+}
+
+.bc-heading-line {
+  flex: 0 0 6px;
+  height: 59px;
+  margin-top: 2px;
+  border-radius: 99px;
+  background: linear-gradient(180deg, #075ff0, #2487ff);
+}
+
+.bc-heading-copy {
+  min-width: 0;
+}
+
+.bc-heading h2 {
+  margin: 0 0 7px;
+  color: var(--bc-navy);
+  font-size: clamp(27px, 3vw, 37px);
+  font-weight: 800;
+  letter-spacing: -1.2px;
+  line-height: 1.15;
+}
+
+.bc-heading h2 span {
+  color: #1265dc;
+}
+
+.bc-heading p {
+  margin: 0;
+  color: #53688f;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+/* =========================================
+   FORM GRID
+========================================= */
+
+.bc-form {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 15px 22px;
+}
+
+.bc-field {
+  min-width: 0;
+}
+
+.bc-field--full {
+  grid-column: 1 / -1;
+}
+
+.bc-field label {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  margin: 0 0 7px;
+
+  color: #112247;
+  font-size: 14px;
+  font-weight: 750;
+  line-height: 1.35;
+}
+
+.bc-field label > svg {
+  flex: 0 0 20px;
+  width: 20px;
+  height: 20px;
+  color: var(--bc-blue);
+  stroke-width: 2.4;
+}
+
+.bc-field label b {
+  margin-left: -5px;
+  font-weight: 750;
+}
+
+/* =========================================
+   INPUTS AND SELECTS
+========================================= */
+
+.bc-control {
+  display: flex;
+  align-items: stretch;
+  min-width: 0;
+  min-height: 47px;
+  overflow: hidden;
+
+  border: 1px solid #c9d8ef;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.82);
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease;
+}
+
+.bc-control:focus-within {
+  border-color: #3985ff;
+  background: #ffffff;
+  box-shadow: 0 0 0 3px rgba(26, 112, 255, 0.1);
+}
+
+.bc-control-icon {
+  display: grid;
+  flex: 0 0 48px;
+  place-items: center;
+
+  border-right: 1px solid #d7e2f3;
+  color: var(--bc-blue);
+}
+
+.bc-control-icon svg {
+  width: 21px;
+  height: 21px;
+  stroke-width: 2.3;
+}
+
+.bc-control input,
+.bc-control select,
+.bc-control textarea {
+  display: block;
+  width: 100%;
+  min-width: 0;
+  margin: 0;
+  border: 0;
+  outline: 0;
+
+  color: #243a67;
+  background: transparent;
+  font: 500 14px/1.5 "Inter", Arial, sans-serif;
+}
+
+.bc-control input,
+.bc-control select {
+  min-height: 45px;
+  padding: 0 12px;
+}
+
+.bc-control select {
+  cursor: pointer;
+}
+
+.bc-control input::placeholder,
+.bc-control textarea::placeholder {
+  color: #8c9dbb;
+  opacity: 1;
+}
+
+/* =========================================
+   MESSAGE TEXTAREA
+========================================= */
+
+.bc-control--textarea {
+  min-height: 86px;
+}
+
+.bc-control--textarea .bc-control-icon {
+  align-items: start;
+  padding-top: 14px;
+}
+
+.bc-control textarea {
+  min-height: 84px;
+  padding: 12px;
+  resize: vertical;
+}
+
+/* =========================================
+   SUBMIT BUTTON
+========================================= */
+
+.bc-submit {
+  grid-column: 1 / -1;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 13px;
+
+  width: 100%;
+  min-height: 54px;
+  margin-top: 1px;
+  padding: 12px 20px;
+
+  border: 1px solid rgba(255, 255, 255, 0.95);
+  border-radius: 999px;
+
+  color: #ffffff;
+  background: linear-gradient(
+    105deg,
+    #0757ed 0%,
+    #0875ff 65%,
+    #3187ff 100%
+  );
+
+  box-shadow: 0 9px 23px rgba(0, 99, 242, 0.22);
+
+  font: 750 17px/1.2 "Inter", Arial, sans-serif;
+  cursor: pointer;
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    filter 0.2s ease;
+}
+
+.bc-submit:hover {
+  transform: translateY(-1px);
+  filter: saturate(1.08);
+  box-shadow: 0 12px 26px rgba(0, 99, 242, 0.29);
+}
+
+.bc-submit:active {
+  transform: translateY(0);
+}
+
+.bc-submit:focus-visible {
+  outline: 3px solid #3985ff;
+  outline-offset: 3px;
+}
+
+.bc-submit-arrow {
+  margin-left: 4px;
+  font-size: 27px;
+  font-weight: 400;
+  line-height: 0.8;
+}
+
+.bc-demo-note {
+  grid-column: 1 / -1;
+  margin: -7px 0 0;
+  color: #71819d;
+  font-size: 10px;
+  line-height: 1.4;
+  text-align: center;
+}
+
+/* =========================================
+   THANK YOU MODAL
+========================================= */
+
+.bc-modal--success {
+  display: grid;
+  place-items: center;
+
+  width: min(100%, 760px);
+  height: auto;
+  min-height: 0;
+  max-height: calc(100dvh - 32px);
+  overflow: hidden;
+
+  border-top: 5px solid #9ad7ff;
+}
+
+.bc-modal--success .bc-close {
+  top: 14px;
+  right: 14px;
+}
+
+.bc-success-content {
+  width: 100%;
+  padding: 34px 26px 38px;
+  text-align: center;
+  animation: bc-rise-in 0.3s ease-out both;
+}
+
+/* Success icon */
+
+.bc-success-art {
+  position: relative;
+  display: grid;
+  place-items: center;
+
+  width: 142px;
+  height: 142px;
+  margin: 0 auto 7px;
+}
+
+.bc-success-ring {
+  display: grid;
+  place-items: center;
+
+  width: 122px;
+  height: 122px;
+
+  border: 14px solid rgba(41, 128, 255, 0.08);
+  border-radius: 50%;
+  box-shadow: 0 0 0 8px rgba(41, 128, 255, 0.035);
+}
+
+.bc-success-circle {
+  display: grid;
+  place-items: center;
+
+  width: 86px;
+  height: 86px;
+
+  border-radius: 50%;
+  color: #ffffff;
+  background: linear-gradient(145deg, #58a0ff, #0664ed);
+  box-shadow: 0 10px 24px rgba(0, 101, 239, 0.23);
+
+  animation: bc-check-pop 0.4s ease-out both;
+}
+
+/* Decorative floating dots */
+
+.bc-dot {
+  position: absolute;
+  display: block;
+
+  width: 10px;
+  height: 10px;
+
+  border-radius: 50%;
+  background: #9ac8ff;
+  animation: bc-float 2.6s ease-in-out infinite;
+}
+
+.bc-dot--one {
+  top: 15px;
+  left: 9px;
+}
+
+.bc-dot--two {
+  top: 37px;
+  right: 3px;
+  width: 13px;
+  height: 13px;
+  animation-delay: -0.7s;
+}
+
+.bc-dot--three {
+  right: 20px;
+  bottom: 20px;
+  width: 8px;
+  height: 8px;
+  animation-delay: -1.3s;
+}
+
+.bc-dot--four {
+  bottom: 35px;
+  left: 1px;
+  width: 12px;
+  height: 12px;
+  animation-delay: -0.4s;
+}
+
+/* Success message */
+
+.bc-success-content h2 {
+  margin: 7px 0 13px;
+
+  color: #101e43;
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: clamp(38px, 5vw, 54px);
+  font-weight: 800;
+  letter-spacing: -1px;
+  line-height: 1.12;
+}
+
+.bc-success-content h2 span {
+  color: #0759f5;
+}
+
+.bc-success-content p {
+  margin: 4px 0;
+  color: #526584;
+  font-size: clamp(14px, 1.8vw, 19px);
+  line-height: 1.5;
+}
+
+/* =========================================
+   ANIMATIONS
+========================================= */
+
+@keyframes bc-fade-in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes bc-rise-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px) scale(0.99);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes bc-check-pop {
+  from {
+    opacity: 0;
+    transform: scale(0.65);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes bc-float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+/* =========================================
+   SMALL LAPTOPS AND TABLETS
+========================================= */
+
+@media (max-width: 760px) {
+  .bc-overlay {
+    padding: 12px;
+  }
+
+  .bc-modal {
+    width: min(100%, 560px);
+    max-height: calc(100dvh - 24px);
+  }
+
+  .bc-form-panel {
+    padding: 26px 22px 20px;
+  }
+
+  .bc-heading {
+    gap: 12px;
+    margin-right: 40px;
+    margin-bottom: 20px;
+  }
+
+  .bc-heading-line {
+    flex-basis: 5px;
+    height: 52px;
+  }
+
+  .bc-heading h2 {
+    font-size: clamp(25px, 5vw, 32px);
+  }
+
+  .bc-heading p {
+    font-size: 13px;
+  }
+
+  .bc-form {
+    gap: 14px 16px;
+  }
+
+  .bc-control {
+    min-height: 44px;
+  }
+
+  .bc-control-icon {
+    flex-basis: 43px;
+  }
+
+  .bc-control input,
+  .bc-control select {
+    min-height: 42px;
+    padding: 0 10px;
+    font-size: 13px;
+  }
+
+  .bc-control--textarea {
+    min-height: 76px;
+  }
+
+  .bc-control textarea {
+    min-height: 74px;
+    padding: 10px;
+    font-size: 13px;
+  }
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 560px) {
+  .bc-overlay {
+    align-items: center;
+    padding: 8px;
+  }
+
+  .bc-modal {
+    width: 100%;
+    max-height: calc(100dvh - 16px);
+    border-radius: 17px;
+  }
+
+  .bc-form-panel {
+    padding: 24px 16px 18px;
+  }
+
+  .bc-close {
+    top: 9px;
+    right: 9px;
+    width: 34px;
+    height: 34px;
+  }
+
+  .bc-close svg {
+    width: 19px;
+    height: 19px;
+  }
+
+  .bc-heading {
+    gap: 10px;
+    margin-right: 30px;
+    margin-bottom: 19px;
+  }
+
+  .bc-heading-line {
+    flex-basis: 4px;
+    height: 47px;
+  }
+
+  .bc-heading h2 {
+    font-size: clamp(22px, 6.2vw, 29px);
+    letter-spacing: -0.8px;
+  }
+
+  .bc-heading p {
+    font-size: 12px;
+    line-height: 1.45;
+  }
+
+  .bc-form {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 13px;
+  }
+
+  .bc-field,
+  .bc-field--full,
+  .bc-submit,
+  .bc-demo-note {
+    grid-column: 1 / -1;
+  }
+
+  .bc-field label {
+    gap: 8px;
+    margin-bottom: 6px;
+    font-size: 12px;
+  }
+
+  .bc-field label > svg {
+    flex-basis: 17px;
+    width: 17px;
+    height: 17px;
+  }
+
+  .bc-control {
+    min-height: 42px;
+    border-radius: 8px;
+  }
+
+  .bc-control-icon {
+    flex-basis: 39px;
+  }
+
+  .bc-control-icon svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  .bc-control input,
+  .bc-control select {
+    min-height: 40px;
+    padding: 0 9px;
+    font-size: 12px;
+  }
+
+  .bc-control--textarea {
+    min-height: 70px;
+  }
+
+  .bc-control--textarea .bc-control-icon {
+    padding-top: 12px;
+  }
+
+  .bc-control textarea {
+    min-height: 68px;
+    padding: 10px 9px;
+    font-size: 12px;
+  }
+
+  .bc-submit {
+    min-height: 47px;
+    gap: 10px;
+    padding: 10px 14px;
+    font-size: 15px;
+  }
+
+  .bc-submit svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  .bc-submit-arrow {
+    font-size: 23px;
+  }
+
+  .bc-demo-note {
+    margin-top: -5px;
+    font-size: 10px;
+  }
+
+  /* Smaller success popup on phones */
+
+  .bc-modal--success {
+    width: 100%;
+    min-height: 0;
+    max-height: calc(100dvh - 16px);
+    overflow: hidden;
+  }
+
+  .bc-modal--success .bc-close {
+    top: 10px;
+    right: 10px;
+  }
+
+  .bc-success-content {
+    padding: 48px 14px 28px;
+  }
+
+  .bc-success-art {
+    width: 116px;
+    height: 116px;
+    margin: 0 auto 5px;
+  }
+
+  .bc-success-ring {
+    width: 100px;
+    height: 100px;
+    border-width: 11px;
+  }
+
+  .bc-success-circle {
+    width: 72px;
+    height: 72px;
+  }
+
+  .bc-success-circle svg {
+    width: 42px;
+    height: 42px;
+  }
+
+  .bc-success-content h2 {
+    margin: 6px 0 11px;
+    font-size: clamp(34px, 9vw, 43px);
+  }
+
+  .bc-success-content p {
+    font-size: 13px;
+    line-height: 1.5;
+  }
+}
+
+/* Short screens: keep popup usable and allow form scrolling. */
+
+@media (max-height: 700px) {
+  .bc-overlay {
+    align-items: flex-start;
+  }
+
+  .bc-modal--form {
+    margin: auto 0;
+  }
+
+  .bc-form-panel {
+    padding-top: 22px;
+    padding-bottom: 18px;
+  }
+
+  .bc-heading {
+    margin-bottom: 15px;
+  }
+
+  .bc-form {
+    gap: 11px 18px;
+  }
+
+  .bc-success-content {
+    padding-top: 28px;
+    padding-bottom: 28px;
+  }
+
+  .bc-success-art {
+    transform: scale(0.82);
+    margin-top: -8px;
+    margin-bottom: -8px;
+  }
+}
+
+/* Respect reduced-motion preferences. */
+
+@media (prefers-reduced-motion: reduce) {
+  .bc-overlay,
+  .bc-modal,
+  .bc-success-content,
+  .bc-success-circle,
+  .bc-dot {
+    animation: none !important;
+  }
+
+  .bc-close,
+  .bc-submit {
+    transition: none;
+  }
+}

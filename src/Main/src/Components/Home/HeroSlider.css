@@ -1,0 +1,649 @@
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap");
+
+/* =====================================================
+   HERO SECTION
+===================================================== */
+
+.kk-hero {
+  --kk-blue: #1a5cff;
+  --kk-cyan: #00b4ff;
+  --kk-navy: #0b1530;
+  --kk-text: #5b6478;
+
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  box-sizing: border-box;
+  background: #f8faff;
+
+  font-family: "Outfit", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, Helvetica, Arial, sans-serif;
+}
+
+.kk-hero *,
+.kk-hero *::before,
+.kk-hero *::after {
+  box-sizing: border-box;
+}
+
+
+/* =====================================================
+   BACKGROUND (grid + soft glow)
+===================================================== */
+
+.kk-hero__bg {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+
+  background:
+    radial-gradient(circle at 92% 8%, rgba(26, 92, 255, 0.14), transparent 45%),
+    radial-gradient(circle at 5% 95%, rgba(0, 180, 255, 0.1), transparent 40%),
+    linear-gradient(rgba(26, 92, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(26, 92, 255, 0.05) 1px, transparent 1px);
+
+  background-size: auto, auto, 60px 60px, 60px 60px;
+}
+
+
+/* =====================================================
+   INNER LAYOUT  (content moved down: bigger top padding)
+===================================================== */
+
+.kk-hero__inner {
+  position: relative;
+  z-index: 1;
+
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  align-items: center;
+  gap: 60px;
+
+  max-width: 1240px;
+  min-height: 720px;
+  margin: 0 auto;
+  padding: 130px 32px 100px;
+
+  animation: kkHeroFade 0.6s ease both;
+}
+
+@keyframes kkHeroFade {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/* =====================================================
+   BADGE
+===================================================== */
+
+.kk-hero__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+
+  margin: 0 0 22px;
+  padding: 9px 16px;
+
+  background: rgba(26, 92, 255, 0.07);
+  border: 1px solid rgba(26, 92, 255, 0.2);
+  border-radius: 999px;
+
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--kk-blue);
+}
+
+.kk-hero__badge-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--kk-blue);
+}
+
+
+/* =====================================================
+   TITLE
+===================================================== */
+
+.kk-hero__title {
+  margin: 0 0 24px;
+
+  font-size: clamp(2.3rem, 5vw, 4.3rem);
+  line-height: 1.05;
+  font-weight: 800;
+  letter-spacing: -0.035em;
+  color: var(--kk-navy);
+}
+
+.kk-hero__highlight {
+  background: linear-gradient(90deg, var(--kk-blue), var(--kk-cyan));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: var(--kk-blue);
+}
+
+
+/* =====================================================
+   DESCRIPTION
+===================================================== */
+
+.kk-hero__description {
+  max-width: 560px;
+  margin: 0 0 34px;
+
+  font-size: 18px;
+  line-height: 1.65;
+  color: var(--kk-text);
+}
+
+
+/* =====================================================
+   BUTTONS
+===================================================== */
+
+.kk-hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-bottom: 38px;
+}
+
+.kk-hero__btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  height: 50px;
+  padding: 0 30px;
+
+  border-radius: 8px;
+  border: 1.5px solid var(--kk-blue);
+
+  font-family: inherit;
+  font-size: 16px;
+  font-weight: 600;
+  text-decoration: none;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.kk-hero__btn--primary {
+  background: var(--kk-blue);
+  color: #ffffff;
+  box-shadow: 0 8px 20px rgba(26, 92, 255, 0.28);
+}
+
+.kk-hero__btn--primary:hover {
+  background: #0f49d6;
+  transform: translateY(-2px);
+}
+
+.kk-hero__btn--outline {
+  background: transparent;
+  color: var(--kk-blue);
+}
+
+.kk-hero__btn--outline:hover {
+  background: rgba(26, 92, 255, 0.08);
+  transform: translateY(-2px);
+}
+
+
+/* =====================================================
+   TRUST ROW
+===================================================== */
+
+.kk-hero__trust {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.kk-hero__avatars {
+  display: flex;
+}
+
+.kk-hero__avatar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 34px;
+  height: 34px;
+  margin-left: -6px;
+
+  border-radius: 50%;
+  border: 2px solid #f8faff;
+
+  font-size: 12px;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.kk-hero__avatar:first-child {
+  margin-left: 0;
+}
+
+.kk-hero__avatar:nth-child(1) { background: #1a5cff; }
+.kk-hero__avatar:nth-child(2) { background: #00b4ff; }
+.kk-hero__avatar:nth-child(3) { background: #0b4fd0; }
+.kk-hero__avatar:nth-child(4) { background: #4a90d9; }
+
+.kk-hero__trust-text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+
+  font-size: 13px;
+  color: var(--kk-text);
+}
+
+.kk-hero__stars {
+  font-size: 13px;
+  letter-spacing: 2px;
+  color: #f5b800;
+}
+
+
+/* =====================================================
+   VISUAL (frame + rotating ring + chips)
+===================================================== */
+
+.kk-hero__visual {
+  position: relative;
+  width: 100%;
+  max-width: 420px;
+  justify-self: center;
+}
+
+/* ROTATING CIRCLE — runs all the time */
+
+.kk-hero__ring {
+  position: absolute;
+  inset: -34px;
+  border-radius: 50%;
+  border: 2px dashed rgba(26, 92, 255, 0.3);
+  pointer-events: none;
+
+  animation: kkRingSpin 24s linear infinite;
+}
+
+/* small glowing dot that travels around the circle */
+
+.kk-hero__ring::before {
+  content: "";
+  position: absolute;
+  top: -6px;
+  left: 50%;
+
+  width: 10px;
+  height: 10px;
+  margin-left: -5px;
+
+  border-radius: 50%;
+  background: var(--kk-blue);
+  box-shadow: 0 0 12px 3px rgba(26, 92, 255, 0.45);
+}
+
+@keyframes kkRingSpin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.kk-hero__frame {
+  position: relative;
+  aspect-ratio: 1 / 1;
+  padding: 24px;
+
+  border-radius: 28px;
+  background: linear-gradient(
+    135deg,
+    #0a1a3a 0%,
+    #1a5cff 55%,
+    #00b4ff 100%
+  );
+
+  box-shadow: 0 30px 60px rgba(26, 92, 255, 0.25);
+}
+
+.kk-hero__frame-inner {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+
+  border-radius: 6px;
+  background: #ffffff;
+}
+
+.kk-hero__image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+
+/* =====================================================
+   FLOATING CHIPS
+===================================================== */
+
+.kk-hero__chip {
+  position: absolute;
+  z-index: 2;
+
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+
+  padding: 8px 14px;
+
+  background: #ffffff;
+  border-radius: 999px;
+  box-shadow: 0 6px 18px rgba(11, 21, 48, 0.12);
+
+  font-size: 13px;
+  font-weight: 600;
+  white-space: nowrap;
+  color: var(--kk-navy);
+}
+
+.kk-hero__chip--top {
+  top: -16px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.kk-hero__chip--bottom {
+  bottom: -16px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.kk-hero__chip--left {
+  left: -48px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.kk-hero__chip--right {
+  right: -48px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+
+/* =====================================================
+   ARROWS
+===================================================== */
+
+.kk-hero__arrow {
+  position: absolute;
+  top: 50%;
+  z-index: 3;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 42px;
+  height: 42px;
+  padding: 0;
+
+  border: none;
+  border-radius: 50%;
+  background: #ffffff;
+  color: var(--kk-navy);
+  box-shadow: 0 4px 14px rgba(11, 21, 48, 0.15);
+  cursor: pointer;
+
+  transform: translateY(-50%);
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.kk-hero__arrow:hover {
+  color: var(--kk-blue);
+  transform: translateY(-50%) scale(1.06);
+}
+
+.kk-hero__arrow--prev { left: 20px; }
+.kk-hero__arrow--next { right: 20px; }
+
+
+/* =====================================================
+   DOTS
+===================================================== */
+
+.kk-hero__dots {
+  position: absolute;
+  left: 50%;
+  bottom: 24px;
+  z-index: 3;
+
+  display: flex;
+  gap: 8px;
+
+  transform: translateX(-50%);
+}
+
+.kk-hero__dot {
+  width: 9px;
+  height: 9px;
+  padding: 0;
+
+  border: none;
+  border-radius: 999px;
+  background: rgba(11, 21, 48, 0.2);
+  cursor: pointer;
+
+  transition: background 0.2s ease, width 0.2s ease;
+}
+
+.kk-hero__dot:hover {
+  background: rgba(26, 92, 255, 0.5);
+}
+
+.kk-hero__dot--active {
+  width: 26px;
+  background: var(--kk-blue);
+}
+
+
+/* =====================================================
+   LAPTOP / SMALL DESKTOP
+===================================================== */
+
+@media (max-width: 1100px) {
+
+  .kk-hero__inner {
+    gap: 40px;
+    padding: 110px 28px 90px;
+    min-height: 640px;
+  }
+
+  .kk-hero__description {
+    font-size: 17px;
+  }
+
+  .kk-hero__visual {
+    max-width: 360px;
+  }
+
+  .kk-hero__chip--left  { left: -34px; }
+  .kk-hero__chip--right { right: -34px; }
+}
+
+
+/* =====================================================
+   TABLET — STACKED LAYOUT
+===================================================== */
+
+@media (max-width: 860px) {
+
+  .kk-hero__inner {
+    grid-template-columns: 1fr;
+    gap: 72px;
+
+    min-height: 0;
+    padding: 90px 24px 90px;
+  }
+
+  .kk-hero__description {
+    max-width: 620px;
+  }
+
+  .kk-hero__visual {
+    max-width: 340px;
+  }
+
+  .kk-hero__arrow {
+    display: none;
+  }
+}
+
+
+/* =====================================================
+   MOBILE
+   (visual is narrower than the screen, so the ring and
+   the side chips have room and are never cut off)
+===================================================== */
+
+@media (max-width: 600px) {
+
+  .kk-hero__inner {
+    gap: 64px;
+    padding: 76px 20px 84px;
+  }
+
+  .kk-hero__badge {
+    margin-bottom: 18px;
+    padding: 8px 13px;
+    font-size: 10.5px;
+  }
+
+  .kk-hero__title {
+    margin-bottom: 18px;
+    font-size: clamp(2.1rem, 9.5vw, 2.7rem);
+  }
+
+  .kk-hero__description {
+    margin-bottom: 26px;
+    font-size: 15.5px;
+    line-height: 1.6;
+  }
+
+  .kk-hero__actions {
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 30px;
+  }
+
+  .kk-hero__btn {
+    width: 100%;
+    height: 50px;
+    font-size: 15.5px;
+  }
+
+  .kk-hero__visual {
+    width: min(68vw, 280px);
+    max-width: none;
+    margin: 0 auto 8px;
+  }
+
+  .kk-hero__ring {
+    inset: -20px;
+  }
+
+  .kk-hero__ring::before {
+    top: -5px;
+    width: 8px;
+    height: 8px;
+    margin-left: -4px;
+  }
+
+  .kk-hero__frame {
+    padding: 16px;
+    border-radius: 22px;
+  }
+
+  .kk-hero__chip {
+    padding: 6px 11px;
+    font-size: 11.5px;
+    gap: 6px;
+  }
+
+  .kk-hero__chip--top    { top: -13px; }
+  .kk-hero__chip--bottom { bottom: -13px; }
+  .kk-hero__chip--left   { left: -12px; }
+  .kk-hero__chip--right  { right: -12px; }
+
+  .kk-hero__dots {
+    bottom: 22px;
+  }
+}
+
+
+/* =====================================================
+   SMALL MOBILE
+===================================================== */
+
+@media (max-width: 380px) {
+
+  .kk-hero__inner {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .kk-hero__visual {
+    width: min(64vw, 240px);
+  }
+
+  .kk-hero__chip {
+    font-size: 10.5px;
+    padding: 5px 9px;
+  }
+
+  .kk-hero__chip--left  { left: -8px; }
+  .kk-hero__chip--right { right: -8px; }
+
+  .kk-hero__trust {
+    gap: 12px;
+  }
+}
+
+
+/* =====================================================
+   REDUCED MOTION
+===================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .kk-hero__inner,
+  .kk-hero__ring {
+    animation: none;
+  }
+
+  .kk-hero__btn,
+  .kk-hero__arrow,
+  .kk-hero__dot {
+    transition: none;
+  }
+}

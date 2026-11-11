@@ -1,0 +1,2058 @@
+/* =====================================================
+   KADEN KOPPER TECHNOLOGY
+   INDUSTRY PAGE
+===================================================== */
+
+.kk-industry-page {
+  width: 100%;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  font-family: "Inter", "Segoe UI", Arial, sans-serif;
+  color: #111b42;
+  overflow-x: hidden;
+  background: #ffffff;
+}
+
+.kk-industry-page *,
+.kk-industry-page *::before,
+.kk-industry-page *::after {
+  box-sizing: border-box;
+}
+
+
+/* =====================================================
+   COMMON CONTAINERS
+===================================================== */
+
+.kk-industry-container,
+.kk-industries-container,
+.kk-delivery-container {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
+
+/* =====================================================
+   GLOBAL SCROLL REVEAL
+===================================================== */
+
+.kk-reveal {
+  opacity: 0;
+  transform: translateY(35px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+  transition-delay: var(--reveal-delay, 0ms);
+}
+
+.kk-reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+/* =====================================================
+   INDUSTRY BANNER
+===================================================== */
+
+.kk-industry-banner {
+  position: relative;
+  width: 100%;
+  min-height: clamp(560px, 44vw, 680px);
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  color: #ffffff;
+  background:
+    radial-gradient(circle at 78% 45%, rgba(34, 74, 190, 0.55) 0%, rgba(34, 74, 190, 0) 55%),
+    linear-gradient(135deg, #040d33 0%, #071a5c 52%, #0a2370 100%);
+}
+
+.kk-banner-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.kk-banner-grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(96, 140, 255, 0.09) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(96, 140, 255, 0.09) 1px, transparent 1px);
+  background-size: 48px 48px;
+  -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.95), rgba(0, 0, 0, 0.35));
+  mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.95), rgba(0, 0, 0, 0.35));
+}
+
+.kk-banner-glow {
+  position: absolute;
+  left: -140px;
+  top: -140px;
+  width: 460px;
+  height: 460px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(34, 211, 238, 0.16), transparent 65%);
+}
+
+.kk-banner-globe {
+  position: absolute;
+  right: -170px;
+  top: 50%;
+  width: 760px;
+  height: 760px;
+  transform: translateY(-50%);
+}
+
+.kk-banner-globe-canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.kk-industry-banner .kk-industry-container {
+  position: relative;
+  z-index: 5;
+  padding-top: 70px;
+  padding-bottom: 70px;
+}
+
+.kk-industry-banner-inner {
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  align-items: center;
+  gap: 56px;
+}
+
+.kk-industry-content {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  max-width: 620px;
+  animation: kk-banner-rise 0.8s ease both;
+}
+
+.kk-industry-banner-badge {
+  width: fit-content;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 26px;
+  padding: 9px 18px;
+  border: 1px solid rgba(34, 211, 238, 0.28);
+  border-radius: 999px;
+  background: rgba(34, 211, 238, 0.12);
+  color: #22d3ee;
+  font-size: 12px;
+  line-height: 1;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+}
+
+.kk-industry-content h1 {
+  margin: 0 0 24px;
+  padding: 0;
+  font-size: clamp(38px, 4.6vw, 64px);
+  line-height: 1.1;
+  font-weight: 800;
+  letter-spacing: -1.5px;
+  color: #ffffff;
+}
+
+.kk-industry-content h1 span {
+  background: linear-gradient(90deg, #22d3ee 0%, #4f8bff 55%, #7c6cff 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+.kk-industry-content > p {
+  max-width: 540px;
+  margin: 0;
+  padding: 0;
+  font-size: 17px;
+  line-height: 1.7;
+  font-weight: 400;
+  color: rgba(226, 234, 255, 0.88);
+}
+
+.kk-industry-banner-button {
+  position: relative;
+  width: fit-content;
+  min-width: 200px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 34px;
+  padding: 16px 28px;
+  border: none;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #2f6bff 0%, #22b8ff 100%);
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 14px;
+  line-height: 1.2;
+  font-weight: 700;
+  box-shadow: 0 10px 30px rgba(47, 107, 255, 0.4);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.kk-industry-banner-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 36px rgba(47, 107, 255, 0.55);
+}
+
+.kk-industry-banner-button .kk-banner-arrow {
+  font-size: 20px;
+  line-height: 1;
+  transition: transform 0.25s ease;
+}
+
+.kk-industry-banner-button:hover .kk-banner-arrow {
+  transform: translateX(5px);
+}
+
+
+/* =====================================================
+   BANNER GLASS CARD
+===================================================== */
+
+.kk-banner-card {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  max-width: 540px;
+  margin-left: auto;
+  padding: 26px;
+  border: 1.5px solid rgba(80, 160, 255, 0.55);
+  border-radius: 24px;
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.11), rgba(255, 255, 255, 0.04));
+  -webkit-backdrop-filter: blur(14px);
+  backdrop-filter: blur(14px);
+  box-shadow: 0 24px 60px rgba(0, 10, 60, 0.5), 0 0 40px rgba(60, 130, 255, 0.25);
+  animation: kk-banner-rise 0.9s ease 0.15s both;
+}
+
+.kk-banner-card-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 8px;
+}
+
+.kk-banner-card-logo {
+  width: 56px;
+  height: 56px;
+  flex: 0 0 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #5b6cff 0%, #2d8bff 100%);
+  color: #ffffff;
+  box-shadow: 0 8px 22px rgba(70, 110, 255, 0.45);
+}
+
+.kk-banner-card-logo svg {
+  width: 26px;
+  height: 26px;
+}
+
+.kk-banner-card-heading h2 {
+  margin: 0;
+  font-size: 21px;
+  line-height: 1.25;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.kk-banner-card-heading p {
+  margin: 4px 0 0;
+  font-size: 13px;
+  line-height: 1.4;
+  color: rgba(220, 230, 255, 0.8);
+}
+
+.kk-banner-point {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-top: 14px;
+  padding: 14px 18px 14px 14px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.06);
+  transition: background 0.25s ease, transform 0.25s ease;
+}
+
+.kk-banner-point:hover {
+  background: rgba(255, 255, 255, 0.11);
+  transform: translateX(4px);
+}
+
+.kk-banner-point-icon {
+  width: 48px;
+  height: 48px;
+  flex: 0 0 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.07);
+  color: #38d0ff;
+}
+
+.kk-banner-point-icon svg {
+  width: 24px;
+  height: 24px;
+}
+
+.kk-banner-point-text {
+  flex: 1;
+  min-width: 0;
+}
+
+.kk-banner-point-text h3 {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.3;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.kk-banner-point-text p {
+  margin: 3px 0 0;
+  font-size: 12.5px;
+  line-height: 1.45;
+  color: rgba(220, 230, 255, 0.78);
+}
+
+.kk-banner-point-arrow {
+  font-size: 24px;
+  line-height: 1;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+@keyframes kk-banner-rise {
+  from {
+    opacity: 0;
+    transform: translateY(28px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .kk-industry-content,
+  .kk-banner-card {
+    animation: none;
+  }
+}
+
+
+/* =====================================================
+   STATS (kept for later use)
+===================================================== */
+
+.kk-industry-stats {
+  width: 100%;
+  padding: 0 20px;
+  background: #191d34;
+}
+
+.kk-industry-stats-container {
+  width: 100%;
+  max-width: 1280px;
+  min-height: 120px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  align-items: center;
+  padding: 15px 18px;
+  border: 1px solid rgba(124, 141, 218, 0.25);
+  border-radius: 0 0 28px 28px;
+  background: #1d223b;
+}
+
+.kk-industry-stat {
+  min-height: 76px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 13px;
+  padding: 10px 18px;
+  border-right: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.kk-industry-stat:last-child {
+  border-right: none;
+}
+
+.kk-stat-icon {
+  width: 49px;
+  height: 49px;
+  flex: 0 0 49px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #4b5ca0;
+  border-radius: 12px;
+  color: #788bed;
+}
+
+.kk-stat-icon svg {
+  width: 22px;
+  height: 22px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.7;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.kk-stat-content {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.kk-stat-content strong {
+  font-size: 23px;
+  line-height: 1;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.kk-stat-content span {
+  margin-top: 4px;
+  font-size: 14px;
+  line-height: 1.3;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.kk-stat-content small {
+  margin-top: 3px;
+  font-size: 10px;
+  line-height: 1.4;
+  color: #aeb5ca;
+}
+
+
+/* =====================================================
+   INDUSTRIES SECTION
+===================================================== */
+
+.kk-industries-section {
+  position: relative;
+  width: 100%;
+  padding: 90px 0 100px;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 6% 4%, rgba(124, 108, 255, 0.26) 0, rgba(124, 108, 255, 0) 22%),
+    radial-gradient(circle at 50% 40%, rgba(34, 199, 214, 0.14) 0, rgba(34, 199, 214, 0) 32%),
+    linear-gradient(180deg, #f3f8fc 0%, #e9f2fa 100%);
+}
+
+.kk-industries-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    linear-gradient(rgba(110, 150, 190, 0.14) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(110, 150, 190, 0.14) 1px, transparent 1px);
+  background-size: 36px 36px;
+}
+
+.kk-industries-section .kk-industries-container {
+  position: relative;
+  z-index: 1;
+}
+
+.kk-industry-defs {
+  position: absolute;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+}
+
+.kk-industries-heading {
+  width: 100%;
+  max-width: 880px;
+  margin: 0 auto 56px;
+  text-align: center;
+}
+
+.kk-industries-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 22px;
+  padding: 7px 16px;
+  border: 1px solid rgba(91, 91, 214, 0.3);
+  border-radius: 999px;
+  background: rgba(91, 91, 214, 0.08);
+  color: #5b5bd6;
+  font-size: 11px;
+  line-height: 1;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+}
+
+.kk-industries-badge::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #5b5bd6;
+}
+
+.kk-industries-heading h2 {
+  margin: 0;
+  font-size: clamp(30px, 4.4vw, 54px);
+  line-height: 1.12;
+  font-weight: 800;
+  letter-spacing: -1.2px;
+  color: #0f2a6b;
+  text-wrap: balance;
+}
+
+.kk-industries-heading h2 span {
+  background: linear-gradient(90deg, #2563eb 0%, #14b8c8 55%, #22c7b5 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+.kk-industries-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin: 22px auto 20px;
+}
+
+.kk-industries-divider::before,
+.kk-industries-divider::after {
+  content: "";
+  width: 56px;
+  height: 2px;
+  border-radius: 2px;
+}
+
+.kk-industries-divider::before {
+  background: linear-gradient(90deg, rgba(91, 91, 214, 0), #5b5bd6);
+}
+
+.kk-industries-divider::after {
+  background: linear-gradient(90deg, #14b8c8, rgba(20, 184, 200, 0));
+}
+
+.kk-industries-divider span {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #5b5bd6;
+  box-shadow: 0 0 0 4px rgba(91, 91, 214, 0.18);
+}
+
+.kk-industries-heading p {
+  max-width: 760px;
+  margin: 0 auto;
+  font-size: 16px;
+  line-height: 1.7;
+  color: #3a4a68;
+}
+
+.kk-industries-grid {
+  width: 100%;
+  max-width: 940px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: stretch;
+  gap: 26px;
+}
+
+.kk-industry-card {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 30px 28px 24px;
+  border: 1px solid #e3ebf4;
+  border-radius: 16px;
+  background: #ffffff;
+  color: #111b42;
+  text-decoration: none;
+  overflow: hidden;
+  box-shadow: 0 4px 18px rgba(30, 60, 110, 0.06);
+  transition:
+    opacity 0.7s ease,
+    transform 0.35s ease,
+    box-shadow 0.35s ease,
+    border-color 0.35s ease;
+}
+
+.kk-industry-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #1ea7d6, #4f46e5);
+  opacity: 0;
+  transition: opacity 0.35s ease;
+}
+
+.kk-industry-card:hover {
+  transform: translateY(-5px);
+  transition-delay: 0s;
+  border-color: #1fb2c6;
+  box-shadow: 0 18px 44px rgba(20, 150, 180, 0.2);
+}
+
+.kk-industry-card:hover::before {
+  opacity: 1;
+}
+
+.kk-industry-card-art {
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 22px;
+}
+
+.kk-industry-art-svg {
+  width: 120px;
+  height: 110px;
+  transition: transform 0.35s ease;
+}
+
+.kk-industry-card:hover .kk-industry-art-svg {
+  transform: translateY(-4px) scale(1.06);
+}
+
+.kk-industry-card h3 {
+  margin: 0 0 8px;
+  font-size: 17px;
+  line-height: 1.3;
+  font-weight: 700;
+  color: #101a3f;
+}
+
+.kk-industry-card p {
+  margin: 0;
+  font-size: 13.5px;
+  line-height: 1.7;
+  color: #6b7a94;
+}
+
+.kk-industry-card-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 18px 0 22px;
+}
+
+.kk-industry-card-tags span {
+  padding: 5px 12px;
+  border-radius: 999px;
+  background: #eaf3f6;
+  color: #3a4a68;
+  font-size: 11px;
+  line-height: 1.3;
+  font-weight: 600;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.kk-industry-card:hover .kk-industry-card-tags span {
+  background: #d9f1f4;
+  color: #0f8fa3;
+}
+
+.kk-industry-card-footer {
+  margin-top: auto;
+  padding-top: 16px;
+  border-top: 1px solid #e8eef5;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.kk-industry-card-meta {
+  font-size: 12px;
+  line-height: 1.4;
+  color: #5a6a85;
+}
+
+.kk-industry-card-more {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  line-height: 1.4;
+  font-weight: 700;
+  color: #14a3b8;
+}
+
+.kk-industry-card-arrow {
+  transition: transform 0.3s ease;
+}
+
+.kk-industry-card:hover .kk-industry-card-arrow {
+  transform: translateX(4px);
+}
+
+
+/* =====================================================
+   INDUSTRY FOCUS SECTION  (BUSINESS IMPACT)
+   outer panel + left content + right diagram card
+===================================================== */
+
+.kk-industry-focus {
+  width: 100%;
+  padding: 80px 0;
+  background: linear-gradient(180deg, #f4f8ff 0%, #eef3fd 100%);
+  color: #111b42;
+}
+
+.kk-industry-focus-container {
+  position: relative;
+  width: calc(100% - 48px);
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 60px 52px;
+  display: grid;
+  grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+  align-items: center;
+  gap: 52px;
+  overflow: hidden;
+  border: 1px solid #e1e9f7;
+  border-radius: 32px;
+  background:
+    radial-gradient(circle at 0% 0%, rgba(20, 200, 230, 0.1), transparent 38%),
+    radial-gradient(circle at 100% 100%, rgba(139, 92, 246, 0.1), transparent 40%),
+    linear-gradient(135deg, #ffffff 0%, #f5f9ff 100%);
+  box-shadow: 0 24px 70px rgba(40, 70, 160, 0.1);
+}
+
+.kk-industry-focus-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #14c8e6 0%, #2f6bff 55%, #8b5cf6 100%);
+}
+
+
+/* ---------- LEFT CONTENT ---------- */
+
+.kk-focus-content {
+  width: 100%;
+  max-width: 560px;
+  min-width: 0;
+}
+
+.kk-focus-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 22px;
+  padding: 7px 16px;
+  border: 1px solid rgba(47, 107, 255, 0.22);
+  border-radius: 999px;
+  background: rgba(47, 107, 255, 0.08);
+  color: #2f6bff;
+  font-size: 11px;
+  line-height: 1;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+}
+
+.kk-focus-badge::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #2f6bff;
+}
+
+.kk-focus-content h2 {
+  margin: 0 0 28px;
+  font-size: clamp(27px, 2.7vw, 40px);
+  line-height: 1.2;
+  font-weight: 800;
+  letter-spacing: -0.8px;
+  color: #101a3f;
+  text-wrap: balance;
+}
+
+.kk-focus-content h2 span,
+.kk-focus-visual-title span {
+  background: linear-gradient(90deg, #14b8e6 0%, #2f6bff 55%, #8b5cf6 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+.kk-focus-intro {
+  padding-left: 22px;
+  border-left: 3px solid #2f6bff;
+  border-image: linear-gradient(180deg, #2f6bff, #8b5cf6) 1;
+  font-size: 15.5px;
+  line-height: 1.75;
+  color: #243257;
+}
+
+.kk-focus-content > p {
+  margin: 22px 0 0;
+  padding-left: 25px;
+  font-size: 15.5px;
+  line-height: 1.75;
+  color: #243257;
+}
+
+
+/* ---------- 180+ CARD ---------- */
+
+.kk-project-stat {
+  position: relative;
+  width: 100%;
+  margin-top: 34px;
+  padding: 24px 26px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  overflow: hidden;
+  border: 1px solid #e1e9f7;
+  border-radius: 20px;
+  background: #ffffff;
+  box-shadow: 0 12px 34px rgba(40, 70, 160, 0.08);
+}
+
+.kk-project-stat::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #14c8e6 0%, #2f6bff 55%, #8b5cf6 100%);
+}
+
+.kk-project-icon {
+  width: 72px;
+  height: 72px;
+  flex: 0 0 72px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 18px;
+  background: linear-gradient(135deg, #14b8e6 0%, #2f6bff 55%, #7c4dff 100%);
+  color: #ffffff;
+  box-shadow: 0 10px 24px rgba(47, 107, 255, 0.3);
+}
+
+.kk-project-icon svg {
+  width: 34px;
+  height: 34px;
+}
+
+.kk-project-stat-content {
+  min-width: 0;
+}
+
+.kk-project-stat-content strong {
+  display: block;
+  margin: 0;
+  font-size: 36px;
+  line-height: 1;
+  font-weight: 800;
+  color: #111b42;
+}
+
+.kk-project-stat-content h3 {
+  margin: 8px 0 0;
+  font-size: 17px;
+  line-height: 1.3;
+  font-weight: 700;
+  color: #111b42;
+}
+
+.kk-project-stat-content p {
+  margin: 6px 0 0;
+  font-size: 13px;
+  line-height: 1.55;
+  color: #667593;
+}
+
+
+/* ---------- RIGHT CARD ---------- */
+
+.kk-focus-visual {
+  position: relative;
+  width: 100%;
+  min-width: 0;
+  padding: 32px 32px 36px;
+  overflow: hidden;
+  border: 1px solid #e1e9f7;
+  border-radius: 24px;
+  background: #ffffff;
+  box-shadow: 0 16px 44px rgba(40, 70, 160, 0.1);
+}
+
+.kk-focus-visual::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #14c8e6 0%, #2f6bff 55%, #8b5cf6 100%);
+}
+
+.kk-focus-visual-title {
+  margin: 0;
+  font-size: 22px;
+  line-height: 1.3;
+  font-weight: 700;
+  letter-spacing: -0.4px;
+  color: #101a3f;
+}
+
+
+/* ---------- DIAGRAM ----------
+   desktop: 3 columns (points | stack | points)
+   the connectors are anchored to the centre cell */
+
+.kk-fd {
+  --stack: 180px;
+  --side: calc((100cqw - var(--stack)) / 2);
+
+  container-type: inline-size;
+
+  position: relative;
+  margin-top: 28px;
+
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) var(--stack) minmax(0, 1fr);
+  grid-template-rows: 190px 190px;
+  row-gap: 36px;
+}
+
+.kk-fd-point {
+  position: relative;
+  min-width: 0;
+}
+
+.kk-fd-point--tl { grid-column: 1; grid-row: 1; padding-right: 8px; }
+.kk-fd-point--bl { grid-column: 1; grid-row: 2; padding-right: 8px; }
+.kk-fd-point--tr { grid-column: 3; grid-row: 1; padding-left: 28px; }
+.kk-fd-point--br { grid-column: 3; grid-row: 2; padding-left: 28px; }
+
+.kk-fd-icon {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #7c4dff 0%, #2f6bff 100%);
+  color: #ffffff;
+  box-shadow: 0 8px 18px rgba(79, 70, 229, 0.28);
+}
+
+.kk-fd-point--tr .kk-fd-icon,
+.kk-fd-point--br .kk-fd-icon {
+  background: linear-gradient(135deg, #14c8e6 0%, #2f6bff 100%);
+  box-shadow: 0 8px 18px rgba(20, 150, 230, 0.28);
+}
+
+.kk-fd-icon svg {
+  width: 18px;
+  height: 18px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.kk-fd-point h4 {
+  max-width: 190px;
+  margin: 14px 0 0;
+  font-size: 14.5px;
+  line-height: 1.35;
+  font-weight: 700;
+  color: #101a3f;
+}
+
+.kk-fd-point p {
+  max-width: 190px;
+  margin: 6px 0 0;
+  font-size: 12px;
+  line-height: 1.6;
+  color: #667593;
+}
+
+
+/* ---------- CENTRE CELL ---------- */
+
+.kk-fd-center {
+  position: relative;
+  grid-column: 2;
+  grid-row: 1 / 3;
+  pointer-events: none;
+}
+
+/* connectors: dotted elbows, dots at the stack corners */
+
+.kk-fd-line {
+  position: absolute;
+  display: block;
+  border: 0 dotted rgba(79, 99, 235, 0.65);
+}
+
+.kk-fd-line::after {
+  content: "";
+  position: absolute;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+}
+
+/* top left: horizontal from the icon, then down to the stack */
+.kk-fd-line--tl {
+  top: 20px;
+  height: 158px;
+  left: calc(-1 * (var(--side) - 50px));
+  width: calc(var(--side) - 46px);
+  border-top-width: 2px;
+  border-right-width: 2px;
+}
+
+.kk-fd-line--tl::after {
+  right: -5.5px;
+  bottom: -4px;
+  background: #2f6bff;
+}
+
+/* bottom left: straight line to the stack */
+.kk-fd-line--bl {
+  top: 246px;
+  left: calc(-1 * (var(--side) - 50px));
+  width: calc(var(--side) - 30px);
+  border-top-width: 2px;
+}
+
+.kk-fd-line--bl::after {
+  right: -4px;
+  top: -5.5px;
+  background: #2f6bff;
+}
+
+/* top right: from the stack corner up, then across to the icon */
+.kk-fd-line--tr {
+  top: 20px;
+  height: 158px;
+  left: calc(var(--stack) - 4px);
+  width: 24px;
+  border-top-width: 2px;
+  border-left-width: 2px;
+}
+
+.kk-fd-line--tr::after {
+  left: -5.5px;
+  bottom: -4px;
+  background: #8b5cf6;
+}
+
+/* bottom right: straight line to the stack */
+.kk-fd-line--br {
+  top: 246px;
+  left: calc(var(--stack) - 20px);
+  width: 40px;
+  border-top-width: 2px;
+}
+
+.kk-fd-line--br::after {
+  left: -4px;
+  top: -5.5px;
+  background: #8b5cf6;
+}
+
+
+/* ---------- 3D STACK ---------- */
+
+.kk-fd-stack {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 180px;
+  height: 208px;
+  transform: translate(-50%, -50%);
+  filter: drop-shadow(0 14px 16px rgba(52, 64, 190, 0.28));
+}
+
+.kk-fd-layer {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 104px;
+  height: 104px;
+  margin-left: -52px;
+  border-radius: 20px;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.18);
+  transform: rotate(-30deg) skewX(30deg) scaleY(0.866);
+}
+
+.kk-fd-layer--bottom {
+  margin-top: -24px;
+  background: linear-gradient(120deg, #2352c8 0%, #3a3fc4 55%, #53399f 100%);
+  z-index: 1;
+}
+
+.kk-fd-layer--middle {
+  margin-top: -52px;
+  background: linear-gradient(120deg, #2c7bf0 0%, #4a58e6 55%, #6d4bd8 100%);
+  z-index: 2;
+}
+
+.kk-fd-layer--top {
+  margin-top: -80px;
+  background: linear-gradient(120deg, #35a8ff 0%, #5a6bff 55%, #8a5cf6 100%);
+  z-index: 3;
+}
+
+.kk-fd-hub {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 54px;
+  height: 54px;
+  margin: -55px 0 0 -27px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: #ffffff;
+  color: #2f6bff;
+  box-shadow: 0 6px 16px rgba(20, 30, 90, 0.2);
+  z-index: 4;
+}
+
+.kk-fd-hub svg {
+  width: 26px;
+  height: 26px;
+}
+
+
+
+
+
+/* =====================================================
+   FOCUS SECTION - RESPONSIVE
+   (placed after the base focus rules so it wins)
+===================================================== */
+
+/* laptop: slightly tighter panel so the diagram keeps its room */
+@media (max-width: 1280px) {
+  .kk-industry-focus-container {
+    padding: 48px 36px;
+    gap: 32px;
+  }
+
+  .kk-focus-visual {
+    padding: 28px 22px 32px;
+  }
+
+  .kk-focus-visual-title {
+    font-size: 20px;
+  }
+}
+
+/* tablet: stack the two columns and centre everything */
+@media (max-width: 1100px) {
+  .kk-industry-focus {
+    padding: 64px 0;
+  }
+
+  .kk-industry-focus-container {
+    max-width: 820px;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 44px;
+    padding: 48px 36px;
+  }
+
+  .kk-focus-content {
+    max-width: 680px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .kk-focus-intro,
+  .kk-focus-content > p,
+  .kk-project-stat {
+    max-width: 640px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+  }
+
+  .kk-focus-visual {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 32px 30px 36px;
+  }
+
+  .kk-focus-visual-title {
+    font-size: 22px;
+  }
+}
+
+/* phone: diagram becomes stack on top, points in a 2 x 2 grid */
+@media (max-width: 760px) {
+  .kk-industry-focus {
+    padding: 44px 0;
+  }
+
+  .kk-industry-focus-container {
+    width: calc(100% - 24px);
+    padding: 34px 16px 28px;
+    gap: 32px;
+    border-radius: 24px;
+  }
+
+  .kk-focus-badge {
+    margin-bottom: 18px;
+  }
+
+  .kk-focus-content h2 {
+    margin-bottom: 22px;
+    font-size: clamp(24px, 7vw, 30px);
+    letter-spacing: -0.5px;
+  }
+
+  .kk-focus-intro {
+    padding-left: 16px;
+    font-size: 14.5px;
+    line-height: 1.7;
+  }
+
+  .kk-focus-content > p {
+    margin-top: 18px;
+    padding-left: 19px;
+    font-size: 14.5px;
+    line-height: 1.7;
+  }
+
+  .kk-project-stat {
+    margin-top: 26px;
+    padding: 18px;
+    gap: 16px;
+    border-radius: 18px;
+  }
+
+  .kk-project-icon {
+    width: 58px;
+    height: 58px;
+    flex-basis: 58px;
+    border-radius: 15px;
+  }
+
+  .kk-project-icon svg {
+    width: 28px;
+    height: 28px;
+  }
+
+  .kk-project-stat-content strong {
+    font-size: 30px;
+  }
+
+  .kk-project-stat-content h3 {
+    margin-top: 6px;
+    font-size: 15.5px;
+  }
+
+  .kk-project-stat-content p {
+    font-size: 12px;
+  }
+
+  .kk-focus-visual {
+    padding: 24px 16px 26px;
+    border-radius: 20px;
+  }
+
+  .kk-focus-visual-title {
+    font-size: 18px;
+    text-align: center;
+  }
+
+  .kk-fd {
+    margin-top: 6px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-rows: none;
+    grid-auto-rows: auto;
+    column-gap: 18px;
+    row-gap: 26px;
+  }
+
+  .kk-fd-center {
+    order: -1;
+    grid-column: 1 / -1;
+    grid-row: auto;
+    height: 200px;
+  }
+
+  .kk-fd-line {
+    display: none;
+  }
+
+  .kk-fd-stack {
+    transform: translate(-50%, -50%) scale(0.9);
+  }
+
+  .kk-fd-point--tl,
+  .kk-fd-point--tr,
+  .kk-fd-point--bl,
+  .kk-fd-point--br {
+    grid-column: auto;
+    grid-row: auto;
+    padding: 0;
+  }
+
+  .kk-fd-icon {
+    width: 38px;
+    height: 38px;
+  }
+
+  .kk-fd-point h4 {
+    max-width: none;
+    margin-top: 12px;
+    font-size: 14px;
+  }
+
+  .kk-fd-point p {
+    max-width: none;
+    font-size: 12px;
+    line-height: 1.55;
+  }
+}
+
+/* small phone: one column, icon on the left of each point */
+@media (max-width: 380px) {
+  .kk-industry-focus-container {
+    padding: 30px 14px 24px;
+  }
+
+  .kk-project-stat {
+    padding: 16px;
+    gap: 14px;
+  }
+
+  .kk-project-icon {
+    width: 52px;
+    height: 52px;
+    flex-basis: 52px;
+  }
+
+  .kk-project-stat-content strong {
+    font-size: 27px;
+  }
+
+  .kk-fd {
+    grid-template-columns: minmax(0, 1fr);
+    row-gap: 20px;
+  }
+
+  .kk-fd-point {
+    display: grid;
+    grid-template-columns: 38px minmax(0, 1fr);
+    column-gap: 14px;
+    align-items: start;
+  }
+
+  .kk-fd-icon {
+    grid-row: 1 / 3;
+  }
+
+  .kk-fd-point h4 {
+    margin-top: 2px;
+  }
+
+  .kk-fd-point p {
+    margin-top: 4px;
+  }
+}
+
+
+/* =====================================================
+   LARGE TABLET
+===================================================== */
+
+@media (max-width: 1200px) {
+
+  .kk-industry-container,
+  .kk-industries-container,
+  .kk-delivery-container {
+    padding-left: 22px;
+    padding-right: 22px;
+  }
+
+  .kk-industry-banner {
+    min-height: clamp(540px, 50vw, 620px);
+  }
+
+  .kk-industry-banner-inner {
+    gap: 36px;
+  }
+
+  .kk-industry-content h1 {
+    font-size: clamp(36px, 4.4vw, 54px);
+  }
+
+  .kk-banner-card {
+    padding: 22px;
+  }
+
+  .kk-banner-globe {
+    width: 540px;
+    height: 540px;
+    right: -170px;
+  }
+
+  .kk-industries-grid {
+    max-width: 880px;
+    gap: 22px;
+  }
+
+  .kk-delivery-workflow {
+    padding: 0 30px;
+    column-gap: 22px;
+  }
+
+  .kk-delivery-step h3 {
+    font-size: 15px;
+  }
+
+  .kk-delivery-step p {
+    font-size: 11px;
+  }
+}
+
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 900px) {
+
+  /* BANNER */
+
+  .kk-industry-banner {
+    min-height: 0;
+  }
+
+  .kk-industry-banner .kk-industry-container {
+    padding-top: 120px;
+    padding-bottom: 64px;
+  }
+
+  .kk-industry-banner-inner {
+    grid-template-columns: 1fr;
+    gap: 44px;
+  }
+
+  .kk-industry-content {
+    max-width: 680px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .kk-industry-banner-badge {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .kk-industry-content > p {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .kk-industry-banner-button {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .kk-banner-card {
+    max-width: 560px;
+    margin: 0 auto;
+  }
+
+  .kk-banner-globe {
+    top: 62%;
+    right: -260px;
+  }
+
+  /* STATS */
+
+  .kk-industry-stats-container {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 760px;
+  }
+
+  .kk-industry-stat {
+    border-right: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .kk-industry-stat:nth-child(odd) {
+    border-right: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .kk-industry-stat:nth-last-child(-n + 2) {
+    border-bottom: none;
+  }
+
+  /* INDUSTRIES */
+
+  .kk-industries-section {
+    padding: 72px 0 80px;
+  }
+
+  .kk-industries-heading {
+    margin-bottom: 44px;
+  }
+
+  .kk-industries-grid {
+    max-width: 760px;
+    gap: 20px;
+  }
+
+  .kk-industry-card {
+    padding: 26px 22px 22px;
+  }
+
+  /* DELIVERY */
+
+  .kk-delivery-section {
+    padding: 65px 0 75px;
+  }
+
+  .kk-delivery-heading {
+    max-width: 700px;
+    margin: 0 auto 45px;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    text-align: center;
+  }
+
+  .kk-delivery-heading-divider {
+    width: 50px;
+    height: 3px;
+    margin: 0 auto;
+  }
+
+  .kk-delivery-heading p {
+    max-width: 620px;
+    margin: 0 auto;
+  }
+
+  .kk-delivery-workflow {
+    max-width: 700px;
+    margin: 0 auto;
+    min-height: 0;
+    padding: 45px 35px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 45px 35px;
+    border-radius: 32px;
+  }
+
+  .kk-delivery-horizontal-line {
+    display: none;
+  }
+
+  .kk-delivery-step {
+    padding: 0;
+    text-align: center;
+  }
+
+  .kk-delivery-icon {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .kk-delivery-title-line {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .kk-delivery-step h3,
+  .kk-delivery-step p {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 600px) {
+
+  .kk-industry-container,
+  .kk-industries-container,
+  .kk-delivery-container {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  /* BANNER
+     every mobile size below is multiplied by --u, so the layout
+     scales with the screen width (1u = 1px on a 390px phone) */
+
+  .kk-industry-banner {
+    --u: clamp(0.62px, 0.25641vw, 1.15px);
+  }
+
+  .kk-industry-banner .kk-industry-container {
+    padding-top: 100px;
+    padding-bottom: calc(36 * var(--u));
+    padding-left: calc(30 * var(--u));
+    padding-right: calc(30 * var(--u));
+  }
+
+  .kk-industry-banner-inner {
+    gap: calc(30 * var(--u));
+  }
+
+  .kk-industry-content {
+    max-width: 100%;
+    margin: 0;
+    text-align: left;
+  }
+
+  .kk-industry-banner-badge {
+    margin: 0 0 calc(18 * var(--u));
+    padding: calc(7 * var(--u)) calc(14 * var(--u));
+    font-size: calc(10.5 * var(--u));
+    letter-spacing: calc(1 * var(--u));
+  }
+
+  /* max-width in em forces the 4-line break:
+     Solutions for / Every Industry / & Every / Challenge */
+
+  .kk-industry-content h1 {
+    max-width: 7.7em;
+    margin: 0 0 calc(16 * var(--u));
+    font-size: calc(32 * var(--u));
+    line-height: 1.12;
+    letter-spacing: calc(-0.9 * var(--u));
+  }
+
+  .kk-industry-content > p {
+    max-width: 100%;
+    margin: 0;
+    font-size: calc(15.5 * var(--u));
+    line-height: 1.6;
+  }
+
+  .kk-industry-banner-button {
+    width: fit-content;
+    min-width: 0;
+    margin: calc(26 * var(--u)) 0 0;
+    padding: calc(12 * var(--u)) calc(20 * var(--u));
+    gap: calc(12 * var(--u));
+    border-radius: calc(9 * var(--u));
+    font-size: calc(12.5 * var(--u));
+  }
+
+  .kk-industry-banner-button .kk-banner-arrow {
+    font-size: calc(17 * var(--u));
+  }
+
+  .kk-banner-card {
+    max-width: 100%;
+    margin: 0;
+    padding: calc(14 * var(--u));
+    border-radius: calc(16 * var(--u));
+    background: linear-gradient(145deg, rgba(10, 30, 110, 0.55), rgba(10, 30, 110, 0.35));
+    -webkit-backdrop-filter: blur(4px);
+    backdrop-filter: blur(4px);
+  }
+
+  .kk-banner-card-header {
+    gap: calc(12 * var(--u));
+  }
+
+  .kk-banner-card-logo {
+    width: calc(40 * var(--u));
+    height: calc(40 * var(--u));
+    flex-basis: calc(40 * var(--u));
+    border-radius: calc(10 * var(--u));
+  }
+
+  .kk-banner-card-logo svg {
+    width: calc(20 * var(--u));
+    height: calc(20 * var(--u));
+  }
+
+  .kk-banner-card-heading h2 {
+    font-size: calc(16 * var(--u));
+  }
+
+  .kk-banner-card-heading p {
+    margin-top: calc(2 * var(--u));
+    font-size: calc(11 * var(--u));
+  }
+
+  .kk-banner-point {
+    gap: calc(11 * var(--u));
+    margin-top: calc(10 * var(--u));
+    padding: calc(9 * var(--u)) calc(10 * var(--u)) calc(9 * var(--u)) calc(9 * var(--u));
+    border-radius: calc(12 * var(--u));
+  }
+
+  .kk-banner-point-icon {
+    width: calc(36 * var(--u));
+    height: calc(36 * var(--u));
+    flex-basis: calc(36 * var(--u));
+    border-radius: calc(9 * var(--u));
+  }
+
+  .kk-banner-point-icon svg {
+    width: calc(18 * var(--u));
+    height: calc(18 * var(--u));
+  }
+
+  .kk-banner-point-text h3 {
+    font-size: calc(13 * var(--u));
+  }
+
+  .kk-banner-point-text p {
+    margin-top: calc(2 * var(--u));
+    font-size: calc(10.5 * var(--u));
+  }
+
+  .kk-banner-point-arrow {
+    font-size: calc(18 * var(--u));
+  }
+
+  /* MOBILE GLOBE - BIG, CENTRED BEHIND THE CARD */
+
+  .kk-banner-globe {
+    left: 50%;
+    right: auto;
+    top: auto;
+    bottom: -24vw;
+    width: 130vw;
+    height: 130vw;
+    transform: translateX(-50%);
+    opacity: 1;
+  }
+
+  /* STATS */
+
+  .kk-industry-stats {
+    padding: 0 10px;
+  }
+
+  .kk-industry-stats-container {
+    grid-template-columns: 1fr;
+    padding: 8px 18px;
+    border-radius: 0 0 20px 20px;
+  }
+
+  .kk-industry-stat,
+  .kk-industry-stat:nth-child(odd) {
+    width: 100%;
+    min-height: 70px;
+    justify-content: flex-start;
+    padding: 12px 0;
+    border-right: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .kk-industry-stat:last-child {
+    border-bottom: none;
+  }
+
+  .kk-stat-icon {
+    width: 45px;
+    height: 45px;
+    flex-basis: 45px;
+  }
+
+  .kk-stat-content strong {
+    font-size: 21px;
+  }
+
+  .kk-stat-content span {
+    font-size: 13px;
+  }
+
+  .kk-stat-content small {
+    font-size: 9px;
+  }
+
+  /* INDUSTRIES */
+
+  .kk-industries-section {
+    padding: 56px 0 64px;
+  }
+
+  .kk-industries-heading {
+    margin-bottom: 32px;
+  }
+
+  .kk-industries-badge {
+    margin-bottom: 18px;
+    padding: 6px 13px;
+    font-size: 10px;
+  }
+
+  .kk-industries-heading h2 {
+    font-size: clamp(28px, 8.4vw, 38px);
+    letter-spacing: -0.8px;
+  }
+
+  .kk-industries-divider {
+    margin: 18px auto 16px;
+  }
+
+  .kk-industries-heading p {
+    font-size: 14.5px;
+    line-height: 1.65;
+  }
+
+  .kk-industries-grid {
+    grid-template-columns: 1fr;
+    max-width: 460px;
+    gap: 16px;
+  }
+
+  .kk-industry-card {
+    padding: 24px 20px 20px;
+    border-radius: 14px;
+  }
+
+  .kk-industry-card-art {
+    height: 104px;
+    margin-bottom: 18px;
+  }
+
+  .kk-industry-art-svg {
+    width: 104px;
+    height: 95px;
+  }
+
+  .kk-industry-card h3 {
+    font-size: 17px;
+  }
+
+  .kk-industry-card p {
+    font-size: 13.5px;
+  }
+
+  /* DELIVERY */
+
+  .kk-delivery-section {
+    padding: 55px 0 60px;
+  }
+
+  .kk-delivery-heading {
+    margin-bottom: 35px;
+    gap: 16px;
+  }
+
+  .kk-delivery-heading h2 {
+    font-size: 22px;
+    line-height: 1.35;
+  }
+
+  .kk-delivery-heading p {
+    font-size: 11px;
+    line-height: 1.7;
+  }
+
+  .kk-delivery-heading-divider {
+    width: 42px;
+    height: 3px;
+  }
+
+  .kk-delivery-workflow {
+    width: 100%;
+    max-width: 100%;
+    padding: 35px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 42px;
+    border-radius: 26px;
+  }
+
+  .kk-delivery-horizontal-line {
+    display: block;
+    left: 57px;
+    top: 75px;
+    bottom: 75px;
+    width: 1px;
+    height: auto;
+    border-top: none;
+    border-left: 2px dashed #687be2;
+  }
+
+  .kk-delivery-step {
+    width: 100%;
+    min-height: 190px;
+    padding: 0 0 0 85px;
+    text-align: left;
+  }
+
+  .kk-delivery-icon {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 64px;
+    height: 64px;
+    margin: 0;
+  }
+
+  .kk-delivery-icon svg {
+    width: 27px;
+    height: 27px;
+  }
+
+  .kk-delivery-number {
+    margin: 0 0 10px;
+    font-size: 30px;
+  }
+
+  .kk-delivery-title-line {
+    margin: 0 0 13px;
+  }
+
+  .kk-delivery-step h3 {
+    max-width: 100%;
+    font-size: 15px;
+    line-height: 1.4;
+  }
+
+  .kk-delivery-step p {
+    max-width: 100%;
+    margin-top: 12px;
+    font-size: 11px;
+    line-height: 1.7;
+  }
+}
+
+
+/* =====================================================
+   SMALL MOBILE
+===================================================== */
+
+@media (max-width: 400px) {
+
+  .kk-industry-container,
+  .kk-industries-container,
+  .kk-delivery-container {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  .kk-industry-banner .kk-industry-container {
+    padding-top: 96px;
+  }
+
+  .kk-delivery-section {
+    padding: 45px 0 50px;
+  }
+
+  .kk-delivery-heading h2 {
+    font-size: 20px;
+  }
+
+  .kk-delivery-heading p {
+    font-size: 10px;
+  }
+
+  .kk-delivery-workflow {
+    padding: 30px 16px;
+    gap: 35px;
+    border-radius: 22px;
+  }
+
+  .kk-delivery-horizontal-line {
+    left: 48px;
+    top: 65px;
+    bottom: 65px;
+  }
+
+  .kk-delivery-step {
+    min-height: 195px;
+    padding-left: 70px;
+  }
+
+  .kk-delivery-icon {
+    width: 56px;
+    height: 56px;
+  }
+
+  .kk-delivery-icon svg {
+    width: 24px;
+    height: 24px;
+  }
+
+  .kk-delivery-number {
+    font-size: 27px;
+  }
+
+  .kk-delivery-step h3 {
+    font-size: 14px;
+  }
+
+  .kk-delivery-step p {
+    font-size: 10px;
+    line-height: 1.7;
+  }
+}
+
+
+/* =====================================================
+   REDUCED MOTION
+===================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .kk-reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  .kk-industry-card,
+  .kk-industry-banner-button {
+    transition: none;
+  }
+}

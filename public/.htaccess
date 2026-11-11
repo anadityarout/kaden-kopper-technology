@@ -1,0 +1,14 @@
+
+DirectoryIndex index.html
+
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    # Allow existing files and folders to load normally.
+    RewriteCond %{REQUEST_FILENAME} -f [OR]
+    RewriteCond %{REQUEST_FILENAME} -d
+    RewriteRule ^ - [L]
+
+    # Route website page requests through PHP for SEO.
+    RewriteRule ^ seo.php [L,QSA]
+</IfModule>

@@ -1,0 +1,875 @@
+/* =====================================================
+   KADEN KOPPER TECHNOLOGY - FOOTER (COMPACT)
+===================================================== */
+
+.kk-footer {
+  --kk-blue: #0879ff;
+  --kk-cyan: #1da1ff;
+  --kk-text: rgba(255, 255, 255, 0.82);
+  --kk-muted: rgba(255, 255, 255, 0.66);
+  --kk-line: rgba(255, 255, 255, 0.12);
+  --kk-logo-h: 72px; /* raise this if you use the wide logo */
+
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  box-sizing: border-box;
+  color: #fff;
+  font-family: "Inter", Arial, sans-serif;
+
+  background:
+    radial-gradient(circle at 100% 0%, rgba(80, 90, 255, 0.22), transparent 34%),
+    radial-gradient(circle at 0% 100%, rgba(8, 121, 255, 0.2), transparent 32%),
+    #030c1f;
+}
+
+.kk-footer *,
+.kk-footer *::before,
+.kk-footer *::after {
+  box-sizing: border-box;
+}
+
+.kk-footer ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.kk-footer a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.kk-footer a:focus-visible,
+.kk-footer button:focus-visible,
+.kk-footer input:focus-visible {
+  outline: 2px solid var(--kk-cyan);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
+.kk-icon {
+  display: block;
+  width: 100%;
+  height: 100%;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.kk-icon-fill {
+  fill: currentColor;
+  stroke: none;
+}
+
+/* =====================================================
+   MAIN AREA + DECORATIVE WAVE / GLOBE
+===================================================== */
+
+.kk-footer-main {
+  position: relative;
+  overflow: hidden;
+}
+
+.kk-footer-glow {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: min(520px, 45vw);
+  height: 190px;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.kk-footer-glow svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.kk-footer-globe {
+  position: absolute;
+  left: -80px;
+  bottom: -110px;
+  width: 420px;
+  height: 200px;
+  border-radius: 50%;
+  border-top: 2px solid rgba(29, 161, 255, 0.7);
+  background:
+    radial-gradient(circle, rgba(29, 161, 255, 0.8) 1px, transparent 1.6px)
+      0 0 / 9px 9px;
+  -webkit-mask-image: linear-gradient(180deg, #000 0%, transparent 70%);
+  mask-image: linear-gradient(180deg, #000 0%, transparent 70%);
+  box-shadow: 0 -8px 34px rgba(8, 121, 255, 0.35);
+}
+
+/* =====================================================
+   MAIN GRID
+===================================================== */
+
+.kk-footer-container {
+  position: relative;
+  z-index: 1;
+  width: min(1400px, calc(100% - 80px));
+  margin: 0 auto;
+  padding: 34px 0 30px;
+
+  display: grid;
+  grid-template-columns:
+    minmax(330px, 1.25fr)
+    minmax(180px, 0.7fr)
+    minmax(220px, 0.85fr)
+    minmax(410px, 2fr);
+  column-gap: 40px;
+  align-items: start;
+}
+
+/* =====================================================
+   BRAND
+===================================================== */
+
+.kk-footer-brand {
+  min-width: 0;
+  align-self: stretch;
+  padding-right: 32px;
+  border-right: 1px solid var(--kk-line);
+}
+
+.kk-footer-logo-image {
+  display: block;
+  height: var(--kk-logo-h);
+  width: auto;
+  max-width: 100%;
+  margin-bottom: 14px;
+}
+
+.kk-footer-brand h3 {
+  margin: 0 0 10px;
+  font-size: clamp(25px, 2.1vw, 31px);
+  line-height: 1.12;
+  font-weight: 800;
+  letter-spacing: -0.3px;
+}
+
+.kk-footer-brand h3 span {
+  display: block;
+  white-space: nowrap;
+}
+
+.kk-footer-brand h3 em {
+  font-style: normal;
+  color: var(--kk-cyan);
+}
+
+.kk-footer-desc {
+  max-width: 320px;
+  margin: 0 0 16px;
+  color: var(--kk-text);
+  font-size: 14px;
+  line-height: 1.55;
+}
+
+.kk-social-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.kk-social-links a {
+  width: 40px;
+  height: 40px;
+  padding: 11px;
+  display: block;
+  border-radius: 50%;
+  color: #fff;
+  background: rgba(24, 40, 78, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: background 0.25s ease, border-color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.kk-social-links a:hover {
+  background: var(--kk-blue);
+  border-color: var(--kk-blue);
+  transform: translateY(-3px);
+}
+
+/* =====================================================
+   LINK COLUMNS
+===================================================== */
+
+.kk-footer-column {
+  position: relative;
+  min-width: 0;
+}
+
+.kk-footer-heading {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin: 0 0 14px;
+  padding-bottom: 14px;
+  font-size: 17px;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.kk-footer-heading::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 44px;
+  height: 3px;
+  border-radius: 3px;
+  background: var(--kk-cyan);
+}
+
+.kk-footer-heading-icon {
+  flex: 0 0 44px;
+  width: 44px;
+  height: 44px;
+  padding: 11px;
+  display: block;
+  border-radius: 11px;
+  color: var(--kk-cyan);
+  background: rgba(8, 121, 255, 0.14);
+  border: 1px solid rgba(29, 161, 255, 0.45);
+  box-shadow: 0 0 16px rgba(8, 121, 255, 0.2);
+}
+
+.kk-footer-column li a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 5px 0;
+  color: var(--kk-text);
+  font-size: 14.5px;
+  line-height: 1.35;
+  transition: color 0.2s ease;
+}
+
+.kk-chevron {
+  flex: 0 0 16px;
+  width: 16px;
+  height: 16px;
+  color: rgba(255, 255, 255, 0.75);
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.kk-footer-column li a:hover {
+  color: #fff;
+}
+
+.kk-footer-column li a:hover .kk-chevron {
+  color: var(--kk-cyan);
+  transform: translateX(3px);
+}
+
+/* thin divider between Company and Services */
+.kk-divided::before {
+  content: "";
+  position: absolute;
+  left: -20px;
+  top: 72px;
+  bottom: 0;
+  width: 1px;
+  background: var(--kk-line);
+}
+
+/* =====================================================
+   NEWSLETTER CARD
+===================================================== */
+
+.kk-newsletter {
+  position: relative;
+  min-width: 0;
+  overflow: hidden;
+  border-radius: 24px;
+  border: 1px solid rgba(120, 135, 255, 0.55);
+  background:
+    radial-gradient(circle at 95% 15%, rgba(110, 100, 255, 0.4), transparent 50%),
+    linear-gradient(120deg, #07163a 0%, #0a1c52 55%, #2a3aa8 140%);
+  box-shadow: 0 0 36px rgba(80, 90, 255, 0.2);
+}
+
+.kk-news-art {
+  position: absolute;
+  top: 12px;
+  right: 14px;
+  width: 38%;
+  max-width: 220px;
+  height: auto;
+  pointer-events: none;
+}
+
+.kk-news-body {
+  position: relative;
+  z-index: 1;
+  padding: 22px 26px 18px;
+}
+
+.kk-news-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 16px 7px 12px;
+  border-radius: 999px;
+  color: #fff;
+  background: linear-gradient(135deg, #0a84ff, #0a5de0);
+  font-size: 12.5px;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+.kk-news-badge .kk-icon {
+  width: 18px;
+  height: 18px;
+}
+
+.kk-news-title {
+  max-width: 60%;
+  margin: 12px 0 8px;
+  font-size: clamp(26px, 2.4vw, 35px);
+  line-height: 1.1;
+  font-weight: 800;
+  letter-spacing: -0.4px;
+}
+
+.kk-news-title span {
+  color: var(--kk-cyan);
+}
+
+.kk-news-text {
+  max-width: 56%;
+  margin: 0 0 14px;
+  color: var(--kk-text);
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.kk-news-form {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  max-width: 480px;
+  padding: 4px 4px 4px 18px;
+  border-radius: 999px;
+  background: rgba(2, 10, 30, 0.82);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+}
+
+.kk-news-form:focus-within {
+  border-color: var(--kk-cyan);
+}
+
+.kk-news-form > .kk-icon {
+  flex: 0 0 20px;
+  width: 20px;
+  height: 20px;
+  color: var(--kk-text);
+}
+
+.kk-news-form input {
+  flex: 1;
+  min-width: 0;
+  height: 40px;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  color: #fff;
+  font: inherit;
+  font-size: 14px;
+}
+
+.kk-news-form input::placeholder {
+  color: var(--kk-muted);
+}
+
+.kk-news-form button {
+  flex: 0 0 42px;
+  width: 42px;
+  height: 42px;
+  padding: 11px;
+  border: 0;
+  border-radius: 50%;
+  color: #fff;
+  cursor: pointer;
+  background: linear-gradient(135deg, #8f5cff, #3f6bff);
+  box-shadow: 0 5px 16px rgba(110, 90, 255, 0.45);
+  transition: transform 0.25s ease;
+}
+
+.kk-news-form button:hover {
+  transform: scale(1.06);
+}
+
+.kk-news-status {
+  min-height: 0;
+  margin: 0 0 0 18px;
+  font-size: 13px;
+}
+
+.kk-news-status:not(:empty) {
+  margin-top: 6px;
+}
+
+.kk-news-status.error {
+  color: #ff9a9a;
+}
+
+.kk-news-status.success {
+  color: #6be4a4;
+}
+
+/* PERKS */
+
+.kk-news-perks {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6px;
+  margin-top: 12px;
+}
+
+.kk-news-perks li {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  color: #fff;
+  font-size: 13.5px;
+  font-weight: 500;
+  line-height: 1.25;
+  white-space: nowrap;
+}
+
+.kk-news-perks li + li {
+  padding-left: 12px;
+  border-left: 1px solid var(--kk-line);
+}
+
+.kk-perk-icon {
+  flex: 0 0 32px;
+  width: 32px;
+  height: 32px;
+  padding: 8px;
+  display: block;
+  border-radius: 50%;
+  color: var(--kk-cyan);
+  background: rgba(8, 121, 255, 0.2);
+  border: 1px solid rgba(29, 161, 255, 0.35);
+}
+
+/* =====================================================
+   BOTTOM BAR
+===================================================== */
+
+.kk-footer-bottom {
+  position: relative;
+  z-index: 1;
+  width: min(1400px, calc(100% - 80px));
+  margin: 0 auto;
+  padding: 12px 0;
+  border-top: 1px solid rgba(29, 161, 255, 0.28);
+
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: 16px;
+}
+
+.kk-footer-bottom::before {
+  content: "";
+  position: absolute;
+  inset: 0 -100vw;
+  z-index: -1;
+  background: #030c1f;
+}
+
+.kk-footer-copyright {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.kk-shield {
+  flex: 0 0 24px;
+  width: 24px;
+  height: 24px;
+  color: var(--kk-cyan);
+}
+
+.kk-footer-copyright,
+.kk-footer-bottom-links a,
+.kk-footer-built {
+  color: var(--kk-muted);
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.kk-footer-bottom-links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 6px 14px;
+}
+
+.kk-footer-bottom-links span {
+  color: rgba(255, 255, 255, 0.35);
+}
+
+.kk-footer-bottom-links a:hover {
+  color: #fff;
+}
+
+.kk-footer-end {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  gap: 10px 22px;
+}
+
+.kk-footer-built {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding-left: 22px;
+  border-left: 1px solid var(--kk-line);
+}
+
+.kk-heart {
+  flex: 0 0 20px;
+  width: 20px;
+  height: 20px;
+  color: var(--kk-cyan);
+}
+
+.kk-top-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 5px 22px 5px 5px;
+  border-radius: 999px;
+  border: 1px solid rgba(8, 121, 255, 0.75);
+  background: rgba(2, 12, 32, 0.8);
+  color: #fff;
+  font: inherit;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.25s ease, transform 0.25s ease;
+}
+
+.kk-top-btn:hover {
+  background: rgba(8, 121, 255, 0.2);
+  transform: translateY(-2px);
+}
+
+.kk-top-icon {
+  width: 32px;
+  height: 32px;
+  padding: 8px;
+  display: block;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #1da1ff, #0879ff);
+}
+
+/* =====================================================
+   LAPTOP  (<= 1250px)
+   Brand | Company | Services, then newsletter full width
+===================================================== */
+
+@media (max-width: 1250px) {
+  .kk-footer-container,
+  .kk-footer-bottom {
+    width: calc(100% - 60px);
+  }
+
+  .kk-footer-container {
+    grid-template-columns: 1.3fr 0.9fr 1fr;
+    column-gap: 34px;
+    row-gap: 26px;
+  }
+
+  .kk-newsletter {
+    grid-column: 1 / -1;
+  }
+
+  .kk-news-title {
+    max-width: 62%;
+  }
+
+  .kk-footer-bottom {
+    grid-template-columns: 1fr auto;
+  }
+
+  .kk-footer-bottom-links {
+    justify-content: flex-end;
+  }
+
+  .kk-footer-end {
+    grid-column: 1 / -1;
+    justify-content: space-between;
+  }
+
+  .kk-footer-built {
+    padding-left: 0;
+    border-left: 0;
+  }
+}
+
+/* =====================================================
+   TABLET  (<= 900px)
+===================================================== */
+
+@media (max-width: 900px) {
+  .kk-footer-container {
+    grid-template-columns: 1fr 1fr;
+    column-gap: 30px;
+    padding: 30px 0 26px;
+  }
+
+  .kk-footer-brand {
+    grid-column: 1 / -1;
+    padding-right: 0;
+    padding-bottom: 22px;
+    border-right: 0;
+    border-bottom: 1px solid var(--kk-line);
+  }
+
+  .kk-footer-brand h3 span {
+    white-space: normal;
+  }
+
+  .kk-divided::before {
+    display: none;
+  }
+
+  .kk-footer-bottom {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    text-align: center;
+  }
+
+  .kk-footer-bottom-links {
+    justify-content: center;
+  }
+
+  .kk-footer-end {
+    grid-column: auto;
+    justify-content: center;
+  }
+}
+
+/* =====================================================
+   MOBILE  (<= 600px)
+===================================================== */
+
+@media (max-width: 600px) {
+  .kk-footer {
+    --kk-logo-h: 60px;
+  }
+
+  .kk-footer-container,
+  .kk-footer-bottom {
+    width: calc(100% - 32px);
+  }
+
+  .kk-footer-container {
+    column-gap: 16px;
+    row-gap: 22px;
+    padding: 26px 0 22px;
+  }
+
+  .kk-footer-brand {
+    padding-bottom: 20px;
+  }
+
+  .kk-footer-brand h3 {
+    font-size: 25px;
+  }
+
+  .kk-footer-desc {
+    margin-bottom: 14px;
+    font-size: 13.5px;
+  }
+
+  .kk-social-links {
+    gap: 9px;
+  }
+
+  .kk-social-links a {
+    width: 38px;
+    height: 38px;
+    padding: 10px;
+  }
+
+  .kk-footer-heading {
+    gap: 10px;
+    margin-bottom: 10px;
+    padding-bottom: 12px;
+    font-size: 15.5px;
+  }
+
+  .kk-footer-heading-icon {
+    flex-basis: 36px;
+    width: 36px;
+    height: 36px;
+    padding: 9px;
+    border-radius: 9px;
+  }
+
+  .kk-footer-heading::after {
+    width: 36px;
+  }
+
+  .kk-footer-column li a {
+    gap: 4px;
+    padding: 5px 0;
+    font-size: 13.5px;
+  }
+
+  .kk-chevron {
+    flex-basis: 14px;
+    width: 14px;
+    height: 14px;
+  }
+
+  .kk-news-art {
+    display: none;
+  }
+
+  .kk-news-body {
+    padding: 18px 16px 14px;
+  }
+
+  .kk-news-badge {
+    font-size: 11.5px;
+    padding: 6px 14px 6px 10px;
+  }
+
+  .kk-news-title {
+    max-width: none;
+    font-size: 26px;
+  }
+
+  .kk-news-text {
+    max-width: none;
+    font-size: 13.5px;
+  }
+
+  .kk-news-form {
+    padding-left: 14px;
+    gap: 8px;
+  }
+
+  .kk-news-form input {
+    font-size: 14px;
+  }
+
+  .kk-news-perks {
+    margin-top: 10px;
+  }
+
+  .kk-news-perks li {
+    flex: 1;
+    flex-direction: column;
+    gap: 6px;
+    font-size: 11.5px;
+    text-align: center;
+    white-space: normal;
+  }
+
+  .kk-news-perks li + li {
+    padding-left: 0;
+  }
+
+  .kk-perk-icon {
+    flex-basis: 30px;
+    width: 30px;
+    height: 30px;
+    padding: 7px;
+  }
+
+  .kk-footer-bottom {
+    gap: 8px;
+    padding: 12px 0 14px;
+  }
+
+  .kk-footer-copyright {
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .kk-footer-copyright,
+  .kk-footer-bottom-links a,
+  .kk-footer-built {
+    font-size: 12.5px;
+  }
+
+  .kk-footer-end {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .kk-footer-built {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
+/* =====================================================
+   SMALL MOBILE  (<= 360px)
+===================================================== */
+
+@media (max-width: 360px) {
+  .kk-footer-container,
+  .kk-footer-bottom {
+    width: calc(100% - 24px);
+  }
+
+  .kk-footer-brand h3 {
+    font-size: 23px;
+  }
+
+  .kk-footer-column li a {
+    font-size: 13px;
+  }
+
+  .kk-social-links a {
+    width: 36px;
+    height: 36px;
+    padding: 9px;
+  }
+
+  .kk-news-title {
+    font-size: 24px;
+  }
+
+  .kk-news-perks li {
+    font-size: 11px;
+  }
+}
+
+/* =====================================================
+   REDUCED MOTION
+===================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .kk-footer * {
+    transition: none !important;
+  }
+}

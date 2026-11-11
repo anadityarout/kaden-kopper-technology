@@ -1,0 +1,473 @@
+/* =====================================================
+   APP LAYOUT
+===================================================== */
+
+.App {
+  width: 100%;
+  min-height: 100vh;
+
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+
+  margin: 0;
+  padding: 0;
+
+  box-sizing: border-box;
+
+  background-color: #f5f7fa;
+}
+
+
+/* =====================================================
+   SIDEBAR
+===================================================== */
+
+.sidebar {
+  width: 260px;
+  min-width: 260px;
+  max-width: 260px;
+
+  height: 100vh;
+  min-height: 100vh;
+
+  background-color: #0b1120;
+  color: #e2e8f0;
+
+  padding: 0;
+  margin: 0;
+
+  font-family: "Segoe UI", Arial, sans-serif;
+
+  box-sizing: border-box;
+
+  flex: 0 0 260px;
+  flex-shrink: 0;
+
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+
+/* =====================================================
+   SIDEBAR TITLE
+===================================================== */
+
+.sidebar-title {
+  width: 100%;
+
+  margin: 0;
+
+  padding: 14px 20px 18px 20px;
+
+  color: #ffffff;
+
+  font-size: 22px;
+  font-weight: 700;
+
+  line-height: 1.3;
+
+  border-bottom: 1px solid #1e293b;
+
+  box-sizing: border-box;
+
+  white-space: nowrap;
+}
+
+
+/* =====================================================
+   SIDEBAR NAVIGATION
+===================================================== */
+
+.sidebar-nav {
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+
+  margin: 0;
+  padding: 0;
+
+  box-sizing: border-box;
+}
+
+
+/* =====================================================
+   MENU ITEM WRAPPER
+===================================================== */
+
+.sidebar-item-wrapper {
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+
+  margin: 0;
+  padding: 0;
+
+  box-sizing: border-box;
+}
+
+
+/* =====================================================
+   MAIN SIDEBAR ITEM
+===================================================== */
+
+.sidebar-item {
+  width: 100%;
+  min-height: 48px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 12px 20px;
+
+  margin: 0;
+
+  background: transparent;
+
+  border: none;
+  outline: none;
+
+  color: #cbd5e1;
+
+  font-family: "Segoe UI", Arial, sans-serif;
+
+  font-size: 15px;
+  font-weight: 600;
+
+  text-align: left;
+
+  cursor: pointer;
+
+  box-sizing: border-box;
+
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease;
+}
+
+
+/* =====================================================
+   MAIN ITEM HOVER
+===================================================== */
+
+.sidebar-item:hover {
+  background-color: #141c2e;
+
+  color: #ffffff;
+}
+
+
+/* =====================================================
+   ACTIVE MAIN ITEM
+===================================================== */
+
+.sidebar-item.active {
+  background-color: #1e293b;
+
+  color: #ffffff;
+}
+
+
+/* =====================================================
+   LEFT SIDE OF ITEM
+===================================================== */
+
+.sidebar-item-left {
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  min-width: 0;
+}
+
+
+/* =====================================================
+   MENU LABEL
+===================================================== */
+
+.sidebar-label {
+  display: block;
+
+  color: inherit;
+
+  font-size: 15px;
+  font-weight: 600;
+
+  white-space: nowrap;
+
+  overflow: hidden;
+
+  text-overflow: ellipsis;
+}
+
+
+/* =====================================================
+   CHEVRON
+===================================================== */
+
+.sidebar-chevron {
+  flex-shrink: 0;
+
+  color: #64748b;
+
+  transition:
+    transform 0.2s ease,
+    color 0.2s ease;
+}
+
+
+/* =====================================================
+   CHEVRON HOVER
+===================================================== */
+
+.sidebar-item:hover .sidebar-chevron {
+  color: #94a3b8;
+}
+
+
+/* =====================================================
+   OPEN CHEVRON
+===================================================== */
+
+.sidebar-chevron.open {
+  transform: rotate(90deg);
+
+  color: #94a3b8;
+}
+
+
+/* =====================================================
+   SUBMENU
+===================================================== */
+
+.sidebar-submenu {
+  width: 100%;
+
+  display: flex;
+
+  flex-direction: column;
+
+  padding: 4px 0 8px 0;
+
+  margin: 0;
+
+  background-color: #0f172a;
+
+  box-sizing: border-box;
+}
+
+
+/* =====================================================
+   SUBMENU ITEM
+===================================================== */
+
+.sidebar-subitem {
+  width: 100%;
+  min-height: 42px;
+
+  display: flex;
+
+  align-items: center;
+
+  padding: 10px 20px 10px 48px;
+
+  margin: 0;
+
+  background: transparent;
+
+  border: none;
+  outline: none;
+
+  color: #94a3b8;
+
+  font-family: "Segoe UI", Arial, sans-serif;
+
+  font-size: 14px;
+  font-weight: 500;
+
+  text-align: left;
+
+  cursor: pointer;
+
+  box-sizing: border-box;
+
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease;
+}
+
+
+/* =====================================================
+   SUBMENU HOVER
+===================================================== */
+
+.sidebar-subitem:hover {
+  background-color: #1e293b;
+
+  color: #ffffff;
+}
+
+
+/* =====================================================
+   ACTIVE SUBMENU
+===================================================== */
+
+.sidebar-subitem.active {
+  background-color: #1e293b;
+
+  color: #ffffff;
+
+  font-weight: 600;
+}
+
+
+/* =====================================================
+   LOGOUT
+===================================================== */
+
+.sidebar-logout {
+  margin-top: 16px;
+
+  padding-top: 16px;
+
+  border-top: 1px solid #1e293b;
+
+  color: #f87171;
+}
+
+
+/* =====================================================
+   LOGOUT HOVER
+===================================================== */
+
+.sidebar-logout:hover {
+  background-color: #1e293b;
+
+  color: #fca5a5;
+}
+
+
+/* =====================================================
+   MAIN CONTENT
+===================================================== */
+
+.main-content {
+  flex: 1 1 auto;
+
+  width: calc(100% - 260px);
+
+  min-width: 0;
+
+  min-height: 100vh;
+
+  margin: 0;
+  padding: 0;
+
+  background-color: #f5f7fa;
+
+  box-sizing: border-box;
+
+  overflow-x: auto;
+}
+
+
+/* =====================================================
+   SIDEBAR SCROLLBAR
+===================================================== */
+
+.sidebar::-webkit-scrollbar {
+  width: 5px;
+}
+
+.sidebar::-webkit-scrollbar-track {
+  background: #0b1120;
+}
+
+.sidebar::-webkit-scrollbar-thumb {
+  background: #334155;
+
+  border-radius: 10px;
+}
+
+.sidebar::-webkit-scrollbar-thumb:hover {
+  background: #475569;
+}
+
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 768px) {
+
+  .sidebar {
+    width: 230px;
+    min-width: 230px;
+    max-width: 230px;
+
+    flex: 0 0 230px;
+  }
+
+  .main-content {
+    width: calc(100% - 230px);
+  }
+
+  .sidebar-title {
+    font-size: 20px;
+
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+
+  .sidebar-item {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+
+  .sidebar-subitem {
+    padding-left: 44px;
+  }
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 480px) {
+
+  .sidebar {
+    width: 210px;
+    min-width: 210px;
+    max-width: 210px;
+
+    flex: 0 0 210px;
+  }
+
+  .main-content {
+    width: calc(100% - 210px);
+  }
+
+  .sidebar-title {
+    font-size: 19px;
+  }
+
+  .sidebar-item {
+    font-size: 14px;
+  }
+
+  .sidebar-label {
+    font-size: 14px;
+  }
+
+  .sidebar-subitem {
+    font-size: 13px;
+
+    padding-left: 40px;
+  }
+}

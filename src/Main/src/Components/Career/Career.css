@@ -1,0 +1,2441 @@
+/* =====================================================
+   FONTS
+   Tip: for faster loading, move this to <link> tags in
+   index.html and delete the @import.
+===================================================== */
+
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap");
+
+
+/* =====================================================
+   GLOBAL
+===================================================== */
+
+.kk-career-page {
+  --kk-blue: #075ce8;
+  --kk-blue-dark: #004dc8;
+  --kk-navy: #10245e;
+  --kk-text: #4b6088;
+  --kk-line: #dce6f4;
+  --kk-soft: #f5f9ff;
+
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  background: #ffffff;
+  font-family: "Inter", sans-serif;
+  overflow-x: hidden;
+}
+
+.kk-career-page *,
+.kk-career-page *::before,
+.kk-career-page *::after {
+  box-sizing: border-box;
+}
+
+.kk-career-page h1,
+.kk-career-page h2,
+.kk-career-page h3 {
+  font-family: "Manrope", sans-serif;
+}
+
+/* anchors land below a fixed navbar; change if yours is taller */
+.kk-life-section,
+.kk-jobs-section {
+  scroll-margin-top: 80px;
+}
+
+
+/* =====================================================
+   01 — HERO BANNER
+
+   Desktop (1001px+)
+   - photo fills the banner (.kk-career-banner-media)
+   - text on the left, glass feature strip bottom-right
+
+   Tablet / mobile (1000px and below)
+   - photo on top, fading into the dark background
+   - text below the photo, then the feature strip
+===================================================== */
+
+.kk-career-banner {
+  position: relative;
+  isolation: isolate;
+  width: 100%;
+  height: clamp(580px, 44vw, 720px);
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background: #030b2b;
+  color: #ffffff;
+  line-height: normal;
+}
+
+/* ---------- photo ---------- */
+
+.kk-career-banner-media {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background: #030b2b;
+}
+
+.kk-career-banner-picture,
+.kk-career-banner-placeholder {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.kk-career-banner-image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  object-fit: cover;
+  object-position: 70% center;
+}
+
+/* shown while the banner loads or when none is uploaded */
+.kk-career-banner-placeholder {
+  background:
+    radial-gradient(circle at 75% 40%, rgba(18, 100, 238, 0.35), transparent 55%),
+    linear-gradient(135deg, #030b2b, #062442);
+}
+
+.kk-career-banner-placeholder.is-loading {
+  animation: kk-pulse 1.6s ease-in-out infinite;
+}
+
+@keyframes kk-pulse {
+  50% {
+    opacity: 0.75;
+  }
+}
+
+/* dark fade behind the text (left) and under the feature strip (bottom) */
+.kk-career-banner-media::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(2, 8, 35, 0.97) 0%,
+      rgba(3, 10, 42, 0.88) 24%,
+      rgba(3, 12, 47, 0.5) 42%,
+      rgba(3, 12, 47, 0) 62%
+    ),
+    linear-gradient(
+      0deg,
+      rgba(2, 8, 35, 0.55) 0%,
+      rgba(2, 8, 35, 0) 30%
+    );
+}
+
+/* ---------- text ---------- */
+
+.kk-career-hero-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  padding: 56px clamp(24px, 6vw, 110px);
+}
+
+.kk-career-hero-content {
+  width: 100%;
+  max-width: min(560px, 38vw);
+}
+
+.kk-career-hero-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 22px;
+  padding: 9px 15px;
+  border: 1px solid rgba(0, 207, 255, 0.65);
+  border-radius: 30px;
+  background: rgba(0, 42, 100, 0.48);
+  color: #22dcff;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 2.2px;
+  line-height: 1;
+}
+
+.kk-career-hero-dot {
+  width: 8px;
+  height: 8px;
+  flex: 0 0 8px;
+  border-radius: 50%;
+  background: #17e4ff;
+  box-shadow: 0 0 12px rgba(23, 228, 255, 0.8);
+}
+
+.kk-career-hero-content h1 {
+  max-width: 9.8em;
+  margin: 0 0 20px;
+  color: #ffffff;
+  font-size: clamp(34px, 3.9vw, 62px);
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  overflow-wrap: anywhere;
+}
+
+.kk-career-hero-title-top {
+  display: block;
+}
+
+/* gradient on the second sentence; clone = each wrapped line gets the full gradient */
+.kk-career-hero-title-grad {
+  background: linear-gradient(
+    90deg,
+    #18e6ff 0%,
+    #3d8bff 42%,
+    #a24bff 78%,
+    #e53df0 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+}
+
+.kk-career-hero-content p {
+  max-width: 480px;
+  margin: 0;
+  color: #dbe6ff;
+  font-size: clamp(14px, 1.1vw, 17px);
+  line-height: 1.75;
+  overflow-wrap: anywhere;
+}
+
+/* ---------- buttons ---------- */
+
+.kk-career-hero-actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 28px;
+}
+
+.kk-career-hero-primary,
+.kk-career-hero-secondary {
+  min-height: 54px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  padding: 14px 22px;
+  border-radius: 12px;
+  font-size: 14px;
+  font-weight: 700;
+  text-align: center;
+  text-decoration: none;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.kk-career-hero-primary {
+  color: #ffffff;
+  background: linear-gradient(100deg, #1f6bff 0%, #6a45ff 55%, #c02cf0 100%);
+  box-shadow: 0 8px 28px rgba(60, 70, 255, 0.35);
+}
+
+.kk-career-hero-primary span {
+  font-size: 22px;
+  line-height: 1;
+}
+
+.kk-career-hero-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 32px rgba(60, 70, 255, 0.5);
+}
+
+.kk-career-hero-secondary {
+  color: #ffffff;
+  background: rgba(6, 14, 56, 0.55);
+  border: 1px solid rgba(130, 150, 255, 0.5);
+}
+
+.kk-career-hero-secondary:hover {
+  transform: translateY(-3px);
+  border-color: #21dfff;
+  box-shadow: 0 8px 25px rgba(0, 192, 255, 0.15);
+}
+
+.kk-career-play {
+  width: 26px;
+  height: 26px;
+  flex: 0 0 26px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding-left: 1px;
+  border-radius: 50%;
+  background: #ffffff;
+  color: #153a9b;
+  font-size: 10px;
+}
+
+/* ---------- avatars + "500+ Professionals" ---------- */
+
+.kk-career-hero-proof {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-top: 30px;
+}
+
+.kk-career-hero-avatars {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.kk-career-hero-avatar {
+  width: 46px;
+  height: 46px;
+  margin-left: -11px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border: 2px solid #0b1650;
+  border-radius: 50%;
+  background: linear-gradient(145deg, #2a6dff, #7b3dff);
+  color: rgba(255, 255, 255, 0.92);
+  font-size: 19px;
+}
+
+.kk-career-hero-avatar:first-child {
+  margin-left: 0;
+}
+
+.kk-career-hero-avatar:nth-child(2) {
+  background: linear-gradient(145deg, #12b8ff, #2a5cff);
+}
+
+.kk-career-hero-avatar:nth-child(3) {
+  background: linear-gradient(145deg, #7b3dff, #d23cf0);
+}
+
+.kk-career-hero-avatar:nth-child(4) {
+  background: linear-gradient(145deg, #19c6e6, #3a7bff);
+}
+
+.kk-career-hero-avatar img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.kk-career-hero-proof-text {
+  min-width: 0;
+}
+
+.kk-career-hero-proof-text strong {
+  display: block;
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+.kk-career-hero-proof-text span {
+  display: block;
+  margin-top: 3px;
+  color: #b9c8ee;
+  font-size: 13px;
+  line-height: 1.3;
+}
+
+/* ---------- glass feature strip ---------- */
+
+.kk-career-hero-features {
+  position: absolute;
+  right: clamp(20px, 3.5vw, 70px);
+  bottom: clamp(20px, 3vw, 44px);
+  z-index: 3;
+  width: min(52%, 800px);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  border: 1px solid rgba(96, 140, 255, 0.5);
+  border-radius: 18px;
+  background: linear-gradient(
+    135deg,
+    rgba(10, 20, 78, 0.72),
+    rgba(16, 12, 70, 0.62)
+  );
+  -webkit-backdrop-filter: blur(14px);
+  backdrop-filter: blur(14px);
+  box-shadow:
+    0 0 34px rgba(60, 90, 255, 0.28),
+    inset 0 0 22px rgba(90, 110, 255, 0.1);
+}
+
+.kk-career-hero-feature {
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 18px 16px;
+}
+
+.kk-career-hero-feature + .kk-career-hero-feature {
+  border-left: 1px solid rgba(120, 150, 255, 0.16);
+}
+
+.kk-career-hero-feature-icon {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+}
+
+.kk-hero-feature-cyan .kk-career-hero-feature-icon {
+  color: #22d8ff;
+}
+
+.kk-hero-feature-blue .kk-career-hero-feature-icon {
+  color: #3d8bff;
+}
+
+.kk-hero-feature-violet .kk-career-hero-feature-icon {
+  color: #a46bff;
+}
+
+.kk-career-hero-feature-text {
+  display: block;
+  min-width: 0;
+}
+
+.kk-career-hero-feature-text strong {
+  display: block;
+  color: #ffffff;
+  font-size: 13.5px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.kk-career-hero-feature-text span {
+  display: block;
+  margin-top: 2px;
+  color: #a9b9e6;
+  font-size: 12.5px;
+  line-height: 1.2;
+}
+
+/* ---------- laptop: tighter strip ---------- */
+
+@media (max-width: 1280px) {
+  .kk-career-hero-feature {
+    gap: 9px;
+    padding: 15px 10px;
+  }
+
+  .kk-career-hero-feature-icon {
+    font-size: 22px;
+  }
+
+  .kk-career-hero-feature-text strong {
+    font-size: 12.5px;
+  }
+
+  .kk-career-hero-feature-text span {
+    font-size: 11.5px;
+  }
+}
+
+/* ---------- tablet + mobile: stacked layout ---------- */
+
+@media (max-width: 1000px) {
+  .kk-career-banner {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    min-height: 0;
+  }
+
+  .kk-career-banner-media {
+    position: relative;
+    inset: auto;
+    flex: 0 0 auto;
+    width: 100%;
+    height: clamp(300px, 56vw, 520px);
+  }
+
+  .kk-career-banner-image {
+    object-position: 60% center;
+  }
+
+  /* photo fades down into the dark background */
+  .kk-career-banner-media::after {
+    background: linear-gradient(
+      180deg,
+      rgba(3, 11, 43, 0) 40%,
+      rgba(3, 11, 43, 0.82) 82%,
+      #030b2b 100%
+    );
+  }
+
+  .kk-career-hero-overlay {
+    position: relative;
+    inset: auto;
+    display: block;
+    margin-top: -72px;
+    padding: 0 clamp(20px, 5vw, 48px);
+  }
+
+  .kk-career-hero-content {
+    max-width: 620px;
+    margin: 0 auto;
+  }
+
+  .kk-career-hero-content h1 {
+    max-width: 100%;
+    font-size: clamp(32px, 6.4vw, 52px);
+  }
+
+  .kk-career-hero-content p {
+    max-width: 100%;
+    font-size: 15px;
+  }
+
+  .kk-career-hero-features {
+    position: relative;
+    right: auto;
+    bottom: auto;
+    width: calc(100% - 2 * clamp(20px, 5vw, 48px));
+    max-width: 620px;
+    margin: 30px auto 38px;
+  }
+
+  .kk-career-hero-feature {
+    gap: 12px;
+    padding: 18px 14px;
+  }
+
+  .kk-career-hero-feature-icon {
+    font-size: 26px;
+  }
+
+  .kk-career-hero-feature-text strong {
+    font-size: 13.5px;
+  }
+
+  .kk-career-hero-feature-text span {
+    font-size: 12.5px;
+  }
+}
+
+/* ---------- mobile ---------- */
+
+@media (max-width: 760px) {
+  .kk-career-banner-media {
+    height: clamp(250px, 70vw, 380px);
+  }
+
+  .kk-career-hero-overlay {
+    margin-top: -64px;
+  }
+
+  .kk-career-hero-eyebrow {
+    margin-bottom: 16px;
+    padding: 8px 12px;
+    gap: 8px;
+    font-size: 11px;
+    letter-spacing: 1.7px;
+  }
+
+  .kk-career-hero-content h1 {
+    margin-bottom: 14px;
+    font-size: clamp(30px, 8.2vw, 40px);
+    line-height: 1.12;
+  }
+
+  .kk-career-hero-content p {
+    line-height: 1.7;
+  }
+
+  .kk-career-hero-actions {
+    margin-top: 24px;
+  }
+
+  .kk-career-hero-proof {
+    margin-top: 24px;
+  }
+
+  .kk-career-hero-avatar {
+    width: 40px;
+    height: 40px;
+    margin-left: -10px;
+    font-size: 16px;
+  }
+
+  .kk-career-hero-proof-text strong {
+    font-size: 14px;
+  }
+
+  .kk-career-hero-proof-text span {
+    font-size: 12.5px;
+  }
+
+  /* strip becomes a 2 x 2 grid */
+  .kk-career-hero-features {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    margin: 26px auto 34px;
+    border-radius: 16px;
+  }
+
+  .kk-career-hero-feature + .kk-career-hero-feature {
+    border-left: 0;
+  }
+
+  .kk-career-hero-feature:nth-child(even) {
+    border-left: 1px solid rgba(120, 150, 255, 0.16);
+  }
+
+  .kk-career-hero-feature:nth-child(n + 3) {
+    border-top: 1px solid rgba(120, 150, 255, 0.16);
+  }
+
+  .kk-career-hero-feature {
+    gap: 10px;
+    padding: 15px 12px;
+  }
+
+  .kk-career-hero-feature-icon {
+    font-size: 24px;
+  }
+
+  .kk-career-hero-feature-text strong {
+    font-size: 13px;
+  }
+
+  .kk-career-hero-feature-text span {
+    font-size: 12px;
+  }
+}
+
+/* ---------- small phones: buttons stack full width ---------- */
+
+@media (max-width: 520px) {
+  .kk-career-hero-actions {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 12px;
+  }
+
+  .kk-career-hero-primary,
+  .kk-career-hero-secondary {
+    width: 100%;
+    min-height: 50px;
+    padding: 13px 15px;
+    border-radius: 10px;
+  }
+}
+
+@media (max-width: 430px) {
+  .kk-career-hero-overlay {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+
+  .kk-career-hero-features {
+    width: calc(100% - 36px);
+  }
+
+  .kk-career-hero-content p {
+    font-size: 14px;
+    line-height: 1.65;
+  }
+}
+
+@media (max-width: 340px) {
+  .kk-career-hero-content h1 {
+    font-size: 27px;
+  }
+
+  .kk-career-hero-feature {
+    gap: 8px;
+    padding: 13px 9px;
+  }
+
+  .kk-career-hero-feature-icon {
+    font-size: 20px;
+  }
+
+  .kk-career-hero-feature-text strong {
+    font-size: 12px;
+  }
+
+  .kk-career-hero-feature-text span {
+    font-size: 11px;
+  }
+}
+
+
+/* =====================================================
+   02 — WHY WORK WITH US
+===================================================== */
+
+.kk-career-benefits {
+  width: 100%;
+  padding: 70px 40px 80px;
+  background: #ffffff;
+}
+
+.kk-career-benefits-container {
+  width: 100%;
+  max-width: 1180px;
+  margin: 0 auto;
+}
+
+.kk-career-benefits-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 60px;
+  margin-bottom: 34px;
+}
+
+.kk-career-heading {
+  flex: 1;
+  min-width: 0;
+}
+
+.kk-career-label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.kk-career-label span {
+  color: var(--kk-blue);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 1.8px;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.kk-career-line {
+  width: 48px;
+  height: 2px;
+  border-radius: 20px;
+  background: #7ea5f2;
+}
+
+.kk-career-heading h2 {
+  margin: 0;
+  color: var(--kk-navy);
+  font-size: clamp(28px, 3vw, 40px);
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: -0.8px;
+}
+
+.kk-career-intro {
+  flex: 0 0 42%;
+  margin: 0;
+  color: #465a80;
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+.kk-career-cards {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.kk-career-card {
+  min-width: 0;
+  min-height: 175px;
+  padding: 26px 14px 22px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  background: #ffffff;
+  border: 1px solid #e3ebfa;
+  border-radius: 14px;
+  box-shadow: 0 6px 24px rgba(40, 90, 255, 0.07);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.kk-career-card:hover {
+  transform: translateY(-4px);
+  border-color: #c3d6fb;
+  box-shadow: 0 14px 32px rgba(40, 90, 255, 0.14);
+}
+
+.kk-career-card-icon {
+  width: 52px;
+  height: 52px;
+  margin-bottom: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 38px;
+}
+
+.kk-benefit-blue .kk-career-card-icon {
+  color: #0a6cff;
+}
+
+.kk-benefit-purple .kk-career-card-icon {
+  color: #a63df0;
+}
+
+.kk-benefit-gradient .kk-career-card-icon svg {
+  fill: url(#kk-benefit-gradient);
+}
+
+.kk-career-card h3 {
+  margin: 0 0 8px;
+  color: #172d63;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+.kk-career-card p {
+  margin: 0;
+  color: #53678d;
+  font-size: 13px;
+  line-height: 1.55;
+}
+
+
+/* =====================================================
+   03 — LIFE AT KADEN KOPPER
+===================================================== */
+
+.kk-life-section {
+  width: 100%;
+  padding: 60px 25px 65px;
+  background: var(--kk-soft);
+}
+
+.kk-life-container {
+  width: 100%;
+  max-width: 1120px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 290px minmax(0, 1fr);
+  gap: 30px;
+  align-items: center;
+}
+
+.kk-life-label {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  margin-bottom: 9px;
+}
+
+.kk-life-label span {
+  color: var(--kk-blue);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1.3px;
+  white-space: nowrap;
+}
+
+.kk-life-line {
+  width: 42px;
+  height: 2px;
+  border-radius: 20px;
+  background: #7ea5f2;
+}
+
+.kk-life-content h2 {
+  margin: 0 0 10px;
+  color: var(--kk-navy);
+  font-size: 30px;
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -0.7px;
+}
+
+.kk-life-content p {
+  max-width: 280px;
+  margin: 0;
+  color: #465a80;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.kk-life-gallery {
+  width: 100%;
+  min-width: 0;
+  display: grid;
+  grid-template-columns: 1.35fr 0.85fr 0.85fr;
+  grid-auto-rows: 130px;
+  gap: 8px;
+}
+
+.kk-life-image {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border-radius: 8px;
+  background: #e8eef8;
+}
+
+.kk-life-image.large {
+  grid-column: 1;
+  grid-row: 1 / 3;
+}
+
+.kk-life-image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.kk-life-image:hover img {
+  transform: scale(1.04);
+}
+
+.kk-life-loading,
+.kk-life-empty {
+  grid-column: 1 / -1;
+  grid-row: 1 / 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  background: #e8eef8;
+  color: #53678d;
+  text-align: center;
+}
+
+.kk-life-loading {
+  color: var(--kk-blue);
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.kk-life-empty p {
+  margin: 0;
+  font-size: 14px;
+}
+
+.kk-life-no-image {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #e8eef8;
+  color: #53678d;
+  font-size: 12px;
+}
+
+
+/* =====================================================
+   04 — OUR IMPACT
+   Mobile first: stacked + centered. The desktop diagram
+   is switched on at 1001px and above (see further down).
+===================================================== */
+
+.kk-impact-section {
+  width: 100%;
+  padding: 60px 20px 70px;
+  background: #ffffff;
+  overflow: hidden;
+}
+
+.kk-impact-container {
+  width: 100%;
+  max-width: 1120px;
+  margin: 0 auto;
+}
+
+.kk-impact-header {
+  text-align: center;
+  margin-bottom: 34px;
+}
+
+.kk-impact-label span {
+  display: block;
+  margin-bottom: 10px;
+  color: #0a6cff;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 1.8px;
+  line-height: 1;
+}
+
+.kk-impact-header h2 {
+  margin: 0;
+  color: var(--kk-navy);
+  font-size: clamp(30px, 6vw, 44px);
+  font-weight: 800;
+  line-height: 1.12;
+  letter-spacing: -0.9px;
+}
+
+.kk-impact-header h2 span {
+  color: #0a6cff;
+}
+
+.kk-impact-header p {
+  max-width: 620px;
+  margin: 12px auto 0;
+  color: var(--kk-text);
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+/* ---------- diagram (mobile: centered grid) ---------- */
+
+.kk-impact-diagram {
+  width: 100%;
+  max-width: 1060px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 30px 14px;
+}
+
+.kk-impact-lineset {
+  display: none;
+}
+
+/* centre disc */
+
+.kk-impact-center {
+  --halo: 250px;
+  --disc: 200px;
+
+  position: relative;
+  grid-column: 1 / -1;
+  order: -1;
+  justify-self: center;
+  width: var(--halo);
+  height: var(--halo);
+  margin-bottom: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 3;
+}
+
+.kk-impact-center::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle at 58% 50%,
+    rgba(214, 70, 255, 0.22) 0%,
+    rgba(110, 90, 255, 0.16) 45%,
+    rgba(110, 90, 255, 0) 70%
+  );
+}
+
+.kk-impact-circle {
+  position: relative;
+  z-index: 2;
+  width: var(--disc);
+  height: var(--disc);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 6px solid transparent;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 32% 28%, #3f64ff 0%, #2b3df0 38%, #2a1fd0 68%, #4a1fc4 100%) padding-box,
+    conic-gradient(from 210deg, #35d6ff, #4d86ff 22%, #7b4dff 45%, #e03df2 62%, #b04dff 78%, #35d6ff) border-box;
+  box-shadow:
+    0 0 36px rgba(90, 100, 255, 0.45),
+    10px 0 46px rgba(220, 60, 255, 0.3),
+    inset 0 0 34px rgba(10, 10, 120, 0.35);
+}
+
+.kk-impact-k {
+  display: block;
+  width: 54px;
+  height: 54px;
+  margin-bottom: 12px;
+  filter: drop-shadow(0 0 10px rgba(130, 200, 255, 0.55));
+}
+
+.kk-impact-circle-text {
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  line-height: 1.4;
+  text-align: center;
+}
+
+/* items (mobile: icon above, text centered) */
+
+.kk-impact-item {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  text-align: center;
+}
+
+.kk-impact-icon {
+  width: 76px;
+  height: 76px;
+  flex: 0 0 76px;
+}
+
+.kk-impact-icon-inner {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 3px solid transparent;
+  border-radius: 50%;
+  color: #ffffff;
+  font-size: 28px;
+  box-shadow:
+    0 0 0 6px rgba(90, 120, 255, 0.1),
+    0 10px 26px rgba(60, 80, 255, 0.32),
+    inset 0 2px 8px rgba(255, 255, 255, 0.28);
+}
+
+.kk-impact-blue .kk-impact-icon-inner {
+  background: radial-gradient(circle at 30% 25%, #3a7bff, #0a2fd0 72%);
+  border-color: rgba(120, 170, 255, 0.65);
+}
+
+.kk-impact-cyan .kk-impact-icon-inner {
+  background: radial-gradient(circle at 30% 25%, #3fe0ff, #1670ff 72%);
+  border-color: rgba(150, 235, 255, 0.7);
+}
+
+.kk-impact-violet .kk-impact-icon-inner {
+  background: radial-gradient(circle at 30% 25%, #5b4bff, #2a1aa6 75%);
+  border-color: #b05cff;
+  box-shadow:
+    0 0 0 6px rgba(176, 92, 255, 0.12),
+    0 10px 26px rgba(176, 60, 255, 0.34),
+    inset 0 2px 8px rgba(255, 255, 255, 0.25);
+}
+
+.kk-impact-text {
+  min-width: 0;
+}
+
+.kk-impact-number {
+  display: block;
+  margin-bottom: 4px;
+  color: #0a84ff;
+  font-size: 15px;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.kk-impact-text h3 {
+  margin: 0 0 5px;
+  color: #0b1230;
+  font-size: 19px;
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+.kk-impact-text p {
+  max-width: 200px;
+  margin: 0 auto;
+  color: #3b4660;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+/* tablet: 3 columns */
+
+@media (min-width: 641px) {
+  .kk-impact-diagram {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 36px 20px;
+  }
+}
+
+/* small phones */
+
+@media (max-width: 430px) {
+  .kk-impact-section {
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+
+  .kk-impact-center {
+    --halo: 220px;
+    --disc: 176px;
+  }
+
+  .kk-impact-k {
+    width: 46px;
+    height: 46px;
+    margin-bottom: 9px;
+  }
+
+  .kk-impact-circle-text {
+    font-size: 12.5px;
+  }
+
+  .kk-impact-icon {
+    width: 68px;
+    height: 68px;
+    flex-basis: 68px;
+  }
+
+  .kk-impact-icon-inner {
+    font-size: 25px;
+  }
+
+  .kk-impact-text h3 {
+    font-size: 16px;
+  }
+
+  .kk-impact-text p {
+    font-size: 12.5px;
+  }
+}
+
+/* very small phones: 1 column */
+
+@media (max-width: 340px) {
+  .kk-impact-diagram {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ---------- desktop diagram: 1001px and up ---------- */
+
+@media (min-width: 1001px) {
+  .kk-impact-diagram {
+    position: relative;
+    display: block;
+    height: 300px;
+  }
+
+  .kk-impact-center {
+    --halo: 290px;
+    --disc: 224px;
+
+    position: absolute;
+    left: 50%;
+    top: 2px;
+    margin: 0;
+    transform: translateX(-50%);
+  }
+
+  .kk-impact-k {
+    width: 58px;
+    height: 58px;
+  }
+
+  .kk-impact-circle-text {
+    font-size: 15px;
+  }
+
+  .kk-impact-item {
+    position: absolute;
+    z-index: 4;
+    width: 270px;
+    min-height: 80px;
+    flex-direction: row;
+    gap: 20px;
+    text-align: left;
+  }
+
+  .kk-impact-icon {
+    width: 76px;
+    height: 76px;
+    flex-basis: 76px;
+  }
+
+  .kk-impact-icon-inner {
+    font-size: 28px;
+  }
+
+  .kk-impact-text h3 {
+    font-size: 19px;
+  }
+
+  .kk-impact-text p {
+    max-width: 180px;
+    margin: 0;
+    font-size: 14px;
+  }
+
+  .kk-impact-one   { top: 5px;   left: 0; }
+  .kk-impact-two   { top: 107px; left: 0; }
+  .kk-impact-three { top: 209px; left: 0; }
+  .kk-impact-four  { top: 5px;   right: 0; }
+  .kk-impact-five  { top: 107px; right: 0; }
+  .kk-impact-six   { top: 209px; right: 0; }
+
+  /* gradient lines fill the gap between items and circle */
+
+  .kk-impact-lineset {
+    display: block;
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: calc(50% - 397px);
+    z-index: 1;
+    pointer-events: none;
+  }
+
+  .kk-impact-lineset-left {
+    left: 282px;
+  }
+
+  .kk-impact-lineset-right {
+    right: 282px;
+  }
+
+  .kk-impact-lineset svg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    overflow: visible;
+  }
+
+  .kk-impact-lineset path {
+    fill: none;
+    stroke-width: 1.4;
+    stroke-linecap: round;
+    vector-effect: non-scaling-stroke;
+  }
+
+  /* dots: small faint ones at the item side, bright ones at the circle */
+
+  .kk-impact-dot {
+    position: absolute;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .kk-impact-dot-left  { background: #19b8ff; }
+  .kk-impact-dot-right { background: #c23cf2; }
+
+  .kk-impact-dot.is-out {
+    width: 5px;
+    height: 5px;
+    opacity: 0.55;
+  }
+
+  .kk-impact-dot.is-in {
+    width: 9px;
+    height: 9px;
+  }
+
+  .kk-impact-dot-left.is-in {
+    box-shadow: 0 0 0 4px rgba(25, 184, 255, 0.16);
+  }
+
+  .kk-impact-dot-right.is-in {
+    box-shadow: 0 0 0 4px rgba(194, 60, 242, 0.16);
+  }
+}
+
+
+/* =====================================================
+   05 — OUR NUMBERS
+===================================================== */
+
+.kk-numbers-section {
+  width: 100%;
+  padding: 50px 20px 60px;
+  background: #ffffff;
+  overflow: hidden;
+}
+
+.kk-numbers-container {
+  width: 100%;
+  max-width: 1180px;
+  margin: 0 auto;
+}
+
+.kk-numbers-header {
+  text-align: center;
+  margin-bottom: 22px;
+}
+
+.kk-numbers-label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 8px;
+}
+
+.kk-numbers-label::before,
+.kk-numbers-label::after {
+  content: "";
+  width: 48px;
+  height: 2px;
+  margin: 0 17px;
+  border-radius: 20px;
+  background: #86a9f2;
+}
+
+.kk-numbers-label span {
+  color: var(--kk-blue);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  white-space: nowrap;
+}
+
+.kk-numbers-header h2 {
+  margin: 0;
+  color: var(--kk-navy);
+  font-size: 34px;
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -0.8px;
+}
+
+.kk-numbers-header h2 span {
+  color: #0963ed;
+}
+
+.kk-numbers-header p {
+  margin: 8px auto 0;
+  color: var(--kk-text);
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.kk-numbers-grid {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.kk-number-card {
+  min-width: 0;
+  padding: 18px 18px 12px;
+  background: #ffffff;
+  border: 1px solid #d9e5f6;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.kk-number-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(25, 75, 150, 0.08);
+}
+
+.kk-number-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.kk-number-top strong {
+  display: block;
+  color: #07165d;
+  font-size: 28px;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.kk-number-top span {
+  display: block;
+  margin-top: 6px;
+  color: var(--kk-navy);
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1.25;
+}
+
+.kk-number-growth {
+  flex-shrink: 0;
+  padding-top: 4px;
+  color: #08a965;
+  font-size: 12px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.kk-number-chart {
+  width: 100%;
+  margin-top: 10px;
+}
+
+.kk-number-chart svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  overflow: visible;
+}
+
+.kk-chart-line {
+  fill: none;
+  stroke-width: 2.2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.kk-chart-blue   { stroke: #1264ee; }
+.kk-chart-green  { stroke: #08a96b; }
+.kk-chart-cyan   { stroke: #08a8d9; }
+.kk-chart-purple { stroke: #3437f5; }
+
+.kk-blue-dot   { fill: #1264ee; }
+.kk-green-dot  { fill: #08a96b; }
+.kk-cyan-dot   { fill: #08a8d9; }
+.kk-purple-dot { fill: #3437f5; }
+
+
+/* =====================================================
+   06 — OPEN POSITIONS
+===================================================== */
+
+.kk-jobs-section {
+  width: 100%;
+  padding: 60px 20px 75px;
+  background: #ffffff;
+  overflow: hidden;
+}
+
+.kk-jobs-container {
+  width: 100%;
+  max-width: 1160px;
+  margin: 0 auto;
+}
+
+.kk-jobs-header {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.55fr);
+  gap: 35px;
+  align-items: start;
+  margin-bottom: 26px;
+}
+
+.kk-jobs-label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+
+.kk-jobs-label span {
+  color: var(--kk-blue);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1.4px;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.kk-jobs-label-line {
+  width: 52px;
+  height: 2px;
+  border-radius: 20px;
+  background: #86a9f2;
+}
+
+.kk-jobs-heading h2 {
+  margin: 0;
+  color: var(--kk-navy);
+  font-size: 34px;
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -0.8px;
+}
+
+.kk-jobs-heading p {
+  margin: 8px 0 0;
+  color: #53678d;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.kk-jobs-filters {
+  min-width: 0;
+}
+
+.kk-job-categories {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 10px;
+}
+
+.kk-job-categories button {
+  min-height: 36px;
+  padding: 0 16px;
+  border: 1px solid var(--kk-line);
+  border-radius: 8px;
+  background: #f5f9fe;
+  color: #29436d;
+  font-family: "Inter", sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+}
+
+.kk-job-categories button:hover {
+  color: var(--kk-blue);
+  border-color: #b9cff3;
+  transform: translateY(-1px);
+}
+
+.kk-job-categories button.active {
+  color: #ffffff;
+  background: #0963ed;
+  border-color: #0963ed;
+  box-shadow: 0 4px 12px rgba(9, 99, 237, 0.16);
+}
+
+.kk-job-search-row {
+  display: flex;
+  gap: 8px;
+}
+
+.kk-job-select {
+  flex: 1 1 0;
+  min-width: 0;
+  height: 40px;
+  padding: 0 34px 0 12px;
+  border: 1px solid #d7e3f3;
+  border-radius: 8px;
+  background: #ffffff
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%231b3d70' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E")
+    no-repeat right 11px center / 14px;
+  color: #415777;
+  font-family: "Inter", sans-serif;
+  font-size: 12px;
+  cursor: pointer;
+  appearance: none;
+  -webkit-appearance: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.kk-job-select:hover {
+  border-color: #a9c7f1;
+}
+
+.kk-job-search {
+  flex: 1.6 1 0;
+  min-width: 0;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0 12px;
+  border: 1px solid #d7e3f3;
+  border-radius: 8px;
+  background: #ffffff;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.kk-job-search:focus-within,
+.kk-job-select:focus-visible {
+  border-color: #79aaf2;
+  box-shadow: 0 0 0 3px rgba(9, 99, 237, 0.1);
+  outline: 0;
+}
+
+.kk-job-search svg {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+  fill: none;
+  stroke: #1f477d;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+}
+
+.kk-job-search input {
+  width: 100%;
+  min-width: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  color: #1d355d;
+  font-family: "Inter", sans-serif;
+  font-size: 13px;
+}
+
+.kk-job-search input::placeholder {
+  color: #687b99;
+  opacity: 1;
+}
+
+.kk-jobs-grid {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.kk-job-card {
+  min-width: 0;
+  padding: 20px 18px;
+  background: #ffffff;
+  border: 1px solid #d7e4f5;
+  border-radius: 10px;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.kk-job-card:hover {
+  transform: translateY(-4px);
+  border-color: #a9c7f5;
+  box-shadow: 0 10px 25px rgba(28, 74, 142, 0.09);
+}
+
+.kk-job-card-top {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+}
+
+.kk-job-icon {
+  width: 42px;
+  height: 42px;
+  flex: 0 0 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  background: #edf5ff;
+  color: var(--kk-blue);
+}
+
+.kk-job-icon svg {
+  width: 23px;
+  height: 23px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.kk-job-info {
+  min-width: 0;
+  flex: 1;
+}
+
+.kk-job-info h3 {
+  margin: 1px 0 0;
+  color: var(--kk-navy);
+  font-size: 16px;
+  font-weight: 800;
+  line-height: 1.25;
+}
+
+.kk-job-info > p {
+  margin: 5px 0 10px;
+  color: #526789;
+  font-size: 12.5px;
+  line-height: 1.35;
+}
+
+.kk-job-tags {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin-bottom: 12px;
+}
+
+.kk-job-tags span {
+  padding: 5px 9px;
+  border-radius: 5px;
+  background: #eef6ff;
+  color: #1261d9;
+  font-size: 11px;
+  font-weight: 500;
+  line-height: 1;
+}
+
+.kk-job-info > .kk-job-description {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  margin: 0 0 14px;
+  color: #53678d;
+  font-size: 12.5px;
+  line-height: 1.5;
+}
+
+.kk-job-info a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--kk-blue);
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1;
+  text-decoration: none;
+  transition: gap 0.2s ease, color 0.2s ease;
+}
+
+.kk-job-info a span {
+  font-size: 17px;
+  line-height: 8px;
+}
+
+.kk-job-info a:hover {
+  gap: 12px;
+  color: var(--kk-blue-dark);
+}
+
+.kk-no-jobs {
+  grid-column: 1 / -1;
+  padding: 50px 20px;
+  text-align: center;
+  color: #53678d;
+  font-size: 15px;
+}
+
+
+/* =====================================================
+   07 — HIRING PROCESS
+===================================================== */
+
+.kk-hiring-section {
+  position: relative;
+  width: 100%;
+  margin-bottom: 45px;
+  padding: 60px 25px 68px;
+  color: #ffffff;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 50% 45%, rgba(12, 82, 150, 0.22), transparent 55%),
+    linear-gradient(135deg, #03172c 0%, #062442 48%, #03182e 100%);
+}
+
+.kk-hiring-section::before {
+  content: "";
+  position: absolute;
+  width: 520px;
+  height: 520px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background: rgba(14, 107, 214, 0.08);
+  filter: blur(45px);
+  pointer-events: none;
+}
+
+.kk-hiring-container {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 1240px;
+  margin: 0 auto;
+}
+
+.kk-hiring-header {
+  text-align: left;
+  margin-bottom: 34px;
+}
+
+.kk-hiring-label {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
+.kk-hiring-label span {
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.kk-hiring-label-line {
+  width: 55px;
+  height: 2px;
+  border-radius: 20px;
+  background: #1684f4;
+}
+
+.kk-hiring-header h2 {
+  margin: 0;
+  color: #ffffff;
+  font-size: 34px;
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -0.8px;
+}
+
+.kk-hiring-header p {
+  margin: 8px 0 0;
+  color: #d5e3f4;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.kk-hiring-process {
+  display: grid;
+  grid-template-columns:
+    minmax(0, 1fr) 38px minmax(0, 1fr) 38px minmax(0, 1fr)
+    38px minmax(0, 1fr) 38px minmax(0, 1fr);
+  align-items: center;
+}
+
+.kk-hiring-step {
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.kk-hiring-icon {
+  width: 76px;
+  height: 76px;
+  flex: 0 0 76px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(27, 122, 219, 0.38), rgba(7, 54, 96, 0.82));
+  border: 1px solid rgba(43, 143, 235, 0.55);
+  box-shadow: inset 0 0 18px rgba(54, 156, 255, 0.12), 0 7px 20px rgba(0, 0, 0, 0.25);
+}
+
+.kk-hiring-icon-inner {
+  width: 56px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  color: #ffffff;
+  background: linear-gradient(145deg, #126abd 0%, #08477f 100%);
+  border: 1px solid rgba(100, 181, 255, 0.38);
+  font-size: 25px;
+  box-shadow: inset 0 0 12px rgba(255, 255, 255, 0.08);
+}
+
+.kk-hiring-content {
+  min-width: 0;
+  flex: 1;
+}
+
+.kk-hiring-number {
+  display: block;
+  margin-bottom: 4px;
+  color: #3d9bff;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.kk-hiring-content h3 {
+  margin: 0 0 5px;
+  color: #ffffff;
+  font-size: 17px;
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+.kk-hiring-content p {
+  max-width: 160px;
+  margin: 0;
+  color: #c9d8e9;
+  font-size: 12.5px;
+  line-height: 1.45;
+}
+
+.kk-hiring-arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #dbe9f7;
+  font-size: 27px;
+  font-weight: 300;
+  line-height: 1;
+  opacity: 0.9;
+}
+
+
+/* =====================================================
+   LARGE TABLET — 1100px
+===================================================== */
+
+@media (max-width: 1100px) {
+  .kk-career-benefits-header {
+    gap: 30px;
+  }
+
+  .kk-career-cards {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .kk-numbers-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .kk-jobs-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+
+/* =====================================================
+   TABLET — 1000px
+===================================================== */
+
+@media (max-width: 1000px) {
+  /* life */
+  .kk-life-container {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+
+  .kk-life-content {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .kk-life-label {
+    justify-content: center;
+  }
+
+  .kk-life-content p {
+    margin: 0 auto;
+  }
+
+  /* jobs */
+  .kk-jobs-header {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .kk-jobs-heading {
+    text-align: center;
+  }
+
+  .kk-jobs-label {
+    justify-content: center;
+  }
+
+  .kk-jobs-filters {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .kk-job-categories {
+    justify-content: center;
+  }
+
+  .kk-jobs-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  /* hiring becomes a vertical list */
+  .kk-hiring-header {
+    text-align: center;
+  }
+
+  .kk-hiring-label {
+    justify-content: center;
+  }
+
+  .kk-hiring-process {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .kk-hiring-step {
+    width: 100%;
+    max-width: 430px;
+    padding: 12px 0;
+  }
+
+  .kk-hiring-content p {
+    max-width: 330px;
+  }
+
+  .kk-hiring-arrow {
+    width: 100%;
+    height: 23px;
+    font-size: 22px;
+    transform: rotate(90deg);
+  }
+}
+
+
+/* =====================================================
+   MOBILE — 760px
+===================================================== */
+
+@media (max-width: 760px) {
+  /* ---------- benefits (centered) ---------- */
+  .kk-career-benefits {
+    padding: 50px 18px 55px;
+  }
+
+  .kk-career-benefits-header {
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 26px;
+    text-align: center;
+  }
+
+  .kk-career-label {
+    justify-content: center;
+  }
+
+  .kk-career-heading h2 {
+    font-size: 27px;
+  }
+
+  .kk-career-intro {
+    flex: none;
+    max-width: 480px;
+    margin: 0 auto;
+    font-size: 14px;
+    text-align: center;
+  }
+
+  .kk-career-cards {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
+
+  .kk-career-card {
+    min-height: 170px;
+    padding: 22px 12px 18px;
+  }
+
+  /* ---------- life ---------- */
+  .kk-life-section {
+    padding: 45px 18px 55px;
+  }
+
+  .kk-life-content h2 {
+    font-size: 26px;
+  }
+
+  .kk-life-content p {
+    max-width: 430px;
+    font-size: 14px;
+  }
+
+  .kk-life-gallery {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-auto-rows: 100px;
+    gap: 6px;
+  }
+
+  .kk-life-image.large {
+    grid-column: 1 / 3;
+    grid-row: span 2;
+  }
+
+  .kk-life-loading,
+  .kk-life-empty {
+    grid-row: span 2;
+  }
+
+  /* ---------- numbers ---------- */
+  .kk-numbers-section {
+    padding: 42px 16px 50px;
+  }
+
+  .kk-numbers-header h2 {
+    font-size: 28px;
+  }
+
+  .kk-numbers-label::before,
+  .kk-numbers-label::after {
+    width: 30px;
+    margin: 0 10px;
+  }
+
+  .kk-numbers-grid {
+    grid-template-columns: 1fr;
+    gap: 10px;
+    max-width: 430px;
+    margin: 0 auto;
+  }
+
+  /* ---------- jobs ---------- */
+  .kk-jobs-section {
+    padding: 45px 16px 55px;
+  }
+
+  .kk-jobs-heading h2 {
+    font-size: 28px;
+  }
+
+  .kk-job-categories {
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    overflow-x: auto;
+    padding-bottom: 6px;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .kk-job-categories::-webkit-scrollbar {
+    display: none;
+  }
+
+  .kk-job-categories button {
+    flex: 0 0 auto;
+    min-height: 38px;
+    padding: 0 15px;
+  }
+
+  .kk-job-search-row {
+    flex-wrap: wrap;
+  }
+
+  .kk-job-select {
+    flex: 1 1 calc(50% - 4px);
+    height: 44px;
+    font-size: 14px;
+  }
+
+  .kk-job-search {
+    flex: 1 1 100%;
+    height: 44px;
+  }
+
+  /* 16px stops iOS from zooming in when the field is focused */
+  .kk-job-search input {
+    font-size: 16px;
+  }
+
+  .kk-jobs-grid {
+    grid-template-columns: 1fr;
+    max-width: 500px;
+    margin: 0 auto;
+    gap: 12px;
+  }
+
+  /* ---------- hiring ---------- */
+  .kk-hiring-section {
+    padding: 48px 18px 55px;
+    margin-bottom: 35px;
+  }
+
+  .kk-hiring-header {
+    margin-bottom: 26px;
+  }
+
+  .kk-hiring-header h2 {
+    font-size: 28px;
+  }
+
+  .kk-hiring-header p {
+    max-width: 430px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .kk-hiring-step {
+    gap: 18px;
+  }
+
+  .kk-hiring-icon {
+    width: 68px;
+    height: 68px;
+    flex-basis: 68px;
+  }
+
+  .kk-hiring-icon-inner {
+    width: 50px;
+    height: 50px;
+    font-size: 22px;
+  }
+}
+
+
+/* =====================================================
+   SMALL MOBILE — 430px
+===================================================== */
+
+@media (max-width: 430px) {
+  /* benefits stay 2 columns so the section is not 6 cards tall */
+  .kk-career-benefits {
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+
+  .kk-career-heading h2 {
+    font-size: 24px;
+  }
+
+  .kk-career-cards {
+    gap: 10px;
+  }
+
+  .kk-career-card {
+    min-height: 160px;
+    padding: 18px 10px 16px;
+  }
+
+  .kk-career-card-icon {
+    width: 44px;
+    height: 44px;
+    font-size: 32px;
+  }
+
+  .kk-career-card h3 {
+    font-size: 14px;
+  }
+
+  .kk-career-card p {
+    font-size: 12px;
+  }
+
+  .kk-life-section {
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+
+  .kk-life-content h2 {
+    font-size: 24px;
+  }
+
+  .kk-life-gallery {
+    grid-auto-rows: 90px;
+  }
+
+  .kk-numbers-header h2,
+  .kk-jobs-heading h2,
+  .kk-hiring-header h2 {
+    font-size: 25px;
+  }
+
+  .kk-numbers-section,
+  .kk-jobs-section {
+    padding-left: 13px;
+    padding-right: 13px;
+  }
+
+  .kk-number-card {
+    padding: 15px 14px 10px;
+  }
+
+  .kk-job-card {
+    padding: 17px 15px;
+  }
+
+  .kk-job-card-top {
+    gap: 12px;
+  }
+
+  .kk-hiring-section {
+    padding: 44px 14px 50px;
+    margin-bottom: 30px;
+  }
+
+  .kk-hiring-step {
+    max-width: 360px;
+    gap: 14px;
+  }
+
+  .kk-hiring-icon {
+    width: 61px;
+    height: 61px;
+    flex-basis: 61px;
+  }
+
+  .kk-hiring-icon-inner {
+    width: 45px;
+    height: 45px;
+    font-size: 19px;
+  }
+}
+
+
+/* =====================================================
+   VERY SMALL — 340px
+===================================================== */
+
+@media (max-width: 340px) {
+  .kk-career-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .kk-hiring-step {
+    max-width: 310px;
+    gap: 12px;
+  }
+
+  .kk-hiring-icon {
+    width: 55px;
+    height: 55px;
+    flex-basis: 55px;
+  }
+
+  .kk-hiring-icon-inner {
+    width: 41px;
+    height: 41px;
+    font-size: 17px;
+  }
+}
+
+
+/* =====================================================
+   REDUCED MOTION
+===================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .kk-career-page *,
+  .kk-career-page *::before,
+  .kk-career-page *::after {
+    transition: none !important;
+    animation: none !important;
+  }
+
+  .kk-career-card:hover,
+  .kk-number-card:hover,
+  .kk-job-card:hover,
+  .kk-job-categories button:hover,
+  .kk-career-hero-primary:hover,
+  .kk-career-hero-secondary:hover,
+  .kk-life-image:hover img {
+    transform: none;
+  }
+}

@@ -1,0 +1,623 @@
+/* =====================================================
+   HOMEBANNER ADMIN
+===================================================== */
+
+.homebanner-admin {
+  width: 100%;
+  min-height: 100vh;
+  padding: 20px;
+  box-sizing: border-box;
+  background: #f5f7fa;
+}
+
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+.homebanner-header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 28px;
+}
+
+.homebanner-header h1 {
+  margin: 0;
+  font-size: 28px;
+  font-weight: 700;
+  color: #172033;
+}
+
+
+/* =====================================================
+   ADD IMAGE BUTTON
+===================================================== */
+
+.homebanner-add-btn {
+  border: none;
+  outline: none;
+  background: #1769f5;
+  color: #ffffff;
+
+  padding: 12px 22px;
+
+  border-radius: 9px;
+
+  font-size: 14px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition: 0.25s ease;
+}
+
+.homebanner-add-btn:hover {
+  background: #0d5de0;
+  transform: translateY(-1px);
+}
+
+
+/* =====================================================
+   FORM CARD
+===================================================== */
+
+.homebanner-form-card {
+  width: 100%;
+  max-width: 700px;
+
+  background: #ffffff;
+
+  border-radius: 10px;
+
+  padding: 32px;
+
+  margin-bottom: 30px;
+
+  box-sizing: border-box;
+
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+}
+
+
+/* =====================================================
+   FORM FIELD
+===================================================== */
+
+.homebanner-field {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+
+/* =====================================================
+   IMAGE UPLOADER
+===================================================== */
+
+.homebanner-upload-box {
+  width: 100%;
+  min-height: 90px;
+
+  border: 2px dashed #d5d5d5;
+
+  border-radius: 8px;
+
+  background: #fafafa;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+
+  overflow: hidden;
+
+  box-sizing: border-box;
+
+  transition: 0.25s ease;
+}
+
+.homebanner-upload-box:hover {
+  border-color: #1769f5;
+  background: #f8fbff;
+}
+
+
+/* Hide browser input */
+
+.homebanner-upload-box input {
+  display: none;
+}
+
+
+/* =====================================================
+   UPLOAD PLACEHOLDER
+===================================================== */
+
+.homebanner-upload-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  color: #687386;
+
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.upload-icon {
+  width: 30px;
+  height: 30px;
+
+  border-radius: 50%;
+
+  background: #1769f5;
+
+  color: #ffffff;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 20px;
+  font-weight: 600;
+}
+
+
+/* =====================================================
+   IMAGE PREVIEW
+===================================================== */
+
+.homebanner-preview-wrapper {
+  position: relative;
+
+  width: 100%;
+  height: 150px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.homebanner-upload-preview {
+  width: 100%;
+  height: 150px;
+
+  object-fit: cover;
+
+  display: block;
+}
+
+.homebanner-change-text {
+  position: absolute;
+
+  bottom: 10px;
+
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  background: rgba(0, 0, 0, 0.7);
+
+  color: #ffffff;
+
+  padding: 7px 14px;
+
+  border-radius: 5px;
+
+  font-size: 12px;
+}
+
+
+/* =====================================================
+   INPUT
+===================================================== */
+
+.homebanner-input {
+  width: 100%;
+
+  height: 50px;
+
+  padding: 0 16px;
+
+  border: 1px solid #d9d9d9;
+
+  border-radius: 8px;
+
+  outline: none;
+
+  font-size: 15px;
+
+  color: #273142;
+
+  box-sizing: border-box;
+
+  transition: 0.25s ease;
+}
+
+.homebanner-input::placeholder {
+  color: #7b8491;
+}
+
+.homebanner-input:focus {
+  border-color: #1769f5;
+
+  box-shadow: 0 0 0 3px rgba(23, 105, 245, 0.08);
+}
+
+
+/* =====================================================
+   TEXTAREA
+===================================================== */
+
+.homebanner-textarea {
+  width: 100%;
+
+  min-height: 130px;
+
+  padding: 14px 16px;
+
+  border: 1px solid #d9d9d9;
+
+  border-radius: 8px;
+
+  outline: none;
+
+  resize: vertical;
+
+  font-family: inherit;
+
+  font-size: 15px;
+
+  line-height: 1.6;
+
+  color: #273142;
+
+  box-sizing: border-box;
+
+  transition: 0.25s ease;
+}
+
+.homebanner-textarea::placeholder {
+  color: #7b8491;
+}
+
+.homebanner-textarea:focus {
+  border-color: #1769f5;
+
+  box-shadow: 0 0 0 3px rgba(23, 105, 245, 0.08);
+}
+
+
+/* =====================================================
+   FORM ACTIONS
+===================================================== */
+
+.homebanner-form-actions {
+  display: flex;
+
+  align-items: center;
+
+  gap: 15px;
+
+  margin-top: 28px;
+}
+
+
+/* =====================================================
+   SAVE BUTTON
+===================================================== */
+
+.homebanner-save-btn {
+  min-width: 110px;
+
+  border: none;
+
+  padding: 12px 25px;
+
+  border-radius: 8px;
+
+  background: #168f5a;
+
+  color: #ffffff;
+
+  font-size: 14px;
+
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition: 0.25s ease;
+}
+
+.homebanner-save-btn:hover {
+  background: #117b4d;
+}
+
+
+/* =====================================================
+   CANCEL BUTTON
+===================================================== */
+
+.homebanner-cancel-btn {
+  min-width: 110px;
+
+  border: none;
+
+  padding: 12px 25px;
+
+  border-radius: 8px;
+
+  background: #df3045;
+
+  color: #ffffff;
+
+  font-size: 14px;
+
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition: 0.25s ease;
+}
+
+.homebanner-cancel-btn:hover {
+  background: #c92338;
+}
+
+
+/* =====================================================
+   TABLE WRAPPER
+===================================================== */
+
+.homebanner-table-wrapper {
+  width: 100%;
+
+  background: #ffffff;
+
+  border-radius: 12px;
+
+  overflow-x: auto;
+
+  box-shadow: 0 5px 18px rgba(0, 0, 0, 0.07);
+}
+
+
+/* =====================================================
+   TABLE
+===================================================== */
+
+.homebanner-table {
+  width: 100%;
+
+  min-width: 1050px;
+
+  border-collapse: collapse;
+
+  table-layout: fixed;
+}
+
+
+/* =====================================================
+   TABLE HEADER
+===================================================== */
+
+.homebanner-table thead {
+  background: #1769f5;
+}
+
+.homebanner-table th {
+  padding: 17px 18px;
+
+  color: #ffffff;
+
+  font-size: 14px;
+
+  font-weight: 700;
+
+  text-align: center;
+
+  white-space: nowrap;
+}
+
+
+/* Column widths */
+
+.homebanner-table th:nth-child(1) {
+  width: 5%;
+}
+
+.homebanner-table th:nth-child(2) {
+  width: 12%;
+}
+
+.homebanner-table th:nth-child(3) {
+  width: 10%;
+}
+
+.homebanner-table th:nth-child(4) {
+  width: 15%;
+}
+
+.homebanner-table th:nth-child(5) {
+  width: 28%;
+}
+
+.homebanner-table th:nth-child(6) {
+  width: 12%;
+}
+
+.homebanner-table th:nth-child(7) {
+  width: 18%;
+}
+
+
+/* =====================================================
+   TABLE BODY
+===================================================== */
+
+.homebanner-table tbody tr {
+  border-bottom: 1px solid #e6e9ee;
+
+  transition: 0.2s ease;
+}
+
+.homebanner-table tbody tr:hover {
+  background: #fafcff;
+}
+
+.homebanner-table tbody tr:last-child {
+  border-bottom: none;
+}
+
+.homebanner-table td {
+  padding: 22px 18px;
+
+  color: #273142;
+
+  font-size: 14px;
+
+  text-align: center;
+
+  vertical-align: middle;
+}
+
+
+/* =====================================================
+   TABLE IMAGE
+===================================================== */
+
+.homebanner-table-image {
+  width: 90px;
+
+  height: 70px;
+
+  object-fit: cover;
+
+  border-radius: 8px;
+
+  display: block;
+
+  margin: 0 auto;
+
+  border: 1px solid #e2e5e9;
+}
+
+
+/* =====================================================
+   NAME
+===================================================== */
+
+.homebanner-name {
+  font-size: 14px;
+
+  font-weight: 500;
+
+  line-height: 1.5;
+
+  word-break: break-word;
+}
+
+
+/* =====================================================
+   DESCRIPTION
+===================================================== */
+
+.homebanner-description {
+  max-width: 260px;
+
+  margin: 0 auto;
+
+  font-size: 14px;
+
+  line-height: 1.55;
+
+  word-break: break-word;
+}
+
+
+/* =====================================================
+   DELETE BUTTON
+===================================================== */
+
+.homebanner-delete-btn {
+  border: none;
+
+  outline: none;
+
+  background: #e91e48;
+
+  color: #ffffff;
+
+  padding: 9px 18px;
+
+  border-radius: 5px;
+
+  font-size: 13px;
+
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition: 0.25s ease;
+}
+
+.homebanner-delete-btn:hover {
+  background: #cf173d;
+  transform: translateY(-1px);
+}
+
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media (max-width: 900px) {
+
+  .homebanner-admin {
+    padding: 16px;
+  }
+
+  .homebanner-header h1 {
+    font-size: 24px;
+  }
+
+  .homebanner-form-card {
+    padding: 24px;
+  }
+
+}
+
+
+@media (max-width: 600px) {
+
+  .homebanner-header {
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 15px;
+  }
+
+  .homebanner-add-btn {
+    width: 100%;
+  }
+
+  .homebanner-form-card {
+    padding: 18px;
+  }
+
+  .homebanner-form-actions {
+    width: 100%;
+
+    flex-direction: column;
+  }
+
+  .homebanner-save-btn,
+  .homebanner-cancel-btn {
+    width: 100%;
+  }
+
+}

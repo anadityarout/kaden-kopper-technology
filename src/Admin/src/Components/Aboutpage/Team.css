@@ -1,0 +1,637 @@
+/* =====================================================
+   OUR TEAM ADMIN
+===================================================== */
+
+.team-admin {
+  width: 100%;
+  min-height: 100vh;
+
+  padding: 20px 14px;
+
+  background: #f5f7fa;
+
+  box-sizing: border-box;
+
+  font-family: "Segoe UI", Arial, sans-serif;
+}
+
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+.team-header {
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-bottom: 28px;
+}
+
+.team-header h1 {
+  margin: 0;
+
+  color: #172033;
+
+  font-size: 28px;
+  font-weight: 700;
+}
+
+
+/* =====================================================
+   ADD IMAGE BUTTON
+===================================================== */
+
+.team-add-btn {
+  border: none;
+  outline: none;
+
+  background: #1769f5;
+  color: #ffffff;
+
+  padding: 12px 22px;
+
+  border-radius: 9px;
+
+  font-family: "Segoe UI", Arial, sans-serif;
+
+  font-size: 14px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition: 0.2s ease;
+}
+
+.team-add-btn:hover {
+  background: #0d5de0;
+
+  transform: translateY(-1px);
+}
+
+
+/* =====================================================
+   FORM CARD
+===================================================== */
+
+.team-form-card {
+  width: 100%;
+  max-width: 700px;
+
+  padding: 30px;
+
+  margin-bottom: 30px;
+
+  background: #ffffff;
+
+  border-radius: 10px;
+
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.07);
+
+  box-sizing: border-box;
+}
+
+
+/* =====================================================
+   FIELD
+===================================================== */
+
+.team-field {
+  width: 100%;
+
+  margin-bottom: 20px;
+}
+
+
+/* =====================================================
+   LABEL
+===================================================== */
+
+.team-label {
+  display: block;
+
+  margin-bottom: 8px;
+
+  color: #273142;
+
+  font-size: 14px;
+  font-weight: 600;
+}
+
+
+/* =====================================================
+   IMAGE UPLOADER
+===================================================== */
+
+.team-upload-box {
+  width: 100%;
+  min-height: 180px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 2px dashed #d5d5d5;
+
+  border-radius: 8px;
+
+  background: #fafafa;
+
+  overflow: hidden;
+
+  cursor: pointer;
+
+  box-sizing: border-box;
+
+  transition: 0.2s ease;
+}
+
+.team-upload-box:hover {
+  border-color: #1769f5;
+
+  background: #f8fbff;
+}
+
+.team-upload-box input {
+  display: none;
+}
+
+
+/* =====================================================
+   UPLOAD PLACEHOLDER
+===================================================== */
+
+.team-upload-placeholder {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 10px;
+
+  color: #687386;
+
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.team-upload-icon {
+  width: 32px;
+  height: 32px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: #1769f5;
+
+  color: #ffffff;
+
+  font-size: 21px;
+}
+
+
+/* =====================================================
+   IMAGE PREVIEW
+===================================================== */
+
+.team-preview-wrapper {
+  position: relative;
+
+  width: 100%;
+  height: 200px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #000000;
+}
+
+.team-image-preview {
+  width: 100%;
+  height: 200px;
+
+  display: block;
+
+  object-fit: contain;
+}
+
+
+/* =====================================================
+   CHANGE IMAGE
+===================================================== */
+
+.team-change-text {
+  position: absolute;
+
+  left: 50%;
+  bottom: 10px;
+
+  transform: translateX(-50%);
+
+  padding: 7px 14px;
+
+  border-radius: 5px;
+
+  background: rgba(0, 0, 0, 0.7);
+
+  color: #ffffff;
+
+  font-size: 12px;
+}
+
+
+/* =====================================================
+   INPUT
+===================================================== */
+
+.team-input {
+  width: 100%;
+  height: 50px;
+
+  padding: 0 16px;
+
+  border: 1px solid #d9d9d9;
+
+  border-radius: 8px;
+
+  outline: none;
+
+  color: #273142;
+
+  background: #ffffff;
+
+  font-family: "Segoe UI", Arial, sans-serif;
+
+  font-size: 15px;
+
+  box-sizing: border-box;
+
+  transition: 0.2s ease;
+}
+
+.team-input::placeholder {
+  color: #7b8491;
+}
+
+.team-input:focus {
+  border-color: #1769f5;
+
+  box-shadow: 0 0 0 3px rgba(23, 105, 245, 0.08);
+}
+
+
+/* =====================================================
+   FORM ACTIONS
+===================================================== */
+
+.team-form-actions {
+  display: flex;
+
+  align-items: center;
+
+  gap: 15px;
+
+  margin-top: 28px;
+}
+
+
+/* =====================================================
+   SAVE
+===================================================== */
+
+.team-save-btn {
+  min-width: 110px;
+
+  padding: 12px 25px;
+
+  border: none;
+
+  border-radius: 8px;
+
+  background: #168f5a;
+
+  color: #ffffff;
+
+  font-family: "Segoe UI", Arial, sans-serif;
+
+  font-size: 14px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition: 0.2s ease;
+}
+
+.team-save-btn:hover {
+  background: #117b4d;
+}
+
+
+/* =====================================================
+   CANCEL
+===================================================== */
+
+.team-cancel-btn {
+  min-width: 110px;
+
+  padding: 12px 25px;
+
+  border: none;
+
+  border-radius: 8px;
+
+  background: #df3045;
+
+  color: #ffffff;
+
+  font-family: "Segoe UI", Arial, sans-serif;
+
+  font-size: 14px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition: 0.2s ease;
+}
+
+.team-cancel-btn:hover {
+  background: #c92338;
+}
+
+
+/* =====================================================
+   TABLE WRAPPER
+===================================================== */
+
+.team-table-wrapper {
+  width: 100%;
+
+  background: #ffffff;
+
+  border-radius: 12px;
+
+  overflow-x: auto;
+
+  box-shadow: 0 5px 18px rgba(0, 0, 0, 0.07);
+}
+
+
+/* =====================================================
+   TABLE
+===================================================== */
+
+.team-table {
+  width: 100%;
+
+  min-width: 1050px;
+
+  border-collapse: collapse;
+
+  table-layout: fixed;
+}
+
+
+/* =====================================================
+   TABLE HEADER
+===================================================== */
+
+.team-table thead {
+  background: #1769f5;
+}
+
+.team-table th {
+  padding: 17px 18px;
+
+  color: #ffffff;
+
+  font-size: 14px;
+  font-weight: 700;
+
+  text-align: center;
+
+  white-space: nowrap;
+}
+
+
+/* =====================================================
+   COLUMN WIDTHS
+===================================================== */
+
+.team-table th:nth-child(1) {
+  width: 6%;
+}
+
+.team-table th:nth-child(2) {
+  width: 14%;
+}
+
+.team-table th:nth-child(3) {
+  width: 11%;
+}
+
+.team-table th:nth-child(4) {
+  width: 18%;
+}
+
+.team-table th:nth-child(5) {
+  width: 22%;
+}
+
+.team-table th:nth-child(6) {
+  width: 12%;
+}
+
+.team-table th:nth-child(7) {
+  width: 17%;
+}
+
+
+/* =====================================================
+   TABLE ROW
+===================================================== */
+
+.team-table tbody tr {
+  border-bottom: 1px solid #e6e9ee;
+
+  transition: 0.2s ease;
+}
+
+.team-table tbody tr:hover {
+  background: #fafcff;
+}
+
+.team-table tbody tr:last-child {
+  border-bottom: none;
+}
+
+
+/* =====================================================
+   TABLE CELL
+===================================================== */
+
+.team-table td {
+  padding: 22px 18px;
+
+  color: #273142;
+
+  font-size: 14px;
+
+  text-align: center;
+
+  vertical-align: middle;
+}
+
+
+/* =====================================================
+   TABLE IMAGE
+===================================================== */
+
+.team-table-image {
+  width: 90px;
+  height: 70px;
+
+  display: block;
+
+  margin: 0 auto;
+
+  object-fit: cover;
+
+  border-radius: 8px;
+
+  border: 1px solid #e2e5e9;
+}
+
+
+/* =====================================================
+   TYPE
+===================================================== */
+
+.team-type {
+  font-weight: 500;
+}
+
+
+/* =====================================================
+   NAME
+===================================================== */
+
+.team-name {
+  font-size: 14px;
+
+  line-height: 1.5;
+
+  word-break: break-word;
+}
+
+
+/* =====================================================
+   DESIGNATION
+===================================================== */
+
+.team-designation {
+  font-size: 14px;
+
+  line-height: 1.5;
+
+  word-break: break-word;
+}
+
+
+/* =====================================================
+   DELETE
+===================================================== */
+
+.team-delete-btn {
+  border: none;
+  outline: none;
+
+  padding: 9px 18px;
+
+  border-radius: 5px;
+
+  background: #e91e48;
+
+  color: #ffffff;
+
+  font-family: "Segoe UI", Arial, sans-serif;
+
+  font-size: 13px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition: 0.2s ease;
+}
+
+.team-delete-btn:hover {
+  background: #cf173d;
+
+  transform: translateY(-1px);
+}
+
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 900px) {
+
+  .team-admin {
+    padding: 18px 12px;
+  }
+
+  .team-form-card {
+    max-width: 100%;
+
+    padding: 24px;
+  }
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 600px) {
+
+  .team-header {
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 15px;
+  }
+
+  .team-header h1 {
+    font-size: 24px;
+  }
+
+  .team-add-btn {
+    width: 100%;
+  }
+
+  .team-form-card {
+    padding: 18px;
+  }
+
+  .team-form-actions {
+    flex-direction: column;
+
+    width: 100%;
+  }
+
+  .team-save-btn,
+  .team-cancel-btn {
+    width: 100%;
+  }
+
+  .team-delete-btn {
+    width: 80px;
+  }
+}

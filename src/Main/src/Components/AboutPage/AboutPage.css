@@ -1,0 +1,2280 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Libre+Baskerville:wght@700&display=swap");
+
+.about-page {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+/* =====================================================
+   ABOUT HERO (blue tech banner with rotating globe)
+   ===================================================== */
+.about-hero {
+  /* Height of your fixed navbar. Change this one number if the top is still covered. */
+  --about-nav-offset: 100px;
+
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  padding: calc(var(--about-nav-offset) + 40px) 5% 90px;
+  min-height: 640px;
+  display: flex;
+  align-items: center;
+  background:
+    radial-gradient(circle at 0% 0%, rgba(0, 190, 255, 0.35), transparent 38%),
+    radial-gradient(circle at 100% 100%, rgba(40, 90, 255, 0.35), transparent 40%),
+    linear-gradient(135deg, #021a52 0%, #03206b 50%, #021445 100%);
+  font-family: "Inter", sans-serif;
+}
+
+/* grid lines */
+.about-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(90, 170, 255, 0.12) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(90, 170, 255, 0.12) 1px, transparent 1px);
+  background-size: 64px 64px;
+  -webkit-mask-image: linear-gradient(90deg, #000 0%, #000 45%, transparent 85%);
+  mask-image: linear-gradient(90deg, #000 0%, #000 45%, transparent 85%);
+  pointer-events: none;
+}
+
+.about-hero-glow {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  filter: blur(60px);
+}
+
+.about-hero-glow-1 {
+  width: 360px;
+  height: 360px;
+  left: -140px;
+  top: -120px;
+  background: rgba(0, 200, 255, 0.35);
+}
+
+.about-hero-glow-2 {
+  width: 420px;
+  height: 420px;
+  right: -160px;
+  bottom: -160px;
+  background: rgba(50, 90, 255, 0.4);
+}
+
+.about-hero-inner {
+  width: 100%;
+  max-width: 1300px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  align-items: center;
+  gap: 40px;
+}
+
+/* ---------- Left ---------- */
+.about-hero-left {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+  min-width: 0;
+}
+
+.about-hero-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 18px;
+  border-radius: 999px;
+  border: 1px solid rgba(34, 211, 238, 0.35);
+  background: rgba(6, 40, 110, 0.65);
+  color: #22d3ee;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  margin-bottom: 22px;
+}
+
+.about-hero-title {
+  margin: 0 0 22px;
+  font-weight: 800;
+  color: #ffffff;
+  font-size: clamp(2.1rem, 4.4vw, 3.9rem);
+  line-height: 1.08;
+  letter-spacing: -0.5px;
+}
+
+.about-hero-line {
+  display: block;
+}
+
+.about-hero-cyan {
+  background: linear-gradient(90deg, #19d3ff, #1fb0ff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: #19d3ff;
+}
+
+.about-hero-soft {
+  color: #a9d2ff;
+}
+
+.about-hero-violet {
+  background: linear-gradient(90deg, #4f8bff, #7a5cff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: #5d7bff;
+}
+
+.about-hero-text {
+  margin: 0 0 32px;
+  max-width: 560px;
+  color: rgba(235, 243, 255, 0.88);
+  font-size: clamp(0.95rem, 1.35vw, 1.1rem);
+  line-height: 1.65;
+}
+
+.about-hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.about-hero-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 16px 28px;
+  border-radius: 14px;
+  font-family: "Inter", sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  color: #ffffff;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+}
+
+.about-hero-btn svg {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+}
+
+.about-hero-btn:hover {
+  transform: translateY(-2px);
+}
+
+.about-hero-btn-primary {
+  border: none;
+  background: linear-gradient(90deg, #19c8ff, #2b5cff);
+  box-shadow: 0 10px 28px rgba(30, 140, 255, 0.45);
+}
+
+.about-hero-btn-outline {
+  border: 1.5px solid rgba(34, 211, 238, 0.75);
+  background: rgba(3, 22, 80, 0.55);
+}
+
+.about-hero-btn-outline:hover {
+  background: rgba(34, 211, 238, 0.14);
+}
+
+/* ---------- Right ---------- */
+/* On desktop the right column is NOT positioned, so the globe is placed
+   relative to the whole hero and always shows fully behind the card. */
+.about-hero-right {
+  min-height: 460px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  min-width: 0;
+}
+
+.about-hero-globe {
+  position: absolute;
+  top: calc(50% + (var(--about-nav-offset) / 2) - 25px);
+  right: 2%;
+  width: min(46vw, 660px);
+  aspect-ratio: 1 / 1;
+  transform: translateY(-50%);
+  z-index: 1;
+  pointer-events: none;
+  filter: drop-shadow(0 0 40px rgba(30, 140, 255, 0.45));
+}
+
+.about-hero-globe-canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.about-hero-orbit {
+  position: absolute;
+  left: -12%;
+  top: -12%;
+  width: 124%;
+  height: 124%;
+  transform: rotate(-28deg);
+  overflow: visible;
+}
+
+.about-hero-card {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 470px;
+  padding: 22px;
+  border-radius: 24px;
+  background: linear-gradient(160deg, rgba(30, 90, 230, 0.55), rgba(15, 55, 170, 0.55));
+  border: 1px solid rgba(130, 190, 255, 0.35);
+  -webkit-backdrop-filter: blur(14px);
+  backdrop-filter: blur(14px);
+  box-shadow: 0 24px 60px rgba(0, 10, 60, 0.45);
+}
+
+.about-hero-brand {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 4px 6px 18px;
+}
+
+.about-hero-logo {
+  width: 52px;
+  height: 56px;
+  flex-shrink: 0;
+}
+
+.about-hero-brand-text {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+}
+
+.about-hero-brand-name {
+  color: #ffffff;
+  font-weight: 700;
+  font-size: clamp(0.95rem, 4.6vw, 1.25rem);
+  letter-spacing: 0.3px;
+  white-space: nowrap;
+}
+
+.about-hero-brand-sub {
+  color: rgba(235, 243, 255, 0.85);
+  font-size: 0.82rem;
+  letter-spacing: 0.4em;
+}
+
+.about-hero-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.about-hero-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 10px 14px 10px 10px;
+  border-radius: 14px;
+  background: rgba(40, 100, 235, 0.28);
+  border: 1px solid rgba(130, 190, 255, 0.2);
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.about-hero-item:hover {
+  background: rgba(60, 130, 255, 0.4);
+  transform: translateX(3px);
+}
+
+.about-hero-item-icon {
+  flex: 0 0 auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  border-radius: 12px;
+  background: linear-gradient(160deg, #3b7bff, #1d4fe0);
+  color: #ffffff;
+  box-shadow: 0 6px 16px rgba(10, 40, 160, 0.4);
+}
+
+.about-hero-item-icon svg {
+  width: 26px;
+  height: 26px;
+}
+
+.about-hero-item-text {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.about-hero-item-title {
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+.about-hero-item-desc {
+  color: rgba(235, 243, 255, 0.82);
+  font-size: 0.85rem;
+  line-height: 1.4;
+}
+
+.about-hero-item-arrow {
+  flex: 0 0 auto;
+  width: 20px;
+  height: 20px;
+  color: #ffffff;
+}
+
+/* ---------- Our Story (light theme) ---------- */
+.about-story {
+  width: 100%;
+  padding: 90px 5%;
+  background-color: #ffffff;
+  scroll-margin-top: 20px;
+}
+
+.about-story-heading-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 60px;
+}
+
+.about-story-title {
+  font-family: inherit;
+  font-weight: 800;
+  color: #14141a;
+  font-size: clamp(1.9rem, 3.4vw, 2.6rem);
+  margin: 0;
+  text-align: center;
+}
+
+.about-story-title-underline {
+  display: block;
+  width: 64px;
+  height: 4px;
+  border-radius: 4px;
+  margin-top: 14px;
+  background: linear-gradient(90deg, #4338ca, #16a34a);
+}
+
+.about-story-inner {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 60px;
+}
+
+.about-story-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+}
+
+.about-story-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  border-radius: 999px;
+  background: #eef0fd;
+  color: #4338ca;
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 0.2px;
+  margin-bottom: 22px;
+}
+
+.about-story-badge::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #4338ca;
+  flex-shrink: 0;
+}
+
+.about-story-heading {
+  font-family: "Libre Baskerville", "Georgia", serif;
+  font-weight: 700;
+  color: #14141a;
+  font-size: clamp(1.7rem, 2.8vw, 2.35rem);
+  line-height: 1.3;
+  margin: 0 0 20px;
+}
+
+.about-story-para {
+  font-family: "Georgia", "Libre Baskerville", serif;
+  color: #3f4148;
+  font-size: 1.02rem;
+  line-height: 1.75;
+  margin: 0 0 16px;
+  max-width: 520px;
+}
+
+.about-story-checklist {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 28px;
+  margin: 24px 0 0;
+  padding: 0;
+}
+
+.about-story-checklist li {
+  font-family: "Georgia", "Libre Baskerville", serif;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #14141a;
+  font-size: 0.98rem;
+  font-weight: 500;
+}
+
+.about-story-checklist li::before {
+  content: "\2713";
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #16a34a;
+  font-size: 0.9rem;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.about-story-media {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.about-story-media-shadow {
+  position: absolute;
+  inset: 18px -18px -18px 18px;
+  background: #d7f5e6;
+  border-radius: 16px;
+  z-index: 0;
+}
+
+.about-story-img,
+.about-story-img-fallback {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  border-radius: 16px;
+  object-fit: cover;
+  display: block;
+  box-shadow: 0 20px 40px rgba(20, 20, 26, 0.12);
+}
+
+.about-story-img-fallback {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f4f4f6;
+  border: 1px dashed #cfcfd6;
+  color: #8a8a92;
+  font-size: 0.9rem;
+  text-align: center;
+  padding: 20px;
+}
+
+/* ---------- Mission & Vision ---------- */
+.about-mv {
+  width: 100%;
+  padding: 90px 5%;
+  background-color: #ffffff;
+}
+
+.about-mv-heading-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 60px;
+}
+
+.about-mv-title {
+  font-weight: 800;
+  color: #14141a;
+  font-size: clamp(1.9rem, 3.4vw, 2.6rem);
+  margin: 0;
+  text-align: center;
+}
+
+.about-mv-title-underline {
+  display: block;
+  width: 64px;
+  height: 4px;
+  border-radius: 4px;
+  margin-top: 14px;
+  background: linear-gradient(90deg, #4338ca, #16a34a);
+}
+
+.about-mv-grid {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+}
+
+.about-mv-card {
+  border-radius: 20px;
+  padding: 40px 36px;
+  box-shadow: 0 20px 45px rgba(20, 20, 26, 0.06);
+}
+
+.about-mv-card-mission {
+  background: linear-gradient(160deg, #eef1fd, #f5f7fe);
+}
+
+.about-mv-card-vision {
+  background: linear-gradient(160deg, #eafaf3, #f2fdf9);
+}
+
+.about-mv-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  margin-bottom: 22px;
+  background: linear-gradient(135deg, #4338ca, #0ea5e9);
+  color: #ffffff;
+}
+
+.about-mv-icon svg {
+  width: 24px;
+  height: 24px;
+}
+
+.about-mv-card-title {
+  font-weight: 700;
+  color: #14141a;
+  font-size: 1.3rem;
+  margin: 0 0 12px;
+}
+
+.about-mv-card-underline {
+  display: block;
+  width: 34px;
+  height: 3px;
+  border-radius: 3px;
+  margin-bottom: 20px;
+  background: linear-gradient(90deg, #4338ca, #16a34a);
+}
+
+.about-mv-card-text {
+  font-family: "Georgia", "Libre Baskerville", serif;
+  color: #4a4c54;
+  font-size: 1rem;
+  line-height: 1.75;
+  margin: 0;
+}
+
+/* ---------- Core Values ---------- */
+.about-values {
+  width: 100%;
+  padding: 90px 5%;
+  background-color: #ffffff;
+}
+
+.about-values-heading-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 60px;
+}
+
+.about-values-title {
+  font-weight: 800;
+  color: #14141a;
+  font-size: clamp(1.9rem, 3.4vw, 2.6rem);
+  margin: 0;
+  text-align: center;
+}
+
+.about-values-title-underline {
+  display: block;
+  width: 64px;
+  height: 4px;
+  border-radius: 4px;
+  margin-top: 14px;
+  background: linear-gradient(90deg, #4338ca, #16a34a);
+}
+
+.about-values-grid {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 32px;
+}
+
+.about-values-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  cursor: pointer;
+}
+
+.about-values-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  border-radius: 14px;
+  margin-bottom: 18px;
+  background: #eef1fd;
+  color: #4338ca;
+  transition: background-color 0.25s ease, color 0.25s ease, transform 0.25s ease;
+}
+
+.about-values-icon svg {
+  width: 26px;
+  height: 26px;
+}
+
+.about-values-card:hover .about-values-icon,
+.about-values-card:active .about-values-icon,
+.about-values-card:focus-within .about-values-icon {
+  background: #2f4be0;
+  color: #ffffff;
+  transform: translateY(-2px);
+}
+
+.about-values-card-title {
+  font-family: "Inter", sans-serif;
+  font-weight: 700;
+  color: #14141a;
+  font-size: 1.1rem;
+  margin: 0 0 10px;
+}
+
+.about-values-card-text {
+  font-family: "Inter", sans-serif;
+  color: #5a5c64;
+  font-size: 0.92rem;
+  line-height: 1.65;
+  margin: 0;
+  max-width: 260px;
+}
+
+/* ---------- Founder's Vision ---------- */
+.about-founder {
+  width: 100%;
+  padding: 90px 5%;
+  background-color: #ffffff;
+}
+
+.about-founder-title {
+  font-family: "Inter", sans-serif;
+  font-weight: 800;
+  color: #14141a;
+  font-size: clamp(1.9rem, 3.4vw, 2.6rem);
+  margin: 0 0 60px;
+  text-align: center;
+}
+
+.about-founder-inner {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 0.85fr 1.15fr;
+  align-items: start;
+  gap: 60px;
+}
+
+.about-founder-media {
+  position: relative;
+  width: 100%;
+}
+
+.about-founder-img,
+.about-founder-img-fallback {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  border-radius: 16px;
+  object-fit: cover;
+  display: block;
+  box-shadow: 0 20px 40px rgba(20, 20, 26, 0.12);
+}
+
+.about-founder-img-fallback {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f4f4f6;
+  border: 1px dashed #cfcfd6;
+  color: #8a8a92;
+  font-family: "Inter", sans-serif;
+  font-size: 0.9rem;
+  text-align: center;
+  padding: 20px;
+}
+
+.about-founder-badge {
+  position: absolute;
+  left: 24px;
+  bottom: -24px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 12px 18px;
+  border-radius: 12px;
+  background: linear-gradient(120deg, #2f4be0, #16a888);
+  box-shadow: 0 12px 24px rgba(20, 20, 26, 0.18);
+}
+
+.about-founder-badge-name {
+  font-family: "Inter", sans-serif;
+  font-weight: 700;
+  color: #ffffff;
+  font-size: 0.95rem;
+}
+
+.about-founder-badge-role {
+  font-family: "Inter", sans-serif;
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 0.8rem;
+}
+
+.about-founder-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+}
+
+.about-founder-pill {
+  font-family: "Inter", sans-serif;
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 16px;
+  border-radius: 999px;
+  background: #eef0fd;
+  color: #4338ca;
+  font-size: 0.85rem;
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+
+.about-founder-heading {
+  font-family: "Inter", sans-serif;
+  font-weight: 800;
+  color: #14141a;
+  font-size: clamp(1.5rem, 2.4vw, 1.9rem);
+  line-height: 1.3;
+  margin: 0 0 20px;
+}
+
+.about-founder-para {
+  font-family: "Inter", sans-serif;
+  color: #4a4c54;
+  font-size: 0.98rem;
+  line-height: 1.75;
+  margin: 0 0 16px;
+}
+
+.about-founder-mini-grid {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-top: 28px;
+}
+
+.about-founder-mini-card {
+  background: #eef3fd;
+  border-radius: 12px;
+  padding: 18px 20px;
+}
+
+.about-founder-mini-title {
+  font-family: "Inter", sans-serif;
+  font-weight: 700;
+  color: #14141a;
+  font-size: 0.95rem;
+  margin: 0 0 6px;
+}
+
+.about-founder-mini-text {
+  font-family: "Inter", sans-serif;
+  color: #5a5c64;
+  font-size: 0.85rem;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* ---------- Culture ---------- */
+.about-culture {
+  width: 100%;
+  padding: 90px 5%;
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.about-culture-label {
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+  color: #2f4be0;
+  font-size: 0.8rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+  text-align: center;
+}
+
+.about-culture-title {
+  font-family: "Inter", sans-serif;
+  font-weight: 800;
+  color: #14141a;
+  font-size: clamp(1.6rem, 3vw, 2.3rem);
+  margin: 0 0 16px;
+  text-align: center;
+}
+
+.about-culture-subtext {
+  font-family: "Inter", sans-serif;
+  color: #5a5c64;
+  font-size: 0.98rem;
+  line-height: 1.7;
+  max-width: 680px;
+  text-align: center;
+  margin: 0 0 56px;
+}
+
+.about-culture-grid {
+  width: 100%;
+  max-width: 1200px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 28px;
+}
+
+.about-culture-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  background: #fbfbfc;
+  border-radius: 14px;
+  padding-bottom: 24px;
+  box-shadow: 0 10px 26px rgba(20, 20, 26, 0.05);
+}
+
+.about-culture-media {
+  position: relative;
+  width: 100%;
+  margin-bottom: 32px;
+}
+
+.about-culture-img,
+.about-culture-img-fallback {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  border-radius: 14px 14px 0 0;
+  object-fit: cover;
+  display: block;
+}
+
+.about-culture-img-fallback {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f4f4f6;
+  border: 1px dashed #cfcfd6;
+  color: #8a8a92;
+  font-family: "Inter", sans-serif;
+  font-size: 0.8rem;
+  text-align: center;
+  padding: 16px;
+}
+
+.about-culture-icon {
+  position: absolute;
+  left: 50%;
+  bottom: -22px;
+  transform: translateX(-50%);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: #ffffff;
+  color: #2f4be0;
+  box-shadow: 0 8px 18px rgba(20, 20, 26, 0.15);
+}
+
+.about-culture-icon svg {
+  width: 20px;
+  height: 20px;
+}
+
+.about-culture-card-title {
+  font-family: "Inter", sans-serif;
+  font-weight: 700;
+  color: #14141a;
+  font-size: 1.02rem;
+  margin: 0 0 8px;
+  padding: 0 18px;
+}
+
+.about-culture-card-text {
+  font-family: "Inter", sans-serif;
+  color: #5a5c64;
+  font-size: 0.85rem;
+  line-height: 1.55;
+  margin: 0;
+  padding: 0 18px;
+}
+
+/* ---------- Achievements ---------- */
+.about-achievements {
+  width: 100%;
+  padding: 90px 5%;
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.about-achievements-title {
+  font-family: "Inter", sans-serif;
+  font-weight: 800;
+  color: #14141a;
+  font-size: clamp(1.9rem, 3.4vw, 2.6rem);
+  margin: 0 0 56px;
+  text-align: center;
+}
+
+.about-achievements-grid {
+  width: 100%;
+  max-width: 1200px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+
+.about-achievements-card {
+  text-align: left;
+  background: #ffffff;
+  border: 1px solid #eceef2;
+  border-radius: 16px;
+  padding: 32px 28px;
+  box-shadow: 0 10px 26px rgba(20, 20, 26, 0.05);
+}
+
+.about-achievements-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  margin-bottom: 18px;
+  background: linear-gradient(135deg, #1f9ad6, #16a888);
+  color: #ffffff;
+}
+
+.about-achievements-icon svg {
+  width: 22px;
+  height: 22px;
+}
+
+.about-achievements-card-title {
+  font-family: "Inter", sans-serif;
+  font-weight: 700;
+  color: #14141a;
+  font-size: 1.05rem;
+  margin: 0 0 10px;
+}
+
+.about-achievements-card-text {
+  font-family: "Inter", sans-serif;
+  color: #5a5c64;
+  font-size: 0.92rem;
+  line-height: 1.65;
+  margin: 0;
+}
+
+/* ---------- Stats Bar (full-width gradient, 4 items) ---------- */
+.about-stats-wrap {
+  width: 100%;
+  padding: 0 0 90px;
+  background-color: #ffffff;
+}
+
+.about-stats-bar {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  align-items: center;
+  gap: 0;
+  /* keeps the 4 stats centered in a 1100px area while the gradient stays full width */
+  padding: 52px max(5%, calc((100% - 1100px) / 2));
+  background: linear-gradient(90deg, #3b5bdb 0%, #2f82c9 50%, #22c4a1 100%);
+}
+
+.about-stats-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0 12px;
+  min-width: 0;
+}
+
+.about-stats-value {
+  font-family: "Inter", sans-serif;
+  font-weight: 700;
+  color: #ffffff;
+  font-size: clamp(2rem, 3vw, 2.4rem);
+  line-height: 1.15;
+  margin-bottom: 10px;
+  font-variant-numeric: tabular-nums;
+}
+
+.about-stats-label {
+  font-family: "Inter", sans-serif;
+  font-weight: 500;
+  color: #ffffff;
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+/* ---------- CTA ---------- */
+.about-cta-wrap {
+  width: 100%;
+  padding: 0 5% 90px;
+  background-color: #ffffff;
+  display: flex;
+  justify-content: center;
+}
+
+.about-cta-card {
+  width: 100%;
+  max-width: 1100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  background: linear-gradient(160deg, #f2f5fc, #eef1fb);
+  border-radius: 22px;
+  padding: 56px 6%;
+}
+
+.about-cta-title {
+  font-family: "Inter", sans-serif;
+  font-weight: 800;
+  color: #14141a;
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+  margin: 0 0 18px;
+}
+
+.about-cta-subtext {
+  font-family: "Inter", sans-serif;
+  color: #5a5c64;
+  font-size: 0.98rem;
+  line-height: 1.7;
+  max-width: 620px;
+  margin: 0 0 30px;
+}
+
+.about-cta-pills {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 14px;
+  margin-bottom: 30px;
+}
+
+.about-cta-pill {
+  font-family: "Inter", sans-serif;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 18px;
+  border-radius: 999px;
+  background: #dde3fb;
+  color: #2f4be0;
+  font-size: 0.88rem;
+  font-weight: 600;
+}
+
+.about-cta-pill svg {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+}
+
+.about-cta-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 14px;
+  margin-bottom: 26px;
+}
+
+.about-cta-btn {
+  font-family: "Inter", sans-serif;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 24px;
+  border-radius: 10px;
+  border: none;
+  font-size: 0.95rem;
+  font-weight: 700;
+  cursor: pointer;
+  color: #ffffff;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.about-cta-btn svg {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+}
+
+.about-cta-btn:hover {
+  transform: translateY(-2px);
+  opacity: 0.92;
+}
+
+.about-cta-btn-dark {
+  background: #0d1230;
+}
+
+.about-cta-btn-blue {
+  background: #2f4be0;
+}
+
+.about-cta-footnote {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  max-width: 620px;
+  color: #5a5c64;
+}
+
+.about-cta-footnote svg {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.about-cta-footnote span {
+  font-family: "Inter", sans-serif;
+  font-size: 0.85rem;
+  line-height: 1.6;
+  text-align: left;
+}
+
+/* ---------- Our Team ---------- */
+.about-team-wrap {
+  width: 100%;
+  padding: 90px 5%;
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  scroll-margin-top: 20px;
+}
+
+.about-team-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.about-team-badge svg {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  padding: 6px;
+  border-radius: 50%;
+  background: #4338ca;
+  color: #ffffff;
+}
+
+.about-team-badge span {
+  font-family: "Inter", sans-serif;
+  font-weight: 700;
+  color: #4338ca;
+  font-size: 0.85rem;
+  letter-spacing: 1px;
+}
+
+.about-team-subtext {
+  font-family: "Inter", sans-serif;
+  color: #5a5c64;
+  font-size: 0.98rem;
+  line-height: 1.7;
+  max-width: 780px;
+  text-align: center;
+  margin: 0 0 48px;
+}
+
+.about-team-carousel {
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.about-team-track {
+  flex: 1 1 auto;
+  display: flex;
+  gap: 24px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  padding-bottom: 4px;
+}
+
+.about-team-track::-webkit-scrollbar {
+  display: none;
+}
+
+.about-team-card {
+  position: relative;
+  flex: 0 0 auto;
+  width: calc((100% - 48px) / 3);
+  aspect-ratio: 3 / 4;
+  border-radius: 12px;
+  overflow: hidden;
+  scroll-snap-align: start;
+}
+
+.about-team-img,
+.about-team-img-fallback {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.about-team-img-fallback {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f4f4f6;
+  border: 1px dashed #cfcfd6;
+  color: #8a8a92;
+  font-family: "Inter", sans-serif;
+  font-size: 0.85rem;
+  text-align: center;
+  padding: 16px;
+}
+
+.about-team-overlay {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  padding: 14px 12px;
+  background: rgba(70, 65, 100, 0.82);
+  text-align: center;
+}
+
+.about-team-name {
+  font-family: "Inter", sans-serif;
+  font-weight: 700;
+  color: #ffffff;
+  font-size: 1rem;
+}
+
+.about-team-role {
+  font-family: "Inter", sans-serif;
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 0.82rem;
+}
+
+.about-team-arrow {
+  flex: 0 0 auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid #dcdde3;
+  background: #ffffff;
+  color: #14141a;
+  cursor: pointer;
+  box-shadow: 0 6px 16px rgba(20, 20, 26, 0.08);
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.about-team-arrow:hover {
+  background: #4338ca;
+  color: #ffffff;
+}
+
+.about-team-arrow svg {
+  width: 18px;
+  height: 18px;
+}
+
+.about-content {
+  padding: 60px 20px;
+}
+
+/* =====================================================
+   RESPONSIVE
+   ===================================================== */
+
+/* ---------- Laptop / small desktop ---------- */
+@media (max-width: 1200px) {
+  .about-hero-globe {
+    right: -4%;
+    width: min(52vw, 620px);
+  }
+}
+
+/* ---------- Tablet (portrait & landscape) ---------- */
+@media (max-width: 1024px) {
+  .about-hero {
+    padding: calc(var(--about-nav-offset) + 30px) 5% 70px;
+  }
+
+  .about-hero-inner {
+    gap: 28px;
+  }
+
+  .about-hero-globe {
+    right: -10%;
+    width: min(56vw, 560px);
+  }
+
+  .about-hero-item-icon {
+    width: 46px;
+    height: 46px;
+  }
+
+  .about-story {
+    padding: 70px 5%;
+  }
+
+  .about-story-inner {
+    gap: 44px;
+  }
+
+  .about-mv {
+    padding: 70px 5%;
+  }
+
+  .about-mv-card {
+    padding: 34px 28px;
+  }
+
+  .about-values {
+    padding: 70px 5%;
+  }
+
+  .about-values-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px 24px;
+  }
+
+  .about-founder {
+    padding: 70px 5%;
+  }
+
+  .about-founder-inner {
+    gap: 44px;
+  }
+
+  .about-culture {
+    padding: 70px 5%;
+  }
+
+  .about-culture-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px 24px;
+  }
+
+  .about-achievements {
+    padding: 70px 5%;
+  }
+
+  .about-achievements-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+
+  .about-stats-wrap {
+    padding: 0 0 70px;
+  }
+
+  .about-stats-bar {
+    padding: 44px 5%;
+  }
+
+  .about-stats-label {
+    font-size: 0.9rem;
+  }
+
+  .about-cta-wrap {
+    padding: 0 5% 70px;
+  }
+
+  .about-cta-card {
+    padding: 48px 6%;
+  }
+
+  .about-team-wrap {
+    padding: 70px 5%;
+  }
+
+  .about-team-card {
+    width: calc((100% - 24px) / 2);
+  }
+}
+
+/* ---------- Tablet (portrait) / large mobile ---------- */
+@media (max-width: 900px) {
+  .about-hero {
+    --about-nav-offset: 80px;
+    min-height: 0;
+    padding: calc(var(--about-nav-offset) + 28px) 6% 64px;
+  }
+
+  .about-hero-inner {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .about-hero-left {
+    align-items: flex-start;
+  }
+
+  .about-hero-text {
+    max-width: 620px;
+  }
+
+  .about-hero-right {
+    position: relative;
+    min-height: 0;
+    justify-content: center;
+    padding: 0;
+  }
+
+  /* on mobile the globe is placed relative to the card area,
+     sitting behind the card and peeking out on the right */
+  .about-hero-globe {
+    top: 50%;
+    right: -22%;
+    width: 78%;
+    max-width: 460px;
+    opacity: 0.7;
+    z-index: 0;
+  }
+
+  .about-hero-card {
+    max-width: 560px;
+  }
+}
+
+@media (max-width: 768px) {
+  .about-content {
+    padding: 44px 18px;
+  }
+
+  .about-story {
+    padding: 56px 6%;
+  }
+
+  .about-story-heading-wrap {
+    margin-bottom: 44px;
+  }
+
+  .about-story-inner {
+    grid-template-columns: 1fr;
+    gap: 36px;
+    text-align: center;
+  }
+
+  .about-story-text {
+    align-items: center;
+    text-align: center;
+  }
+
+  .about-story-para {
+    max-width: 560px;
+  }
+
+  .about-story-checklist {
+    justify-content: center;
+  }
+
+  .about-story-media {
+    order: -1;
+    width: 100%;
+    max-width: 480px;
+    margin: 0 auto;
+  }
+
+  .about-mv {
+    padding: 56px 6%;
+  }
+
+  .about-mv-heading-wrap {
+    margin-bottom: 44px;
+  }
+
+  .about-mv-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .about-values {
+    padding: 56px 6%;
+  }
+
+  .about-values-heading-wrap {
+    margin-bottom: 44px;
+  }
+
+  .about-values-grid {
+    gap: 36px 20px;
+  }
+
+  .about-founder {
+    padding: 56px 6%;
+  }
+
+  .about-founder-title {
+    margin-bottom: 44px;
+  }
+
+  .about-founder-inner {
+    grid-template-columns: 1fr;
+    gap: 56px 0;
+    text-align: center;
+  }
+
+  .about-founder-media {
+    max-width: 380px;
+    margin: 0 auto;
+  }
+
+  .about-founder-badge {
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -22px;
+  }
+
+  .about-founder-text {
+    align-items: center;
+    text-align: center;
+  }
+
+  .about-founder-para {
+    max-width: 560px;
+  }
+
+  .about-founder-mini-grid {
+    max-width: 480px;
+  }
+
+  .about-culture {
+    padding: 56px 6%;
+  }
+
+  .about-culture-subtext {
+    margin-bottom: 44px;
+  }
+
+  .about-achievements {
+    padding: 56px 6%;
+  }
+
+  .about-achievements-title {
+    margin-bottom: 44px;
+  }
+
+  /* Stats: 2 x 2 grid on phones / small tablets */
+  .about-stats-wrap {
+    padding: 0 0 56px;
+  }
+
+  .about-stats-bar {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 36px 12px;
+    padding: 40px 6%;
+  }
+
+  .about-stats-item {
+    padding: 0 6px;
+  }
+
+  .about-stats-value {
+    font-size: clamp(1.9rem, 7vw, 2.3rem);
+    margin-bottom: 8px;
+  }
+
+  .about-stats-label {
+    font-size: 0.9rem;
+  }
+
+  .about-cta-wrap {
+    padding: 0 6% 56px;
+  }
+
+  .about-cta-card {
+    padding: 40px 6%;
+    border-radius: 18px;
+  }
+
+  .about-cta-buttons {
+    gap: 12px;
+  }
+
+  .about-cta-btn {
+    padding: 13px 20px;
+    font-size: 0.9rem;
+  }
+
+  .about-team-wrap {
+    padding: 56px 6%;
+  }
+
+  .about-team-subtext {
+    margin-bottom: 36px;
+  }
+
+  .about-team-card {
+    width: calc((100% - 24px) / 2);
+  }
+
+  .about-team-arrow {
+    width: 36px;
+    height: 36px;
+  }
+}
+
+/* ---------- Mobile ---------- */
+@media (max-width: 480px) {
+  .about-hero {
+    --about-nav-offset: 72px;
+    padding: calc(var(--about-nav-offset) + 24px) 20px 52px;
+  }
+
+  .about-hero-inner {
+    gap: 32px;
+  }
+
+  .about-hero-badge {
+    font-size: 0.75rem;
+    padding: 7px 14px;
+    margin-bottom: 18px;
+  }
+
+  .about-hero-title {
+    font-size: clamp(2rem, 9.5vw, 2.5rem);
+    margin-bottom: 16px;
+  }
+
+  .about-hero-text {
+    font-size: 0.95rem;
+    margin-bottom: 26px;
+  }
+
+  .about-hero-actions {
+    flex-direction: column;
+    width: 100%;
+    gap: 12px;
+  }
+
+  .about-hero-btn {
+    width: 100%;
+    padding: 15px 20px;
+    font-size: 0.95rem;
+  }
+
+  .about-hero-globe {
+    top: 38%;
+    right: -38%;
+    width: 110%;
+    opacity: 0.55;
+  }
+
+  .about-hero-card {
+    padding: 16px;
+    border-radius: 20px;
+  }
+
+  .about-hero-brand {
+    padding: 2px 4px 14px;
+    gap: 12px;
+  }
+
+  .about-hero-logo {
+    width: 42px;
+    height: 46px;
+  }
+
+  .about-hero-brand-name {
+    font-size: 1.05rem;
+  }
+
+  .about-hero-brand-sub {
+    font-size: 0.7rem;
+    letter-spacing: 0.32em;
+  }
+
+  .about-hero-item {
+    gap: 12px;
+    padding: 8px 10px 8px 8px;
+  }
+
+  .about-hero-item-icon {
+    width: 42px;
+    height: 42px;
+    border-radius: 10px;
+  }
+
+  .about-hero-item-icon svg {
+    width: 22px;
+    height: 22px;
+  }
+
+  .about-hero-item-title {
+    font-size: 0.92rem;
+  }
+
+  .about-hero-item-desc {
+    font-size: 0.78rem;
+  }
+
+  .about-content {
+    padding: 32px 16px;
+  }
+
+  .about-story {
+    padding: 44px 6%;
+  }
+
+  .about-story-heading-wrap {
+    margin-bottom: 34px;
+  }
+
+  .about-story-heading {
+    margin-bottom: 16px;
+  }
+
+  .about-story-para {
+    font-size: 0.95rem;
+  }
+
+  .about-story-checklist {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .about-story-media-shadow {
+    inset: 12px -12px -12px 12px;
+  }
+
+  .about-mv {
+    padding: 44px 6%;
+  }
+
+  .about-mv-heading-wrap {
+    margin-bottom: 34px;
+  }
+
+  .about-mv-card {
+    padding: 28px 22px;
+    border-radius: 16px;
+  }
+
+  .about-mv-card-title {
+    font-size: 1.15rem;
+  }
+
+  .about-mv-card-text {
+    font-size: 0.95rem;
+  }
+
+  .about-values {
+    padding: 44px 6%;
+  }
+
+  .about-values-heading-wrap {
+    margin-bottom: 34px;
+  }
+
+  .about-values-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .about-values-card-text {
+    max-width: 320px;
+  }
+
+  .about-founder {
+    padding: 44px 6%;
+  }
+
+  .about-founder-title {
+    margin-bottom: 34px;
+  }
+
+  .about-founder-inner {
+    gap: 44px 0;
+  }
+
+  .about-founder-heading {
+    margin-bottom: 16px;
+  }
+
+  .about-founder-para {
+    font-size: 0.92rem;
+  }
+
+  .about-founder-mini-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .about-founder-badge {
+    padding: 10px 16px;
+  }
+
+  .about-culture {
+    padding: 44px 6%;
+  }
+
+  .about-culture-subtext {
+    margin-bottom: 34px;
+  }
+
+  .about-culture-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    max-width: 380px;
+  }
+
+  .about-culture-media {
+    margin-bottom: 28px;
+  }
+
+  .about-achievements {
+    padding: 44px 6%;
+  }
+
+  .about-achievements-title {
+    margin-bottom: 34px;
+  }
+
+  .about-achievements-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .about-achievements-card {
+    padding: 26px 22px;
+  }
+
+  /* Stats: stay 2 x 2 on phones, slightly tighter */
+  .about-stats-wrap {
+    padding: 0 0 44px;
+  }
+
+  .about-stats-bar {
+    gap: 30px 8px;
+    padding: 34px 5%;
+  }
+
+  .about-stats-value {
+    font-size: 1.9rem;
+  }
+
+  .about-stats-label {
+    font-size: 0.82rem;
+  }
+
+  .about-cta-wrap {
+    padding: 0 6% 44px;
+  }
+
+  .about-cta-card {
+    padding: 34px 6%;
+  }
+
+  .about-cta-pills {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+
+  .about-cta-pill {
+    width: 100%;
+    max-width: 320px;
+    justify-content: center;
+  }
+
+  .about-cta-buttons {
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+  }
+
+  .about-cta-btn {
+    justify-content: center;
+    width: 100%;
+  }
+
+  .about-team-wrap {
+    padding: 44px 6%;
+  }
+
+  .about-team-subtext {
+    margin-bottom: 28px;
+  }
+
+  .about-team-carousel {
+    gap: 10px;
+  }
+
+  .about-team-card {
+    width: 82%;
+  }
+
+  .about-team-arrow {
+    width: 34px;
+    height: 34px;
+  }
+
+  .about-team-arrow svg {
+    width: 16px;
+    height: 16px;
+  }
+}
+
+/* ---------- Small mobile ---------- */
+@media (max-width: 360px) {
+  .about-hero {
+    padding: calc(var(--about-nav-offset) + 20px) 16px 44px;
+  }
+
+  .about-hero-title {
+    font-size: 1.85rem;
+  }
+
+  .about-hero-brand-sub {
+    letter-spacing: 0.26em;
+  }
+
+  .about-story-badge {
+    font-size: 0.78rem;
+    padding: 6px 12px;
+  }
+
+  .about-mv-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+  }
+
+  .about-mv-icon svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  .about-values-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+  }
+
+  .about-values-icon svg {
+    width: 22px;
+    height: 22px;
+  }
+
+  .about-founder-heading {
+    font-size: 1.3rem;
+  }
+
+  .about-founder-badge-name {
+    font-size: 0.88rem;
+  }
+
+  .about-founder-badge-role {
+    font-size: 0.75rem;
+  }
+
+  .about-culture-icon {
+    width: 38px;
+    height: 38px;
+  }
+
+  .about-culture-icon svg {
+    width: 17px;
+    height: 17px;
+  }
+
+  .about-achievements-icon {
+    width: 42px;
+    height: 42px;
+  }
+
+  .about-achievements-icon svg {
+    width: 19px;
+    height: 19px;
+  }
+
+  .about-stats-value {
+    font-size: 1.6rem;
+  }
+
+  .about-stats-label {
+    font-size: 0.78rem;
+  }
+
+  .about-cta-title {
+    font-size: 1.4rem;
+  }
+
+  .about-cta-footnote span {
+    font-size: 0.8rem;
+  }
+
+  .about-team-card {
+    width: 88%;
+  }
+
+  .about-team-name {
+    font-size: 0.92rem;
+  }
+
+  .about-team-role {
+    font-size: 0.78rem;
+  }
+}
+
+/* ---------- Reduced motion ---------- */
+@media (prefers-reduced-motion: reduce) {
+  .about-hero-btn,
+  .about-hero-item {
+    transition: none;
+  }
+}
+
+
+.about-page {
+  font-family: 'Inter', Arial, sans-serif;
+  color: #555555;
+  font-size: 14.5px;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+.about-page h1,
+.about-page h2 {
+  font-family: 'DM Serif Display', Georgia, serif;
+  font-weight: 400;
+  color: #111111;
+  line-height: 1.2;
+}
+
+.about-page h3,
+.about-page h4,
+.about-page h5,
+.about-page button,
+.about-page a {
+  font-family: 'Inter', Arial, sans-serif;
+}
+
+.about-page p {
+  font-family: 'Inter', Arial, sans-serif;
+  color: #555555;
+  font-size: 14.5px;
+  font-weight: 400;
+  line-height: 1.75;
+  margin: 0 0 16px;
+}
+
+/* Hero stays bold and modern, as in the original blue technology banner. */
+.about-page .about-hero-title {
+  font-family: 'DM Serif Display', Georgia, serif;
+  font-weight: 400;
+  line-height: 1.15;
+  letter-spacing: -0.35px;
+}
+
+.about-page .about-hero-text {
+  font-family: 'Inter', Arial, sans-serif;
+  font-size: clamp(14px, 1.1vw, 16px);
+  line-height: 1.75;
+}
+
+/* Our Story — refined serif headline and readable paragraph styling. */
+.about-page .about-story-heading {
+  font-family: 'DM Serif Display', Georgia, serif;
+  font-weight: 400;
+  font-size: clamp(30px, 3.2vw, 42px);
+  line-height: 1.2;
+  letter-spacing: -0.35px;
+  color: #111111;
+}
+
+.about-page .about-story-para {
+  font-family: 'Inter', Arial, sans-serif;
+  color: #555555;
+  font-size: 14.5px;
+  line-height: 1.8;
+}
+
+.about-page .about-story-checklist li {
+  font-family: 'Inter', Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+/* Section titles use the same display font consistently. */
+.about-page .about-story-title,
+.about-page .about-mv-title,
+.about-page .about-values-title,
+.about-page .about-founder-title,
+.about-page .about-achievements-title,
+.about-page .about-team-title,
+.about-page .about-cta-title {
+  font-family: 'DM Serif Display', Georgia, serif;
+  font-weight: 400;
+  line-height: 1.2;
+  letter-spacing: -0.25px;
+}
+
+/* Mission and vision cards. */
+.about-page .about-mv-card-title {
+  font-family: 'DM Serif Display', Georgia, serif;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 1.35;
+  color: #111111;
+}
+
+.about-page .about-mv-card-text {
+  font-family: 'Inter', Arial, sans-serif;
+  color: #555555;
+  font-size: 14.5px;
+  line-height: 1.8;
+}
+
+/* Remaining sections keep a clean sans-serif reading experience. */
+.about-page .about-values-card-title,
+.about-page .about-founder-heading,
+.about-page .about-founder-mini-title,
+.about-page .about-culture-card-title,
+.about-page .about-achievements-card-title,
+.about-page .about-team-name {
+  font-family: 'Inter', Arial, sans-serif;
+  font-weight: 700;
+}
+
+.about-page .about-values-card-text,
+.about-page .about-founder-para,
+.about-page .about-founder-mini-text,
+.about-page .about-culture-subtext,
+.about-page .about-culture-card-text,
+.about-page .about-achievements-card-text,
+.about-page .about-team-role {
+  font-family: 'Inter', Arial, sans-serif;
+  color: #555555;
+  font-size: 14px;
+  line-height: 1.75;
+}
+
+.about-page .about-hero-badge,
+.about-page .about-story-badge,
+.about-page .about-founder-pill,
+.about-page .about-culture-label,
+.about-page .about-hero-brand-name,
+.about-page .about-hero-brand-sub,
+.about-page .about-hero-item-title,
+.about-page .about-hero-item-desc {
+  font-family: 'Inter', Arial, sans-serif;
+}
+
+@media (max-width: 768px) {
+  .about-page {
+    font-size: 14px;
+  }
+
+  .about-page .about-hero-title {
+    font-size: clamp(30px, 8vw, 40px);
+    line-height: 1.18;
+  }
+
+  .about-page .about-story-heading {
+    font-size: clamp(28px, 7vw, 36px);
+    line-height: 1.22;
+  }
+
+  .about-page .about-story-para,
+  .about-page .about-mv-card-text {
+    font-size: 14px;
+    line-height: 1.75;
+  }
+
+  .about-page .about-story-title,
+  .about-page .about-mv-title,
+  .about-page .about-values-title,
+  .about-page .about-founder-title,
+  .about-page .about-achievements-title,
+  .about-page .about-team-title,
+  .about-page .about-cta-title {
+    font-size: clamp(26px, 6.5vw, 34px);
+  }
+}

@@ -1,0 +1,696 @@
+/* =====================================================
+   JOB ADMIN
+===================================================== */
+
+.job-admin {
+  width: 100%;
+  min-height: 100vh;
+
+  padding: 20px 14px;
+
+  background: #f5f7fa;
+
+  box-sizing: border-box;
+}
+
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+.job-header {
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-bottom: 26px;
+
+  box-sizing: border-box;
+}
+
+.job-header h1 {
+  margin: 0;
+
+  color: #172033;
+
+  font-family: "Segoe UI", Arial, sans-serif;
+
+  font-size: 29px;
+  font-weight: 700;
+}
+
+
+/* =====================================================
+   ADD JOB BUTTON
+===================================================== */
+
+.job-add-btn {
+  border: none;
+  outline: none;
+
+  padding: 12px 22px;
+
+  border-radius: 9px;
+
+  background: #1769f5;
+  color: #ffffff;
+
+  font-family: "Segoe UI", Arial, sans-serif;
+
+  font-size: 14px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition: 0.2s ease;
+}
+
+.job-add-btn:hover {
+  background: #0d5de0;
+
+  transform: translateY(-1px);
+}
+
+
+/* =====================================================
+   FORM CARD
+===================================================== */
+
+.job-form-card {
+  width: 100%;
+  max-width: 720px;
+
+  padding: 28px;
+
+  margin-bottom: 30px;
+
+  background: #ffffff;
+
+  border-radius: 12px;
+
+  box-shadow:
+    0 5px 18px rgba(0, 0, 0, 0.07);
+
+  box-sizing: border-box;
+}
+
+
+/* =====================================================
+   FIELD
+===================================================== */
+
+.job-field {
+  width: 100%;
+
+  margin-bottom: 20px;
+
+  box-sizing: border-box;
+}
+
+
+/* =====================================================
+   LABEL
+===================================================== */
+
+.job-label {
+  display: block;
+
+  margin-bottom: 8px;
+
+  color: #273142;
+
+  font-family: "Segoe UI", Arial, sans-serif;
+
+  font-size: 14px;
+  font-weight: 600;
+}
+
+
+/* =====================================================
+   INPUT
+===================================================== */
+
+.job-input {
+  width: 100%;
+  height: 50px;
+
+  padding: 0 16px;
+
+  border: 1px solid #d9dfe7;
+  border-radius: 8px;
+
+  outline: none;
+
+  background: #ffffff;
+  color: #273142;
+
+  font-family: "Segoe UI", Arial, sans-serif;
+
+  font-size: 15px;
+
+  box-sizing: border-box;
+
+  transition: 0.2s ease;
+}
+
+.job-input::placeholder {
+  color: #7b8491;
+}
+
+.job-input:focus {
+  border-color: #1769f5;
+
+  box-shadow:
+    0 0 0 3px rgba(23, 105, 245, 0.08);
+}
+
+
+/* =====================================================
+   SELECT
+===================================================== */
+
+.job-select {
+  width: 100%;
+  height: 50px;
+
+  padding: 0 15px;
+
+  border: 1px solid #d9dfe7;
+  border-radius: 8px;
+
+  outline: none;
+
+  background: #ffffff;
+  color: #273142;
+
+  font-family: "Segoe UI", Arial, sans-serif;
+
+  font-size: 15px;
+
+  cursor: pointer;
+
+  box-sizing: border-box;
+
+  transition: 0.2s ease;
+}
+
+.job-select:focus {
+  border-color: #1769f5;
+
+  box-shadow:
+    0 0 0 3px rgba(23, 105, 245, 0.08);
+}
+
+
+/* =====================================================
+   TEXTAREA
+===================================================== */
+
+.job-textarea {
+  width: 100%;
+  min-height: 130px;
+
+  padding: 14px 16px;
+
+  border: 1px solid #d9dfe7;
+  border-radius: 8px;
+
+  outline: none;
+
+  resize: vertical;
+
+  background: #ffffff;
+  color: #273142;
+
+  font-family: "Segoe UI", Arial, sans-serif;
+
+  font-size: 15px;
+
+  line-height: 1.6;
+
+  box-sizing: border-box;
+
+  transition: 0.2s ease;
+}
+
+.job-textarea::placeholder {
+  color: #7b8491;
+}
+
+.job-textarea:focus {
+  border-color: #1769f5;
+
+  box-shadow:
+    0 0 0 3px rgba(23, 105, 245, 0.08);
+}
+
+
+/* =====================================================
+   DATE + TIME
+===================================================== */
+
+.job-date-time-row {
+  width: 100%;
+
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  gap: 18px;
+
+  box-sizing: border-box;
+}
+
+.job-date-time-row .job-field {
+  min-width: 0;
+}
+
+
+/* =====================================================
+   FORM ACTIONS
+===================================================== */
+
+.job-form-actions {
+  display: flex;
+
+  align-items: center;
+
+  gap: 14px;
+
+  margin-top: 26px;
+}
+
+.job-save-btn,
+.job-cancel-btn {
+  min-width: 110px;
+
+  padding: 12px 24px;
+
+  border: none;
+
+  border-radius: 8px;
+
+  color: #ffffff;
+
+  font-family: "Segoe UI", Arial, sans-serif;
+
+  font-size: 14px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition: 0.2s ease;
+}
+
+
+/* SAVE */
+
+.job-save-btn {
+  background: #168f5a;
+}
+
+.job-save-btn:hover {
+  background: #117b4d;
+}
+
+
+/* CANCEL */
+
+.job-cancel-btn {
+  background: #df3045;
+}
+
+.job-cancel-btn:hover {
+  background: #c92338;
+}
+
+
+/* =====================================================
+   TABLE
+===================================================== */
+
+.job-table-wrapper {
+  width: 100%;
+
+  background: #ffffff;
+
+  border-radius: 12px;
+
+  overflow-x: auto;
+
+  box-shadow:
+    0 5px 18px rgba(0, 0, 0, 0.07);
+}
+
+.job-table {
+  width: 100%;
+
+  min-width: 1500px;
+
+  border-collapse: collapse;
+
+  table-layout: fixed;
+}
+
+
+/* =====================================================
+   TABLE HEADER
+===================================================== */
+
+.job-table thead {
+  background: #1769f5;
+}
+
+.job-table th {
+  padding: 17px 12px;
+
+  color: #ffffff;
+
+  font-family: "Segoe UI", Arial, sans-serif;
+
+  font-size: 14px;
+  font-weight: 700;
+
+  text-align: center;
+
+  white-space: nowrap;
+}
+
+
+/* =====================================================
+   COLUMN WIDTHS
+===================================================== */
+
+.job-table th:nth-child(1) {
+  width: 4%;
+}
+
+.job-table th:nth-child(2) {
+  width: 12%;
+}
+
+.job-table th:nth-child(3) {
+  width: 11%;
+}
+
+.job-table th:nth-child(4) {
+  width: 11%;
+}
+
+.job-table th:nth-child(5) {
+  width: 18%;
+}
+
+.job-table th:nth-child(6) {
+  width: 9%;
+}
+
+.job-table th:nth-child(7) {
+  width: 18%;
+}
+
+.job-table th:nth-child(8) {
+  width: 8%;
+}
+
+.job-table th:nth-child(9) {
+  width: 7%;
+}
+
+.job-table th:nth-child(10) {
+  width: 9%;
+}
+
+.job-table th:nth-child(11) {
+  width: 9%;
+}
+
+.job-table th:nth-child(12) {
+  width: 8%;
+}
+
+
+/* =====================================================
+   TABLE ROW
+===================================================== */
+
+.job-table tbody tr {
+  border-bottom: 1px solid #e3e7ed;
+
+  transition: 0.2s ease;
+}
+
+.job-table tbody tr:hover {
+  background: #fafcff;
+}
+
+.job-table tbody tr:last-child {
+  border-bottom: none;
+}
+
+
+/* =====================================================
+   TABLE CELL
+===================================================== */
+
+.job-table td {
+  padding: 22px 12px;
+
+  color: #172033;
+
+  font-family: "Segoe UI", Arial, sans-serif;
+
+  font-size: 14px;
+
+  text-align: center;
+
+  vertical-align: middle;
+
+  word-break: break-word;
+}
+
+
+/* =====================================================
+   DESCRIPTION
+===================================================== */
+
+.job-description {
+  max-width: 250px;
+
+  margin: 0 auto;
+
+  line-height: 1.55;
+
+  word-break: break-word;
+}
+
+
+/* =====================================================
+   REQUIREMENT
+===================================================== */
+
+.job-requirement {
+  max-width: 250px;
+
+  margin: 0 auto;
+
+  line-height: 1.55;
+
+  word-break: break-word;
+}
+
+
+/* =====================================================
+   DELETE
+===================================================== */
+
+.job-delete-btn {
+  border: none;
+  outline: none;
+
+  padding: 10px 20px;
+
+  border-radius: 5px;
+
+  background: #ed1b45;
+
+  color: #ffffff;
+
+  font-size: 13px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition: 0.2s ease;
+}
+
+.job-delete-btn:hover {
+  background: #cf173d;
+
+  transform: translateY(-1px);
+}
+
+
+/* =====================================================
+   PAGINATION
+===================================================== */
+
+.job-pagination {
+  width: 100%;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 8px;
+
+  padding: 20px;
+
+  border-top: 1px solid #e3e7ed;
+
+  box-sizing: border-box;
+}
+
+.job-page-btn {
+  min-width: 40px;
+  height: 40px;
+
+  padding: 0 12px;
+
+  border: 1px solid #d5dce6;
+
+  border-radius: 6px;
+
+  background: #ffffff;
+
+  color: #172033;
+
+  font-family: "Segoe UI", Arial, sans-serif;
+
+  font-size: 14px;
+
+  cursor: pointer;
+
+  transition: 0.2s ease;
+}
+
+.job-page-btn:hover:not(:disabled) {
+  background: #f0f5ff;
+
+  border-color: #1769f5;
+}
+
+.job-page-btn.active {
+  background: #1769f5;
+
+  color: #ffffff;
+
+  border-color: #1769f5;
+
+  font-weight: 700;
+}
+
+.job-page-btn:disabled {
+  background: #f1f3f5;
+
+  color: #a0a8b4;
+
+  border-color: #e0e4e9;
+
+  cursor: not-allowed;
+}
+
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 900px) {
+
+  .job-admin {
+    padding: 18px 12px;
+  }
+
+  .job-form-card {
+    max-width: 100%;
+
+    padding: 24px;
+  }
+
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 600px) {
+
+  .job-header {
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 15px;
+  }
+
+  .job-header h1 {
+    font-size: 24px;
+  }
+
+  .job-add-btn {
+    width: 100%;
+  }
+
+  .job-form-card {
+    padding: 18px;
+  }
+
+  .job-date-time-row {
+    grid-template-columns: 1fr;
+
+    gap: 0;
+  }
+
+  .job-form-actions {
+    flex-direction: column;
+
+    width: 100%;
+  }
+
+  .job-save-btn,
+  .job-cancel-btn {
+    width: 100%;
+  }
+
+  .job-pagination {
+    flex-wrap: wrap;
+
+    padding: 16px 10px;
+  }
+
+}
+
+
+/* =====================================================
+   SMALL MOBILE
+===================================================== */
+
+@media (max-width: 480px) {
+
+  .job-admin {
+    padding: 14px 10px;
+  }
+
+  .job-header h1 {
+    font-size: 22px;
+  }
+
+  .job-form-card {
+    padding: 16px;
+  }
+
+}

@@ -1,0 +1,860 @@
+/* =====================================================
+   APP DEVELOPMENT ADMIN
+===================================================== */
+
+.appdevlop-admin {
+  width: 100%;
+  min-height: 100vh;
+
+  padding: 20px 14px;
+
+  background: #f5f7fa;
+
+  box-sizing: border-box;
+
+  font-family: "Segoe UI", Arial, sans-serif;
+}
+
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+.appdevlop-header {
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-bottom: 28px;
+}
+
+.appdevlop-header h1 {
+  margin: 0;
+
+  color: #172033;
+
+  font-size: 28px;
+  font-weight: 700;
+}
+
+
+/* =====================================================
+   ADD IMAGE BUTTON
+===================================================== */
+
+.appdevlop-add-btn {
+  border: none;
+  outline: none;
+
+  background: #1769f5;
+  color: #ffffff;
+
+  padding: 12px 22px;
+
+  border-radius: 9px;
+
+  font-family: "Segoe UI", Arial, sans-serif;
+
+  font-size: 14px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition: 0.2s ease;
+}
+
+.appdevlop-add-btn:hover {
+  background: #0d5de0;
+
+  transform: translateY(-1px);
+}
+
+
+/* =====================================================
+   FORM CARD
+===================================================== */
+
+.appdevlop-form-card {
+  width: 100%;
+  max-width: 700px;
+
+  padding: 30px;
+
+  margin-bottom: 30px;
+
+  background: #ffffff;
+
+  border-radius: 10px;
+
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.07);
+
+  box-sizing: border-box;
+}
+
+
+/* =====================================================
+   FIELD
+===================================================== */
+
+.appdevlop-field {
+  width: 100%;
+
+  margin-bottom: 20px;
+}
+
+
+/* =====================================================
+   LABEL
+===================================================== */
+
+.appdevlop-label {
+  display: block;
+
+  margin-bottom: 8px;
+
+  color: #273142;
+
+  font-size: 14px;
+  font-weight: 600;
+}
+
+
+/* =====================================================
+   IMAGE UPLOAD
+===================================================== */
+
+.appdevlop-upload-box {
+  width: 100%;
+  min-height: 180px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 2px dashed #d5d5d5;
+
+  border-radius: 8px;
+
+  background: #fafafa;
+
+  overflow: hidden;
+
+  cursor: pointer;
+
+  box-sizing: border-box;
+
+  transition: 0.2s ease;
+}
+
+.appdevlop-upload-box:hover {
+  border-color: #1769f5;
+
+  background: #f8fbff;
+}
+
+.appdevlop-upload-box input {
+  display: none;
+}
+
+
+/* =====================================================
+   UPLOAD PLACEHOLDER
+===================================================== */
+
+.appdevlop-upload-placeholder {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 10px;
+
+  color: #687386;
+
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.appdevlop-upload-icon {
+  width: 32px;
+  height: 32px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: #1769f5;
+
+  color: #ffffff;
+
+  font-size: 21px;
+}
+
+
+/* =====================================================
+   IMAGE PREVIEW
+===================================================== */
+
+.appdevlop-preview-wrapper {
+  position: relative;
+
+  width: 100%;
+  height: 200px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #000000;
+}
+
+.appdevlop-image-preview {
+  width: 100%;
+  height: 200px;
+
+  display: block;
+
+  object-fit: contain;
+}
+
+
+/* =====================================================
+   CHANGE IMAGE
+===================================================== */
+
+.appdevlop-change-text {
+  position: absolute;
+
+  left: 50%;
+  bottom: 10px;
+
+  transform: translateX(-50%);
+
+  padding: 7px 14px;
+
+  border-radius: 5px;
+
+  background: rgba(0, 0, 0, 0.7);
+
+  color: #ffffff;
+
+  font-size: 12px;
+}
+
+
+/* =====================================================
+   INPUT
+===================================================== */
+
+.appdevlop-input {
+  width: 100%;
+  height: 50px;
+
+  padding: 0 16px;
+
+  border: 1px solid #d9d9d9;
+
+  border-radius: 8px;
+
+  outline: none;
+
+  color: #273142;
+
+  background: #ffffff;
+
+  font-family: "Segoe UI", Arial, sans-serif;
+
+  font-size: 15px;
+
+  box-sizing: border-box;
+
+  transition: 0.2s ease;
+}
+
+.appdevlop-input::placeholder {
+  color: #7b8491;
+}
+
+.appdevlop-input:focus {
+  border-color: #1769f5;
+
+  box-shadow:
+    0 0 0 3px
+    rgba(23, 105, 245, 0.08);
+}
+
+
+/* =====================================================
+   TEXTAREA
+===================================================== */
+
+.appdevlop-textarea {
+  width: 100%;
+  min-height: 130px;
+
+  padding: 14px 16px;
+
+  border: 1px solid #d9d9d9;
+
+  border-radius: 8px;
+
+  outline: none;
+
+  resize: vertical;
+
+  color: #273142;
+
+  background: #ffffff;
+
+  font-family: "Segoe UI", Arial, sans-serif;
+
+  font-size: 15px;
+
+  line-height: 1.6;
+
+  box-sizing: border-box;
+
+  transition: 0.2s ease;
+}
+
+.appdevlop-textarea::placeholder {
+  color: #7b8491;
+}
+
+.appdevlop-textarea:focus {
+  border-color: #1769f5;
+
+  box-shadow:
+    0 0 0 3px
+    rgba(23, 105, 245, 0.08);
+}
+
+
+/* =====================================================
+   CATEGORY SELECT
+===================================================== */
+
+.appdevlop-select {
+  width: 100%;
+  height: 50px;
+
+  padding: 0 15px;
+
+  border: 1px solid #d9d9d9;
+
+  border-radius: 8px;
+
+  outline: none;
+
+  background: #ffffff;
+
+  color: #273142;
+
+  font-family: "Segoe UI", Arial, sans-serif;
+
+  font-size: 15px;
+
+  cursor: pointer;
+
+  box-sizing: border-box;
+
+  transition: 0.2s ease;
+}
+
+.appdevlop-select:focus {
+  border-color: #1769f5;
+
+  box-shadow:
+    0 0 0 3px
+    rgba(23, 105, 245, 0.08);
+}
+
+
+/* =====================================================
+   FORM ACTIONS
+===================================================== */
+
+.appdevlop-form-actions {
+  display: flex;
+
+  align-items: center;
+
+  gap: 15px;
+
+  margin-top: 28px;
+}
+
+
+/* =====================================================
+   SAVE BUTTON
+===================================================== */
+
+.appdevlop-save-btn {
+  min-width: 110px;
+
+  padding: 12px 25px;
+
+  border: none;
+
+  border-radius: 8px;
+
+  background: #168f5a;
+
+  color: #ffffff;
+
+  font-family: "Segoe UI", Arial, sans-serif;
+
+  font-size: 14px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition: 0.2s ease;
+}
+
+.appdevlop-save-btn:hover {
+  background: #117b4d;
+}
+
+
+/* =====================================================
+   CANCEL BUTTON
+===================================================== */
+
+.appdevlop-cancel-btn {
+  min-width: 110px;
+
+  padding: 12px 25px;
+
+  border: none;
+
+  border-radius: 8px;
+
+  background: #df3045;
+
+  color: #ffffff;
+
+  font-family: "Segoe UI", Arial, sans-serif;
+
+  font-size: 14px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition: 0.2s ease;
+}
+
+.appdevlop-cancel-btn:hover {
+  background: #c92338;
+}
+
+
+/* =====================================================
+   TABLE WRAPPER
+===================================================== */
+
+.appdevlop-table-wrapper {
+  width: 100%;
+
+  background: #ffffff;
+
+  border-radius: 12px;
+
+  overflow-x: auto;
+
+  box-shadow:
+    0 5px 18px
+    rgba(0, 0, 0, 0.07);
+}
+
+
+/* =====================================================
+   TABLE
+===================================================== */
+
+.appdevlop-table {
+  width: 100%;
+
+  min-width: 1250px;
+
+  border-collapse: collapse;
+
+  table-layout: fixed;
+}
+
+
+/* =====================================================
+   TABLE HEADER
+===================================================== */
+
+.appdevlop-table thead {
+  background: #1769f5;
+}
+
+.appdevlop-table th {
+  padding: 17px 18px;
+
+  color: #ffffff;
+
+  font-size: 14px;
+  font-weight: 700;
+
+  text-align: center;
+
+  white-space: nowrap;
+}
+
+
+/* =====================================================
+   COLUMN WIDTHS
+===================================================== */
+
+.appdevlop-table th:nth-child(1) {
+  width: 5%;
+}
+
+.appdevlop-table th:nth-child(2) {
+  width: 12%;
+}
+
+.appdevlop-table th:nth-child(3) {
+  width: 9%;
+}
+
+.appdevlop-table th:nth-child(4) {
+  width: 14%;
+}
+
+.appdevlop-table th:nth-child(5) {
+  width: 23%;
+}
+
+.appdevlop-table th:nth-child(6) {
+  width: 16%;
+}
+
+.appdevlop-table th:nth-child(7) {
+  width: 10%;
+}
+
+.appdevlop-table th:nth-child(8) {
+  width: 11%;
+}
+
+
+/* =====================================================
+   TABLE ROW
+===================================================== */
+
+.appdevlop-table tbody tr {
+  border-bottom: 1px solid #e6e9ee;
+
+  transition: 0.2s ease;
+}
+
+.appdevlop-table tbody tr:hover {
+  background: #fafcff;
+}
+
+.appdevlop-table tbody tr:last-child {
+  border-bottom: none;
+}
+
+
+/* =====================================================
+   TABLE CELL
+===================================================== */
+
+.appdevlop-table td {
+  padding: 22px 18px;
+
+  color: #273142;
+
+  font-size: 14px;
+
+  text-align: center;
+
+  vertical-align: middle;
+}
+
+
+/* =====================================================
+   TABLE IMAGE
+===================================================== */
+
+.appdevlop-table-image {
+  width: 90px;
+  height: 70px;
+
+  display: block;
+
+  margin: 0 auto;
+
+  object-fit: cover;
+
+  border-radius: 8px;
+
+  border: 1px solid #e2e5e9;
+}
+
+
+/* =====================================================
+   TYPE
+===================================================== */
+
+.appdevlop-type {
+  font-weight: 500;
+}
+
+
+/* =====================================================
+   NAME
+===================================================== */
+
+.appdevlop-name {
+  font-size: 14px;
+
+  line-height: 1.5;
+
+  word-break: break-word;
+}
+
+
+/* =====================================================
+   DESCRIPTION
+===================================================== */
+
+.appdevlop-description {
+  max-width: 280px;
+
+  margin: 0 auto;
+
+  font-size: 14px;
+
+  line-height: 1.55;
+
+  word-break: break-word;
+}
+
+
+/* =====================================================
+   CATEGORY
+===================================================== */
+
+.appdevlop-category {
+  font-size: 14px;
+
+  font-weight: 600;
+
+  line-height: 1.5;
+
+  word-break: break-word;
+}
+
+
+/* =====================================================
+   DELETE BUTTON
+===================================================== */
+
+.appdevlop-delete-btn {
+  border: none;
+  outline: none;
+
+  padding: 9px 18px;
+
+  border-radius: 5px;
+
+  background: #e91e48;
+
+  color: #ffffff;
+
+  font-family: "Segoe UI", Arial, sans-serif;
+
+  font-size: 13px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition: 0.2s ease;
+}
+
+.appdevlop-delete-btn:hover {
+  background: #cf173d;
+
+  transform: translateY(-1px);
+}
+
+
+/* =====================================================
+   PAGINATION
+===================================================== */
+
+.appdevlop-pagination {
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 8px;
+
+  padding: 20px;
+
+  background: #ffffff;
+
+  border-top: 1px solid #e6e9ee;
+
+  box-sizing: border-box;
+}
+
+
+/* =====================================================
+   PAGE BUTTON
+===================================================== */
+
+.appdevlop-page-btn {
+  min-width: 40px;
+  height: 40px;
+
+  padding: 0 12px;
+
+  border: 1px solid #d9dfe8;
+
+  border-radius: 6px;
+
+  background: #ffffff;
+
+  color: #273142;
+
+  font-family: "Segoe UI", Arial, sans-serif;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: 0.2s ease;
+}
+
+
+/* =====================================================
+   PAGE HOVER
+===================================================== */
+
+.appdevlop-page-btn:hover:not(:disabled) {
+  background: #1769f5;
+
+  border-color: #1769f5;
+
+  color: #ffffff;
+}
+
+
+/* =====================================================
+   ACTIVE PAGE
+===================================================== */
+
+.appdevlop-page-btn.active {
+  background: #1769f5;
+
+  border-color: #1769f5;
+
+  color: #ffffff;
+}
+
+
+/* =====================================================
+   DISABLED
+===================================================== */
+
+.appdevlop-page-btn:disabled {
+  background: #f1f3f6;
+
+  color: #a5acb7;
+
+  border-color: #e1e4e8;
+
+  cursor: not-allowed;
+}
+
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 900px) {
+
+  .appdevlop-admin {
+    padding: 18px 12px;
+  }
+
+  .appdevlop-form-card {
+    max-width: 100%;
+
+    padding: 24px;
+  }
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 600px) {
+
+  .appdevlop-header {
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 15px;
+  }
+
+  .appdevlop-header h1 {
+    font-size: 24px;
+  }
+
+  .appdevlop-add-btn {
+    width: 100%;
+  }
+
+  .appdevlop-form-card {
+    padding: 18px;
+  }
+
+  .appdevlop-form-actions {
+    flex-direction: column;
+
+    width: 100%;
+  }
+
+  .appdevlop-save-btn,
+  .appdevlop-cancel-btn {
+    width: 100%;
+  }
+
+  .appdevlop-delete-btn {
+    width: 80px;
+  }
+
+  .appdevlop-pagination {
+    flex-wrap: wrap;
+
+    padding: 15px 10px;
+
+    gap: 6px;
+  }
+
+  .appdevlop-page-btn {
+    min-width: 36px;
+    height: 36px;
+
+    padding: 0 9px;
+
+    font-size: 13px;
+  }
+}

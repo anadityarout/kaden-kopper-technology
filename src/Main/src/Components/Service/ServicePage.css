@@ -1,0 +1,1421 @@
+/* =====================================================
+   SERVICE PAGE + GLOBAL
+===================================================== */
+
+.kk-service-page {
+  position: relative;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  color: #07163f;
+  font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  overflow-x: hidden;
+}
+
+html,
+body {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* =====================================================
+   HERO BANNER
+   Slides share one grid cell, so the hero grows to fit
+   its content on every screen size.
+===================================================== */
+
+.kk-slider {
+  position: relative;
+  width: 100%;
+  display: grid;
+  overflow: hidden;
+  background: #061033;
+}
+
+.kk-slide {
+  grid-area: 1 / 1;
+  position: relative;
+  width: 100%;
+  min-height: 620px;
+  display: flex;
+  align-items: center;
+  --kk-visual-w: clamp(240px, 27vw, 520px);
+  background: radial-gradient(ellipse at 25% 35%, #0e2f9c 0%, #071a5e 42%, #040d33 100%);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.7s ease;
+}
+
+.kk-slide.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* right image: curved edge + blue glow (uploaded from admin) */
+.kk-slide-visual {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: calc(var(--kk-visual-w) * -0.25);
+  width: calc(var(--kk-visual-w) * 1.25);
+  border-radius: 50% 0 0 50%;
+  background: linear-gradient(160deg, #3fd6ff, #1f5bff);
+  box-shadow: -6px 0 60px rgba(20, 184, 255, 0.55);
+}
+
+.kk-slide-visual-img {
+  position: absolute;
+  inset: 0 0 0 6px;
+  border-radius: inherit;
+  background-color: #061033;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* overlay no longer needed (image sits below content on mobile) */
+.kk-slide-overlay {
+  display: none;
+}
+
+/* layout: text | feature panel | (image on the right) */
+.kk-slide-inner {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 1700px;
+  margin: 0 auto;
+  padding: 120px calc(var(--kk-visual-w) + 30px) 90px 60px;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 360px;
+  align-items: center;
+  gap: 40px;
+}
+
+.kk-slide-content {
+  min-width: 0;
+  text-align: left;
+}
+
+.kk-slide-tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 16px;
+  margin-bottom: 20px;
+  color: #cfe0ff;
+  background: rgba(60, 110, 255, 0.16);
+  border: 1px solid rgba(110, 150, 255, 0.4);
+  border-radius: 50px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+}
+
+.kk-slide-content h1 {
+  max-width: 620px;
+  margin: 0 0 20px;
+  color: #ffffff;
+  font-size: 54px;
+  font-weight: 800;
+  line-height: 1.08;
+  letter-spacing: -1.5px;
+}
+
+.kk-slide-content h1 span {
+  color: #14b8ff;
+}
+
+.kk-slide-content p {
+  max-width: 520px;
+  margin: 0;
+  color: #d5dcf2;
+  font-size: 15.5px;
+  line-height: 1.7;
+}
+
+.kk-slide-buttons {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 30px;
+}
+
+.kk-slide-primary {
+  min-height: 48px;
+  padding: 0 26px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: #0a1440;
+  background: #ffffff;
+  border: none;
+  border-radius: 50px;
+  font-family: inherit;
+  font-size: 13.5px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.25s ease;
+}
+
+.kk-slide-primary:hover {
+  transform: translateY(-2px);
+}
+
+/* glass feature panel */
+.kk-hero-features {
+  list-style: none;
+  margin: 0;
+  padding: 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(120, 160, 255, 0.28);
+  border-radius: 20px;
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  box-shadow: 0 20px 50px rgba(0, 10, 50, 0.35);
+}
+
+.kk-hero-feature {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.kk-hero-feature-icon {
+  flex: 0 0 46px;
+  width: 46px;
+  height: 46px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  background: linear-gradient(145deg, #4a7bff, #2749d8);
+  border-radius: 13px;
+  box-shadow: 0 6px 16px rgba(50, 90, 255, 0.4);
+}
+
+.kk-hero-feature-text {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  min-width: 0;
+}
+
+.kk-hero-feature-text strong {
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.kk-hero-feature-text small {
+  color: #aebbe0;
+  font-size: 12.5px;
+  line-height: 1.4;
+}
+
+/* arrows + dots */
+.kk-slider-arrow {
+  position: absolute;
+  top: 50%;
+  z-index: 5;
+  width: 46px;
+  height: 46px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  transform: translateY(-50%);
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  border-radius: 50%;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  font-size: 28px;
+  line-height: 1;
+  cursor: pointer;
+  transition: background 0.25s ease;
+}
+
+.kk-slider-arrow:hover {
+  background: rgba(255, 255, 255, 0.22);
+}
+
+.kk-slider-arrow.prev {
+  left: 16px;
+}
+
+.kk-slider-arrow.next {
+  right: 16px;
+}
+
+.kk-slider-dots {
+  position: absolute;
+  left: 60px;
+  bottom: 28px;
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+
+.kk-slider-dot {
+  width: 8px;
+  height: 8px;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.4);
+  cursor: pointer;
+  transition: width 0.25s ease, background 0.25s ease;
+}
+
+.kk-slider-dot.active {
+  width: 28px;
+  border-radius: 20px;
+  background: #ffffff;
+}
+
+/* =====================================================
+   WHY CHOOSE US
+===================================================== */
+
+.kk-why-choose,
+.kk-service-details {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  background-color: #f5fbff;
+  background-image:
+    linear-gradient(rgba(80, 150, 220, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(80, 150, 220, 0.08) 1px, transparent 1px),
+    radial-gradient(circle at 8% 30%, rgba(80, 120, 255, 0.14), transparent 32%),
+    radial-gradient(circle at 92% 70%, rgba(50, 200, 255, 0.12), transparent 32%);
+  background-size: 25px 25px, 25px 25px, auto, auto;
+}
+
+.kk-why-choose {
+  padding: 60px 20px 70px;
+}
+
+.kk-why-container,
+.kk-service-details-container {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 1120px;
+  margin: 0 auto;
+}
+
+.kk-why-header,
+.kk-service-details-header {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto 38px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.kk-why-label,
+.kk-service-details-label {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 7px 18px;
+  color: #245bd5;
+  background: #e5efff;
+  border: 1px solid #cddfff;
+  border-radius: 30px;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.7px;
+  line-height: 1.2;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.kk-why-header h2,
+.kk-service-details-header h2 {
+  margin: 12px 0 10px;
+  color: #071942;
+  font-size: 40px;
+  font-weight: 800;
+  line-height: 1.12;
+  letter-spacing: -1px;
+  text-align: center;
+}
+
+.kk-why-header h2 span,
+.kk-service-details-header h2 span {
+  color: #1764e8;
+}
+
+.kk-why-header p,
+.kk-service-details-header p {
+  width: 100%;
+  max-width: 720px;
+  margin: 0 auto;
+  color: #536783;
+  font-size: 14px;
+  line-height: 1.6;
+  text-align: center;
+}
+
+.kk-why-grid {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 14px;
+  align-items: stretch;
+}
+
+.kk-why-card {
+  width: 100%;
+  min-width: 0;
+  min-height: 180px;
+  padding: 22px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  background: rgba(255, 255, 255, 0.96);
+  border: 1px solid #dfe7f2;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(31, 78, 121, 0.07);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.kk-why-card:hover {
+  transform: translateY(-5px);
+  border-color: #c7d9f8;
+  box-shadow: 0 12px 28px rgba(31, 78, 121, 0.14);
+}
+
+.kk-why-icon {
+  width: 48px;
+  height: 48px;
+  flex: 0 0 48px;
+  margin-bottom: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  background: linear-gradient(145deg, #3b70ff 0%, #1550e6 100%);
+  border-radius: 10px;
+  box-shadow: 0 7px 17px rgba(38, 94, 235, 0.28);
+}
+
+.kk-why-icon svg {
+  width: 26px;
+  height: 26px;
+  display: block;
+}
+
+.kk-why-card h3 {
+  width: 100%;
+  margin: 0 0 7px;
+  color: #111e3c;
+  font-size: 15px;
+  font-weight: 800;
+  line-height: 1.3;
+  text-align: left;
+}
+
+.kk-why-card p {
+  width: 100%;
+  margin: 0;
+  color: #667792;
+  font-size: 12px;
+  line-height: 1.45;
+  text-align: left;
+}
+
+/* =====================================================
+   SERVICE DETAILS
+===================================================== */
+
+.kk-service-details {
+  padding: 70px 20px 90px;
+  scroll-margin-top: 0;
+}
+
+.kk-service-details-header {
+  max-width: 780px;
+  margin-bottom: 45px;
+}
+
+.kk-service-details-list {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.kk-service-detail-card {
+  position: relative;
+  width: 100%;
+  min-height: 390px;
+  display: grid;
+  grid-template-columns: 30% minmax(0, 70%);
+  align-items: stretch;
+  overflow: hidden;
+  background: #ffffff;
+  border: 1px solid #d5e1f0;
+  border-radius: 12px;
+  box-shadow: 0 6px 22px rgba(31, 78, 121, 0.09);
+  transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+}
+
+.kk-service-detail-card:hover {
+  transform: translateY(-4px);
+  border-color: #8db5ff;
+  box-shadow: 0 15px 35px rgba(31, 78, 121, 0.16);
+}
+
+.kk-service-detail-image {
+  position: relative;
+  width: 100%;
+  min-height: 390px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: linear-gradient(135deg, #182d70 0%, #4f4de5 48%, #1498a8 100%);
+}
+
+.kk-service-detail-image::before {
+  content: "";
+  position: absolute;
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.12), transparent 70%);
+  pointer-events: none;
+}
+
+.kk-service-mobile-icon {
+  position: relative;
+  z-index: 2;
+  display: block;
+  width: 180px;
+  height: 245px;
+  max-width: 70%;
+  max-height: 75%;
+  margin: auto;
+  transition: transform 0.4s ease, filter 0.4s ease;
+}
+
+.kk-service-detail-card:hover .kk-service-mobile-icon {
+  transform: scale(1.05);
+  filter: drop-shadow(0 12px 20px rgba(0, 0, 0, 0.18));
+}
+
+.kk-service-detail-content {
+  width: 100%;
+  min-width: 0;
+  padding: 40px 34px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  background:
+    radial-gradient(circle at 15% 30%, rgba(48, 200, 205, 0.1), transparent 45%),
+    radial-gradient(circle at 90% 80%, rgba(91, 91, 235, 0.12), transparent 48%);
+}
+
+.kk-service-detail-card:hover .kk-service-detail-content {
+  background: linear-gradient(135deg, #514ce9 0%, #4168e9 48%, #20a9b8 100%);
+}
+
+.kk-service-detail-content h3 {
+  width: 100%;
+  margin: 0 0 10px;
+  color: #17233b;
+  font-size: 23px;
+  font-weight: 800;
+  line-height: 1.25;
+  text-align: left;
+  transition: color 0.35s ease;
+}
+
+.kk-service-detail-content h4 {
+  width: 100%;
+  margin: 0 0 9px;
+  color: #17233b;
+  font-size: 16px;
+  font-weight: 800;
+  line-height: 1.3;
+  text-align: left;
+  transition: color 0.35s ease;
+}
+
+.kk-service-detail-description {
+  width: 100%;
+  max-width: 850px;
+  margin: 0 0 14px;
+  color: #536174;
+  font-size: 13px;
+  line-height: 1.6;
+  text-align: left;
+  transition: color 0.35s ease;
+}
+
+.kk-service-detail-items {
+  width: 100%;
+  margin: 0 0 18px;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.kk-service-detail-items li {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  color: #536174;
+  font-size: 13px;
+  line-height: 1.45;
+  text-align: left;
+  transition: color 0.35s ease;
+}
+
+.kk-service-detail-card:hover .kk-service-detail-content h3,
+.kk-service-detail-card:hover .kk-service-detail-content h4,
+.kk-service-detail-card:hover .kk-service-detail-items li {
+  color: #ffffff;
+}
+
+.kk-service-detail-card:hover .kk-service-detail-description {
+  color: rgba(255, 255, 255, 0.92);
+}
+
+.kk-service-check {
+  width: 18px;
+  height: 18px;
+  flex: 0 0 18px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #19b4c5;
+  transition: color 0.35s ease;
+}
+
+.kk-service-check svg {
+  display: block;
+  width: 18px;
+  height: 18px;
+}
+
+.kk-service-detail-card:hover .kk-service-check {
+  color: #72f5ff;
+}
+
+.kk-service-book-btn {
+  min-width: 108px;
+  min-height: 40px;
+  padding: 0 19px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  background: linear-gradient(135deg, #4b45f5, #315cf5);
+  border: none;
+  border-radius: 6px;
+  box-shadow: 0 7px 16px rgba(61, 80, 235, 0.24);
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease, color 0.3s ease;
+}
+
+.kk-service-book-btn:hover {
+  transform: translateY(-2px);
+  background: linear-gradient(135deg, #3d38e8, #244fe8);
+  box-shadow: 0 10px 20px rgba(61, 80, 235, 0.3);
+}
+
+.kk-service-detail-card:hover .kk-service-book-btn {
+  color: #315cf5;
+  background: #ffffff;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.18);
+}
+
+/* =====================================================
+   LARGE TABLET (max 1200px)
+===================================================== */
+
+@media (max-width: 1200px) {
+  .kk-slide-inner {
+    padding: 110px calc(var(--kk-visual-w) + 30px) 90px 45px;
+    grid-template-columns: minmax(0, 1fr) 320px;
+    gap: 32px;
+  }
+
+  .kk-slide-content h1 {
+    font-size: 44px;
+  }
+
+  .kk-slider-dots {
+    left: 45px;
+  }
+}
+
+/* =====================================================
+   TABLET (max 1100px)
+===================================================== */
+
+@media (max-width: 1100px) {
+  .kk-why-container,
+  .kk-service-details-container {
+    max-width: 100%;
+  }
+
+  .kk-why-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .kk-service-detail-card {
+    grid-template-columns: 32% minmax(0, 68%);
+  }
+
+  .kk-service-detail-content {
+    padding: 35px 28px;
+  }
+
+  .kk-service-mobile-icon {
+    width: 165px;
+    height: 225px;
+  }
+}
+
+/* =====================================================
+   DESKTOP HERO (min 951px)
+   Left: text + 4 feature cards. Right: full image card.
+===================================================== */
+
+@media (min-width: 951px) {
+  .kk-slider {
+    --kk-pad-x: clamp(72px, 5.5vw, 110px);
+    /* on big screens, keep text + image inside a centered 1400px area */
+    --kk-gutter: max(var(--kk-pad-x), calc((100% - 1400px) / 2));
+  }
+
+  .kk-slide {
+    --kk-visual-w: clamp(400px, 38vw, 600px);
+    min-height: 640px;
+    background:
+      linear-gradient(rgba(90, 140, 255, 0.07) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(90, 140, 255, 0.07) 1px, transparent 1px),
+      radial-gradient(ellipse at 22% 35%, #0e2f9c 0%, #071a5e 45%, #040d33 100%);
+    background-size: 36px 36px, 36px 36px, auto;
+  }
+
+  /* right image card (full image, rounded, blue glow) */
+  .kk-slide-visual {
+    top: 50%;
+    bottom: auto;
+    right: var(--kk-gutter);
+    width: var(--kk-visual-w);
+    aspect-ratio: 4 / 3;
+    transform: translateY(-50%);
+    border-radius: 28px;
+    background: linear-gradient(160deg, #3fd6ff, #1f5bff);
+    box-shadow: 0 0 70px rgba(20, 150, 255, 0.45), 0 30px 60px rgba(0, 10, 50, 0.5);
+  }
+
+  .kk-slide-visual-img {
+    inset: 3px;
+    border-radius: 25px;
+  }
+
+  .kk-slide-inner {
+    max-width: none;
+    margin: 0;
+    grid-template-columns: minmax(0, 1fr);
+    padding: 120px calc(var(--kk-visual-w) + var(--kk-gutter) + 50px) 90px var(--kk-gutter);
+  }
+
+  .kk-slide-content {
+    max-width: 760px;
+  }
+
+  .kk-slide-content h1 {
+    max-width: 700px;
+    font-size: 56px;
+  }
+
+  .kk-slide-content h1 span {
+    color: #14b8ff;
+    background: linear-gradient(90deg, #14c8ff 0%, #4a8bff 55%, #9a5cff 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .kk-slide-content p {
+    max-width: 580px;
+    font-size: 16px;
+  }
+
+  .kk-slide-primary {
+    min-height: 52px;
+    padding: 0 30px;
+    color: #ffffff;
+    background: linear-gradient(135deg, #1f6bff, #18b4ff);
+    border-radius: 8px;
+    font-size: 14.5px;
+    box-shadow: 0 10px 30px rgba(31, 107, 255, 0.45);
+  }
+
+  /* feature panel becomes a row of 4 separate cards */
+  .kk-hero-features {
+    margin-top: 44px;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 14px;
+    background: none;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+  }
+
+  .kk-hero-feature {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 16px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(120, 160, 255, 0.3);
+    border-radius: 12px;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+  }
+
+  .kk-hero-feature-icon {
+    flex: 0 0 auto;
+    width: 40px;
+    height: 40px;
+    border-radius: 11px;
+  }
+
+  .kk-hero-feature-text strong {
+    font-size: 14px;
+  }
+
+  .kk-hero-feature-text small {
+    font-size: 12px;
+  }
+
+  .kk-slider-dots {
+    left: var(--kk-gutter, 72px);
+  }
+}
+
+/* feature cards 2 x 2 on smaller desktops */
+@media (min-width: 951px) and (max-width: 1360px) {
+  .kk-hero-features {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 951px) and (max-width: 1200px) {
+  .kk-slide-content h1 {
+    font-size: 44px;
+  }
+
+  .kk-slide-content p {
+    font-size: 15px;
+  }
+
+  .kk-slider-dots {
+    left: 72px;
+  }
+}
+
+/* =====================================================
+   HERO STACKS (max 950px)
+   Order: text -> feature panel -> IMAGE BELOW
+===================================================== */
+
+@media (max-width: 950px) {
+  .kk-slide {
+    min-height: 0;
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  /* text + feature panel come first */
+  .kk-slide-inner {
+    order: 1;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 32px;
+    padding: 110px 30px 36px;
+  }
+
+  /* image block sits below the content, in normal flow */
+  .kk-slide-visual {
+    order: 2;
+    position: relative;
+    top: auto;
+    right: auto;
+    bottom: auto;
+    inset: auto;
+    flex: 0 0 auto;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    max-height: 440px;
+    border-radius: 0;
+    background: none;
+    box-shadow: none;
+    overflow: hidden;
+  }
+
+  .kk-slide-visual-img {
+    inset: 0;
+    border-radius: 0;
+    opacity: 1;
+    background-position: center;
+  }
+
+  /* soft fade at the top so the image blends into the content */
+  .kk-slide-visual::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    height: 40%;
+    z-index: 1;
+    pointer-events: none;
+    background: linear-gradient(180deg, #050f3a 0%, rgba(5, 15, 58, 0) 100%);
+  }
+
+  /* soft fade at the bottom so arrows and dots stay readable */
+  .kk-slide-visual::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 35%;
+    z-index: 1;
+    pointer-events: none;
+    background: linear-gradient(0deg, rgba(4, 13, 51, 0.7) 0%, rgba(4, 13, 51, 0) 100%);
+  }
+
+  .kk-slide-overlay {
+    display: none;
+  }
+
+  .kk-hero-features {
+    margin-top: 32px;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px 20px;
+  }
+
+  .kk-slide-content h1 {
+    font-size: 40px;
+  }
+
+  .kk-slider-dots {
+    left: 30px;
+    bottom: 30px;
+  }
+
+  .kk-slider-arrow {
+    top: auto;
+    bottom: 16px;
+    transform: none;
+    width: 40px;
+    height: 40px;
+    font-size: 24px;
+  }
+
+  .kk-slider-arrow:hover {
+    transform: none;
+  }
+
+  .kk-slider-arrow.prev {
+    left: auto;
+    right: 70px;
+  }
+
+  .kk-slider-arrow.next {
+    right: 20px;
+  }
+}
+
+/* =====================================================
+   SMALL TABLET (max 800px)
+===================================================== */
+
+@media (max-width: 800px) {
+  .kk-why-choose {
+    padding: 50px 20px 60px;
+  }
+
+  .kk-why-header h2,
+  .kk-service-details-header h2 {
+    font-size: 34px;
+  }
+
+  .kk-why-header p {
+    font-size: 13px;
+  }
+
+  .kk-why-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .kk-why-card {
+    min-height: 170px;
+    padding: 19px;
+  }
+
+  .kk-service-details {
+    padding: 60px 20px 70px;
+  }
+
+  .kk-service-details-header {
+    margin-bottom: 35px;
+  }
+
+  .kk-service-detail-card {
+    grid-template-columns: 35% minmax(0, 65%);
+    min-height: 340px;
+  }
+
+  .kk-service-detail-image {
+    min-height: 340px;
+  }
+
+  .kk-service-mobile-icon {
+    width: 145px;
+    height: 205px;
+    max-width: 72%;
+    max-height: 72%;
+  }
+
+  .kk-service-detail-content {
+    padding: 27px 25px;
+  }
+
+  .kk-service-detail-content h3 {
+    font-size: 21px;
+  }
+
+  .kk-service-detail-description,
+  .kk-service-detail-items li {
+    font-size: 12.5px;
+  }
+}
+
+/* =====================================================
+   MOBILE (max 700px)
+===================================================== */
+
+@media (max-width: 700px) {
+  .kk-slide-inner {
+    padding: 100px 20px 30px;
+    gap: 26px;
+  }
+
+  /* taller image on phones so it looks like the reference */
+  .kk-slide-visual {
+    aspect-ratio: 4 / 3;
+    max-height: none;
+  }
+
+  .kk-slide-tag {
+    padding: 7px 13px;
+    margin-bottom: 16px;
+    font-size: 10px;
+  }
+
+  .kk-slide-content h1 {
+    font-size: 32px;
+    line-height: 1.12;
+    letter-spacing: -0.6px;
+    margin-bottom: 14px;
+  }
+
+  .kk-slide-content p {
+    font-size: 14px;
+    line-height: 1.65;
+  }
+
+  .kk-slide-buttons {
+    margin-top: 22px;
+  }
+
+  .kk-slide-primary {
+    min-height: 44px;
+    padding: 0 20px;
+    font-size: 12.5px;
+  }
+
+  .kk-hero-features {
+    margin-top: 26px;
+    grid-template-columns: minmax(0, 1fr);
+    padding: 16px;
+    gap: 14px;
+    border-radius: 16px;
+  }
+
+  .kk-hero-feature {
+    gap: 13px;
+  }
+
+  .kk-hero-feature-icon {
+    flex-basis: 40px;
+    width: 40px;
+    height: 40px;
+    border-radius: 11px;
+  }
+
+  .kk-hero-feature-text strong {
+    font-size: 14px;
+  }
+
+  .kk-hero-feature-text small {
+    font-size: 12px;
+  }
+
+  .kk-slider-dots {
+    left: 20px;
+    bottom: 26px;
+  }
+}
+
+/* =====================================================
+   MOBILE (max 600px): Why + service cards
+===================================================== */
+
+@media (max-width: 600px) {
+  .kk-why-choose {
+    padding: 42px 15px 50px;
+    background-size: 20px 20px, 20px 20px, auto, auto;
+  }
+
+  .kk-why-header {
+    margin-bottom: 26px;
+  }
+
+  .kk-why-label,
+  .kk-service-details-label {
+    padding: 6px 14px;
+    font-size: 9px;
+  }
+
+  .kk-why-header h2,
+  .kk-service-details-header h2 {
+    margin-top: 10px;
+    font-size: 29px;
+    line-height: 1.18;
+  }
+
+  .kk-why-header p,
+  .kk-service-details-header p {
+    font-size: 12.5px;
+    line-height: 1.55;
+  }
+
+  .kk-why-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .kk-why-card {
+    min-height: 0;
+    padding: 18px;
+  }
+
+  .kk-why-icon {
+    width: 46px;
+    height: 46px;
+    flex-basis: 46px;
+    margin-bottom: 12px;
+  }
+
+  .kk-why-icon svg {
+    width: 25px;
+    height: 25px;
+  }
+
+  .kk-service-details {
+    padding: 48px 15px 60px;
+    background-size: 20px 20px, 20px 20px, auto, auto;
+  }
+
+  .kk-service-details-header {
+    margin-bottom: 30px;
+  }
+
+  .kk-service-details-list {
+    gap: 18px;
+  }
+
+  .kk-service-detail-card {
+    grid-template-columns: 1fr;
+    min-height: 0;
+    border-radius: 11px;
+  }
+
+  .kk-service-detail-image {
+    height: 245px;
+    min-height: 245px;
+  }
+
+  .kk-service-mobile-icon {
+    width: 145px;
+    height: 200px;
+    max-width: 48%;
+    max-height: 82%;
+  }
+
+  .kk-service-detail-content {
+    padding: 26px 20px 28px;
+  }
+
+  .kk-service-detail-content h3 {
+    margin-bottom: 9px;
+    font-size: 20px;
+    line-height: 1.3;
+  }
+
+  .kk-service-detail-description {
+    font-size: 13px;
+    line-height: 1.55;
+  }
+
+  .kk-service-detail-content h4 {
+    margin-bottom: 8px;
+    font-size: 15px;
+  }
+
+  .kk-service-detail-items {
+    gap: 8px;
+  }
+
+  .kk-service-detail-items li {
+    gap: 8px;
+    font-size: 12.5px;
+  }
+
+  .kk-service-check {
+    width: 17px;
+    height: 17px;
+    flex-basis: 17px;
+  }
+
+  .kk-service-check svg {
+    width: 17px;
+    height: 17px;
+  }
+}
+
+/* =====================================================
+   SMALL MOBILE (max 480px)
+===================================================== */
+
+@media (max-width: 480px) {
+  .kk-slide-inner {
+    padding: 96px 16px 28px;
+  }
+
+  .kk-slide-content h1 {
+    font-size: 29px;
+  }
+
+  .kk-slide-content p {
+    font-size: 13px;
+  }
+
+  .kk-slider-dots {
+    left: 16px;
+  }
+
+  .kk-service-details {
+    padding: 42px 12px 52px;
+  }
+
+  .kk-service-details-header {
+    padding: 0 5px;
+    margin-bottom: 26px;
+  }
+
+  .kk-service-details-label {
+    padding: 6px 13px;
+    font-size: 8.5px;
+    letter-spacing: 0.5px;
+  }
+
+  .kk-service-details-header h2 {
+    font-size: 26px;
+  }
+
+  .kk-service-details-header p {
+    font-size: 12px;
+  }
+
+  .kk-service-details-list {
+    gap: 15px;
+  }
+
+  .kk-service-detail-card {
+    border-radius: 9px;
+  }
+
+  .kk-service-detail-image {
+    height: 220px;
+    min-height: 220px;
+  }
+
+  .kk-service-mobile-icon {
+    width: 135px;
+    height: 190px;
+    max-width: 46%;
+  }
+
+  .kk-service-detail-content {
+    padding: 22px 17px 24px;
+  }
+
+  .kk-service-detail-content h3 {
+    font-size: 19px;
+  }
+
+  .kk-service-detail-description {
+    font-size: 12px;
+    margin-bottom: 12px;
+  }
+
+  .kk-service-detail-content h4 {
+    font-size: 14px;
+  }
+
+  .kk-service-detail-items {
+    gap: 7px;
+    margin-bottom: 16px;
+  }
+
+  .kk-service-detail-items li {
+    gap: 7px;
+    font-size: 12px;
+    line-height: 1.4;
+  }
+
+  .kk-service-book-btn {
+    min-height: 39px;
+    padding: 0 18px;
+    font-size: 12.5px;
+  }
+}
+
+/* =====================================================
+   VERY SMALL MOBILE (max 360px)
+===================================================== */
+
+@media (max-width: 360px) {
+  .kk-slide-inner {
+    padding: 90px 14px 24px;
+  }
+
+  .kk-slide-content h1 {
+    font-size: 27px;
+  }
+
+  .kk-why-choose,
+  .kk-service-details {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .kk-why-header h2,
+  .kk-service-details-header h2 {
+    font-size: 24px;
+  }
+
+  .kk-why-header p,
+  .kk-service-details-header p {
+    font-size: 11.5px;
+  }
+
+  .kk-why-card {
+    padding: 17px;
+  }
+
+  .kk-service-detail-image {
+    height: 200px;
+    min-height: 200px;
+  }
+
+  .kk-service-mobile-icon {
+    width: 125px;
+    height: 175px;
+    max-width: 45%;
+    max-height: 80%;
+  }
+
+  .kk-service-detail-content {
+    padding: 20px 15px 21px;
+  }
+
+  .kk-service-detail-content h3 {
+    font-size: 18px;
+  }
+
+  .kk-service-detail-description,
+  .kk-service-detail-items li {
+    font-size: 11.5px;
+  }
+}
+
+/* =====================================================
+   ACCESSIBILITY
+===================================================== */
+
+.kk-slider-arrow:focus-visible,
+.kk-slider-dot:focus-visible,
+.kk-slide-primary:focus-visible,
+.kk-service-book-btn:focus-visible {
+  outline: 2px solid #4d7cff;
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .kk-slide,
+  .kk-why-card,
+  .kk-slider-arrow,
+  .kk-slider-dot,
+  .kk-slide-primary,
+  .kk-service-detail-card,
+  .kk-service-detail-content,
+  .kk-service-mobile-icon,
+  .kk-service-book-btn {
+    transition: none;
+  }
+}

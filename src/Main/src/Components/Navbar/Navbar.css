@@ -1,0 +1,719 @@
+
+/* =====================================================
+   GLOBAL RESET
+===================================================== */
+
+html,
+body,
+#root {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100%;
+}
+
+html,
+body {
+  overflow-x: clip;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* =====================================================
+   BODY OFFSET
+===================================================== */
+
+body {
+  padding-top: 72px;
+}
+
+/* =====================================================
+   NAVBAR
+===================================================== */
+
+.kk-navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  max-width: 100%;
+  z-index: 9999;
+  margin: 0;
+  padding: 0;
+  background: #1c2035;
+  border-top: 2px solid #2c3657;
+  color: #ffffff;
+  font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+/* =====================================================
+   NAVBAR CONTAINER
+===================================================== */
+
+.kk-navbar-container {
+  width: 100%;
+  max-width: 1450px;
+  height: 72px;
+  margin: 0 auto;
+  padding: 0 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 25px;
+}
+
+/* =====================================================
+   LOGO
+===================================================== */
+
+.kk-logo {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  text-decoration: none;
+}
+
+.kk-logo-image {
+  display: block;
+  height: 64px;
+  width: auto;
+  max-width: 220px;
+  object-fit: contain;
+}
+
+/* =====================================================
+   DESKTOP NAVIGATION
+===================================================== */
+
+.kk-nav {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 28px;
+  flex: 1;
+  min-width: 0;
+}
+
+.kk-nav-item {
+  position: relative;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.kk-nav-link {
+  position: relative;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  color: #e4e6ef;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  white-space: nowrap;
+  transition: color 0.2s ease, opacity 0.2s ease;
+}
+
+.kk-nav-link:hover {
+  color: #ffffff;
+}
+
+.kk-arrow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: -3px;
+  font-size: 15px;
+  line-height: 1;
+  transition: transform 0.2s ease;
+}
+
+.kk-arrow.active {
+  transform: rotate(180deg);
+}
+
+/* =====================================================
+   DESKTOP DROPDOWN
+===================================================== */
+
+.kk-dropdown {
+  position: absolute;
+  top: 70px;
+  left: 50%;
+  z-index: 10000;
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
+  transform: translateX(-50%);
+  animation: dropdownShow 0.18s ease;
+}
+
+@keyframes dropdownShow {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+}
+
+.kk-dropdown-grid {
+  width: 620px;
+  padding: 14px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 6px;
+}
+
+.kk-dropdown-grid-link {
+  min-width: 0;
+  min-height: 58px;
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  padding: 9px 10px;
+  color: #303442;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 500;
+  border-radius: 8px;
+  transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+
+.kk-dropdown-grid-link:hover {
+  background: #f0f4ff;
+  color: #5367d9;
+  transform: translateX(2px);
+}
+
+.kk-dropdown-icon {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: #5367d9;
+  background: #f7f8fd;
+  border: 1px solid #e3e6f0;
+  border-radius: 8px;
+  transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+
+.kk-dropdown-grid-link:hover .kk-dropdown-icon {
+  color: #ffffff;
+  background: #5367d9;
+  border-color: #5367d9;
+}
+
+.kk-dropdown-grid-text {
+  min-width: 0;
+  line-height: 1.25;
+  white-space: normal;
+}
+
+/* =====================================================
+   RIGHT ACTIONS
+===================================================== */
+
+.kk-actions {
+  min-width: 220px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+/* =====================================================
+   DESKTOP CONSULTATION BUTTON
+===================================================== */
+
+.kk-cta {
+  min-height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 0 17px;
+  color: #ffffff;
+  background: linear-gradient(135deg, #7c89ca, #454f8b);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 24px;
+  box-shadow:
+    inset 0 1px 1px rgba(255, 255, 255, 0.25),
+    0 4px 12px rgba(0, 0, 0, 0.12);
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: 700;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: transform 0.2s ease, filter 0.2s ease;
+}
+
+.kk-cta:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.1);
+}
+
+/* =====================================================
+   MOBILE MENU BUTTON
+===================================================== */
+
+.kk-menu-button {
+  display: none;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 5px;
+  flex-shrink: 0;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.kk-menu-button span {
+  width: 23px;
+  height: 2px;
+  display: block;
+  background: #ffffff;
+  border-radius: 2px;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.kk-menu-button.open span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.kk-menu-button.open span:nth-child(2) {
+  opacity: 0;
+}
+
+.kk-menu-button.open span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* =====================================================
+   MOBILE MENU — HIDDEN BY DEFAULT
+===================================================== */
+
+.kk-mobile-menu,
+.kk-mobile-menu.show {
+  display: none;
+}
+
+.kk-mobile-menu {
+  width: 100%;
+  max-width: 100%;
+  max-height: calc(100vh - 68px);
+  max-height: calc(100dvh - 68px);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  padding: 10px 24px 24px;
+  background: #1c2035;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.kk-mobile-item {
+  width: 100%;
+}
+
+/* =====================================================
+   MOBILE MAIN LINKS
+===================================================== */
+
+.kk-mobile-link {
+  width: 100%;
+  min-height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 0;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 500;
+  text-align: left;
+  cursor: pointer;
+  touch-action: manipulation;
+}
+
+/* =====================================================
+   MOBILE SERVICES ROW
+===================================================== */
+
+.kk-mobile-link-row {
+  display: flex;
+  align-items: stretch;
+  justify-content: space-between;
+  width: 100%;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.kk-mobile-main-link {
+  flex: 1;
+  min-width: 0;
+  justify-content: flex-start;
+  border-bottom: none;
+  text-decoration: none;
+}
+
+.kk-mobile-dropdown-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 46px;
+  min-height: 52px;
+  padding: 0;
+  border: none;
+  background: transparent;
+  color: #ffffff;
+  cursor: pointer;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.kk-mobile-arrow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  line-height: 1;
+  transition: transform 0.2s ease;
+}
+
+.kk-mobile-arrow.active {
+  transform: rotate(180deg);
+}
+
+/* =====================================================
+   MOBILE SUBMENU
+===================================================== */
+
+.kk-mobile-submenu {
+  display: none;
+  flex-direction: column;
+  padding: 4px 0 8px 10px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.kk-mobile-submenu.show {
+  display: flex;
+}
+
+.kk-mobile-submenu a {
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 0;
+  color: #aeb5d0;
+  text-decoration: none;
+  font-size: 14px;
+  transition: color 0.2s ease;
+  touch-action: manipulation;
+}
+
+.kk-mobile-submenu a:hover,
+.kk-mobile-submenu a:focus-visible {
+  color: #ffffff;
+}
+
+/* =====================================================
+   MOBILE SUBMENU ICON
+===================================================== */
+
+.kk-mobile-submenu-icon {
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: #7c89ca;
+  background: rgba(124, 137, 202, 0.08);
+  border: 1px solid rgba(124, 137, 202, 0.22);
+  border-radius: 7px;
+}
+
+/* =====================================================
+   MOBILE CONSULTATION BUTTON
+===================================================== */
+
+.kk-mobile-cta {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 20px;
+  padding: 13px;
+  background: linear-gradient(135deg, #7c89ca, #454f8b);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 25px;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.kk-mobile-cta:hover {
+  background: linear-gradient(135deg, #8895d3, #505b99);
+  transform: translateY(-1px);
+}
+
+/* =====================================================
+   LARGE DESKTOP
+===================================================== */
+
+@media (max-width: 1250px) and (min-width: 901px) {
+  .kk-navbar-container {
+    padding-left: 25px;
+    padding-right: 25px;
+    gap: 15px;
+  }
+
+  .kk-logo-image {
+    height: 58px;
+    max-width: 190px;
+  }
+
+  .kk-nav {
+    gap: 20px;
+  }
+
+  .kk-actions {
+    min-width: 200px;
+  }
+
+  .kk-dropdown-grid {
+    width: 580px;
+  }
+}
+
+/* =====================================================
+   TABLET / SMALL DESKTOP
+===================================================== */
+
+@media (max-width: 1100px) and (min-width: 901px) {
+  .kk-navbar-container {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .kk-logo-image {
+    height: 52px;
+    max-width: 170px;
+  }
+
+  .kk-nav {
+    gap: 15px;
+  }
+
+  .kk-nav-link {
+    font-size: 13px;
+  }
+
+  .kk-actions {
+    min-width: 180px;
+  }
+
+  .kk-cta {
+    padding-left: 13px;
+    padding-right: 13px;
+    font-size: 11px;
+  }
+
+  .kk-dropdown-grid {
+    width: 520px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    padding: 12px;
+  }
+
+  .kk-dropdown-grid-link {
+    min-height: 54px;
+    font-size: 12px;
+    gap: 8px;
+    padding: 8px;
+  }
+
+  .kk-dropdown-icon {
+    width: 30px;
+    height: 30px;
+  }
+}
+
+/* =====================================================
+   MOBILE / TABLET NAVIGATION
+===================================================== */
+
+@media (max-width: 900px) {
+  body {
+    padding-top: 68px;
+  }
+
+  .kk-navbar-container {
+    height: 68px;
+    padding-left: 20px;
+    padding-right: 20px;
+    gap: 10px;
+  }
+
+  .kk-nav {
+    display: none !important;
+  }
+
+  .kk-actions {
+    min-width: auto;
+  }
+
+  .kk-cta {
+    display: none !important;
+  }
+
+  .kk-menu-button {
+    display: flex !important;
+  }
+
+  .kk-dropdown,
+  .kk-dropdown-grid {
+    display: none !important;
+  }
+
+  .kk-mobile-menu {
+    display: none;
+    max-height: calc(100vh - 68px);
+    max-height: calc(100dvh - 68px);
+  }
+
+  .kk-mobile-menu.show {
+    display: block;
+  }
+
+  .kk-logo-image {
+    height: 48px;
+    max-width: 160px;
+  }
+}
+
+/* =====================================================
+   SMALL MOBILE
+===================================================== */
+
+@media (max-width: 480px) {
+  body {
+    padding-top: 62px;
+  }
+
+  .kk-navbar-container {
+    height: 62px;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  .kk-logo-image {
+    height: 42px;
+    max-width: 140px;
+  }
+
+  .kk-menu-button {
+    width: 38px;
+    height: 38px;
+  }
+
+  .kk-mobile-menu {
+    max-height: calc(100vh - 62px);
+    max-height: calc(100dvh - 62px);
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+
+  .kk-mobile-link {
+    font-size: 14px;
+  }
+
+  .kk-mobile-submenu a {
+    font-size: 13px;
+  }
+}
+
+/* =====================================================
+   EXTRA SMALL MOBILE
+===================================================== */
+
+@media (max-width: 360px) {
+  .kk-navbar-container {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  .kk-logo-image {
+    height: 36px;
+    max-width: 120px;
+  }
+
+  .kk-mobile-menu {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}
+
+/* =====================================================
+   DESKTOP MENU VISIBILITY FIX
+===================================================== */
+
+@media (min-width: 901px) {
+  .kk-mobile-menu,
+  .kk-mobile-menu.show {
+    display: none !important;
+  }
+
+  .kk-menu-button {
+    display: none !important;
+  }
+
+  .kk-nav {
+    display: flex;
+  }
+
+  .kk-cta {
+    display: flex;
+  }
+}
+
+/* =====================================================
+   ACCESSIBILITY
+===================================================== */
+
+.kk-nav-link:focus-visible,
+.kk-dropdown-grid-link:focus-visible,
+.kk-cta:focus-visible,
+.kk-menu-button:focus-visible,
+.kk-mobile-link:focus-visible,
+.kk-mobile-dropdown-toggle:focus-visible,
+.kk-mobile-submenu a:focus-visible,
+.kk-mobile-cta:focus-visible {
+  outline: 2px solid #7c89ca;
+  outline-offset: 3px;
+}

@@ -1,0 +1,402 @@
+.seo-page {
+  width: 100%;
+  min-height: 100vh;
+  padding-bottom: 30px;
+  background: #f6f8fc;
+  color: #172b4d;
+  font-family: Arial, Helvetica, sans-serif;
+  box-sizing: border-box;
+}
+
+.seo-page *,
+.seo-page *::before,
+.seo-page *::after {
+  box-sizing: border-box;
+}
+
+/* PAGE HEADER */
+
+.seo-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 30px 24px;
+}
+
+.seo-header h1 {
+  margin: 0;
+  color: #111827;
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.seo-add-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  padding: 12px 21px;
+  border: none;
+  border-radius: 6px;
+  background: #1765ef;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.seo-add-btn:hover {
+  background: #1053ce;
+}
+
+/* FORM CARD */
+
+.seo-form-card {
+  width: calc(100% - 30px);
+  margin: 0 15px 24px;
+  overflow: hidden;
+  border: 1px solid #e0e6ef;
+  border-radius: 9px;
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(25, 45, 75, 0.04);
+}
+
+/* FORM TITLE AND DESCRIPTION */
+
+.seo-form-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 15px;
+  padding: 22px;
+  border-bottom: 1px solid #e7ebf2;
+}
+
+.seo-form-header h2 {
+  margin: 0 0 9px;
+  color: #172b4d;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.seo-form-header p {
+  margin: 0;
+  color: #536987;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.seo-close-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px;
+  border: none;
+  border-radius: 5px;
+  background: transparent;
+  color: #64748b;
+  cursor: pointer;
+}
+
+.seo-close-btn:hover {
+  background: #f1f5f9;
+}
+
+/* FORM FIELDS */
+
+.seo-form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  padding: 22px;
+}
+
+.seo-field {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  width: 100%;
+}
+
+.seo-field label {
+  color: #17345d;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.seo-field input,
+.seo-field select,
+.seo-field textarea {
+  display: block;
+  width: 100%;
+  min-width: 0;
+  margin: 0;
+  padding: 12px;
+  border: 1px solid #cbd4e1;
+  border-radius: 6px;
+  outline: none;
+  background: #fff;
+  color: #172b4d;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.seo-field input,
+.seo-field select {
+  min-height: 44px;
+}
+
+.seo-field select {
+  cursor: pointer;
+}
+
+.seo-field textarea {
+  min-height: 110px;
+  resize: vertical;
+  line-height: 1.5;
+}
+
+.seo-field input::placeholder,
+.seo-field textarea::placeholder {
+  color: #8290a5;
+  opacity: 1;
+}
+
+.seo-field input:focus,
+.seo-field select:focus,
+.seo-field textarea:focus {
+  border-color: #1765ef;
+  box-shadow: 0 0 0 3px rgba(23, 101, 239, 0.1);
+}
+
+/* SAVE AND CANCEL */
+
+.seo-form-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  margin-top: 2px;
+}
+
+.seo-save-btn,
+.seo-cancel-btn {
+  min-height: 42px;
+  padding: 11px 23px;
+  border: none;
+  border-radius: 6px;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.seo-save-btn {
+  background: #078500;
+}
+
+.seo-save-btn:hover {
+  background: #066d00;
+}
+
+.seo-cancel-btn {
+  background: #e8113d;
+}
+
+.seo-cancel-btn:hover {
+  background: #c90c32;
+}
+
+/* SAVED SEO TABLE */
+
+.seo-list-card {
+  width: calc(100% - 30px);
+  margin: 0 15px 24px;
+  overflow: hidden;
+  border-radius: 8px;
+  background: #fff;
+  box-shadow: 0 3px 12px rgba(25, 45, 75, 0.06);
+}
+
+.seo-table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.seo-table {
+  width: 100%;
+  min-width: 1100px;
+  border-collapse: collapse;
+  table-layout: fixed;
+  text-align: center;
+}
+
+.seo-table thead {
+  background: #1765ef;
+  color: #fff;
+}
+
+.seo-table th {
+  padding: 16px 10px;
+  border-right: 1px solid rgba(255, 255, 255, 0.25);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.seo-table th:nth-child(1) { width: 9%; }
+.seo-table th:nth-child(2) { width: 16%; }
+.seo-table th:nth-child(3) { width: 21%; }
+.seo-table th:nth-child(4) { width: 20%; }
+.seo-table th:nth-child(5) { width: 14%; }
+.seo-table th:nth-child(6) { width: 14%; }
+.seo-table th:nth-child(7) { width: 6%; }
+
+.seo-table td {
+  padding: 20px 10px;
+  border: 1px solid #d7dce5;
+  color: #12305b;
+  font-size: 13px;
+  line-height: 1.6;
+  vertical-align: middle;
+  overflow-wrap: anywhere;
+}
+
+.seo-table tbody tr:nth-child(even) {
+  background: #f4f8ff;
+}
+
+.seo-table td a {
+  color: #075be8;
+  text-decoration: none;
+}
+
+.seo-table td a:hover {
+  text-decoration: underline;
+}
+
+.seo-empty {
+  padding: 26px !important;
+  color: #64748b !important;
+  text-align: center;
+}
+
+/* TABLE ACTIONS */
+
+.seo-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
+.seo-edit-btn,
+.seo-delete-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  padding: 8px 10px;
+  border-radius: 6px;
+  background: #fff;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.seo-edit-btn {
+  border: 1px solid #b7d0ff;
+  color: #1765ef;
+}
+
+.seo-delete-btn {
+  border: 1px solid #ffbcbc;
+  color: #dc2626;
+}
+
+.seo-edit-btn:hover {
+  background: #eff6ff;
+}
+
+.seo-delete-btn:hover {
+  background: #fff1f1;
+}
+
+/* TABLET */
+
+@media (max-width: 1024px) {
+  .seo-header {
+    padding: 24px 18px;
+  }
+
+  .seo-header h1 {
+    font-size: 25px;
+  }
+
+  .seo-form-header,
+  .seo-form {
+    padding: 20px;
+  }
+}
+
+/* MOBILE */
+
+@media (max-width: 768px) {
+  .seo-header {
+    align-items: flex-start;
+    padding: 22px 14px;
+  }
+
+  .seo-header h1 {
+    font-size: 22px;
+  }
+
+  .seo-add-btn {
+    padding: 11px 14px;
+    font-size: 13px;
+  }
+
+  .seo-form-card,
+  .seo-list-card {
+    width: calc(100% - 20px);
+    margin-right: 10px;
+    margin-left: 10px;
+  }
+
+  .seo-form-header,
+  .seo-form {
+    padding: 16px;
+  }
+
+  .seo-form {
+    gap: 15px;
+  }
+
+  .seo-table {
+    min-width: 1100px;
+  }
+}
+
+@media (max-width: 480px) {
+  .seo-header {
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .seo-form-header h2 {
+    font-size: 18px;
+  }
+
+  .seo-form-actions {
+    gap: 10px;
+  }
+
+  .seo-save-btn,
+  .seo-cancel-btn {
+    padding: 11px 18px;
+  }
+}

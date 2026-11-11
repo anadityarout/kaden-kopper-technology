@@ -1,0 +1,2210 @@
+/* =====================================================
+   GRAPHIC DESIGN PAGE
+===================================================== */
+
+.kk-graphic-page {
+  --kk-navy-950: #0b1230;
+  --kk-navy-900: #0f172a;
+  --kk-navy-800: #14204a;
+  --kk-navy-700: #1b2a5e;
+
+  --kk-indigo-600: #4338ca;
+  --kk-indigo-700: #312e81;
+  --kk-violet-600: #6d28d9;
+
+  --kk-sky-400: #38bdf8;
+  --kk-sky-300: #93c5fd;
+
+  --kk-slate-50: #f8fafc;
+  --kk-slate-200: #e2e8f0;
+  --kk-slate-400: #94a3b8;
+  --kk-slate-500: #64748b;
+  --kk-slate-600: #475569;
+  --kk-slate-700: #334155;
+
+  width: 100%;
+  min-height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: "Inter", "Segoe UI", sans-serif;
+  color: #1e293b;
+  background: #ffffff;
+  overflow-x: hidden;
+}
+
+
+/* =====================================================
+   GLOBAL BOX SIZING
+===================================================== */
+
+.kk-graphic-page *,
+.kk-graphic-page *::before,
+.kk-graphic-page *::after {
+  box-sizing: border-box;
+}
+
+.kk-graphic-page section {
+  width: 100%;
+}
+
+
+/* =====================================================
+   COMMON SECTION HEADING
+===================================================== */
+
+.kk-graphic-section-head {
+  width: 100%;
+  max-width: 720px;
+  margin: 0 auto 50px;
+  padding: 0 20px;
+  text-align: center;
+}
+
+.kk-graphic-section-head h2 {
+  margin: 0 0 12px;
+  font-size: clamp(24px, 3.2vw, 34px);
+  line-height: 1.25;
+  font-weight: 700;
+  color: var(--kk-navy-900);
+}
+
+.kk-graphic-section-head p {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--kk-slate-600);
+}
+
+.kk-graphic-eyebrow {
+  display: block;
+  margin-bottom: 10px;
+  color: #2563ff;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+}
+
+
+/* =====================================================
+   CENTER
+===================================================== */
+
+.kk-graphic-center {
+  display: flex;
+  justify-content: center;
+  margin-top: 32px;
+}
+
+
+/* =====================================================
+   BUTTONS
+===================================================== */
+
+.kk-graphic-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 14px 28px;
+  border: none;
+  border-radius: 999px;
+  background: #1e293b;
+  color: #ffffff;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1;
+  text-decoration: none;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: transform 0.25s ease, background 0.25s ease, box-shadow 0.25s ease;
+}
+
+.kk-graphic-btn:hover {
+  transform: translateY(-2px);
+  background: #0f172a;
+  box-shadow: 0 8px 20px rgba(15, 23, 42, 0.15);
+}
+
+.kk-graphic-btn-dark {
+  background: #0f172a;
+}
+
+.kk-graphic-btn-dark:hover {
+  background: #1e293b;
+}
+
+.kk-graphic-btn-light {
+  position: relative;
+  z-index: 2;
+  background: #ffffff;
+  color: #4338ca;
+}
+
+.kk-graphic-btn-light:hover {
+  background: #f1f5f9;
+  color: #312e81;
+}
+
+
+/* =====================================================
+   HERO BANNER
+   Left: badge, heading, description, buttons, trust row
+   Right: banner image from admin dashboard
+   Background + grid are the same as the Marketing banner.
+===================================================== */
+
+.kk-graphic-banner {
+  position: relative;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  isolation: isolate;
+  background:
+    radial-gradient(
+      ellipse 45% 70% at 100% 85%,
+      rgba(140, 70, 255, 0.50) 0%,
+      rgba(70, 50, 220, 0.28) 40%,
+      transparent 100%
+    ),
+    radial-gradient(
+      ellipse 40% 60% at 98% 10%,
+      rgba(50, 110, 255, 0.34) 0%,
+      transparent 100%
+    ),
+    radial-gradient(
+      ellipse 35% 70% at 0% 70%,
+      rgba(40, 90, 255, 0.30) 0%,
+      transparent 100%
+    ),
+    radial-gradient(
+      ellipse 40% 50% at 8% 8%,
+      rgba(70, 60, 220, 0.22) 0%,
+      transparent 100%
+    ),
+    linear-gradient(135deg, #081033 0%, #0a1442 50%, #0e0d40 100%);
+
+  /* Height of your site navbar. Increase this if the badge is hidden
+     behind the navbar, decrease it if there is too much space. */
+  --kk-nav-offset: 96px;
+}
+
+/* Faint grid lines over the whole banner (same as Marketing banner) */
+.kk-graphic-banner::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background-image:
+    linear-gradient(rgba(90, 130, 255, 0.07) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(90, 130, 255, 0.07) 1px, transparent 1px);
+  background-size: 64px 64px;
+}
+
+/* The old glow layer is not needed any more (glows are in the background above).
+   The element can stay in your JSX, it just stays empty. */
+.kk-graphic-banner-glow {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: none;
+}
+
+.kk-graphic-banner-inner {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 1360px;
+  min-height: 560px;
+  margin: 0 auto;
+  padding: calc(var(--kk-nav-offset) + 24px) 40px 56px;
+  display: grid;
+  grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+  align-items: center;
+  gap: 24px;
+}
+
+.kk-graphic-banner-no-image .kk-graphic-banner-inner {
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.kk-graphic-banner-no-image .kk-graphic-banner-content {
+  max-width: 760px;
+}
+
+
+/* ---------- LEFT CONTENT ---------- */
+
+.kk-graphic-banner-content {
+  position: relative;
+  width: 100%;
+  max-width: 640px;
+  text-align: left;
+}
+
+.kk-graphic-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 22px;
+  padding: 9px 20px;
+  border: 1.5px solid #22d3ee;
+  border-radius: 999px;
+  background: rgba(6, 24, 60, 0.7);
+  box-shadow: 0 0 16px rgba(34, 211, 238, 0.25), inset 0 0 10px rgba(34, 211, 238, 0.1);
+  color: #22d3ee;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  line-height: 1.3;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.kk-graphic-badge i {
+  width: 9px;
+  height: 9px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: #22d3ee;
+  box-shadow: 0 0 10px #22d3ee;
+}
+
+.kk-graphic-page .kk-graphic-heading {
+  margin: 0 0 20px;
+  color: #ffffff;
+  font-size: clamp(34px, 4.4vw, 62px);
+  line-height: 1.08;
+  font-weight: 800;
+  letter-spacing: -0.025em;
+}
+
+.kk-graphic-heading-plain {
+  color: #ffffff;
+}
+
+.kk-graphic-heading-accent {
+  background-image: linear-gradient(90deg, #14b8ff 0%, #8b5cf6 55%, #e040fb 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+}
+
+.kk-graphic-page .kk-graphic-subtext {
+  width: 100%;
+  max-width: 560px;
+  margin: 0 0 28px;
+  color: rgba(255, 255, 255, 0.88);
+  font-size: clamp(14px, 1.25vw, 17px);
+  line-height: 1.65;
+  text-align: left;
+}
+
+
+/* ---------- BUTTONS ---------- */
+
+.kk-graphic-banner-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 30px;
+}
+
+.kk-graphic-banner-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 15px 28px;
+  border: 1px solid transparent;
+  border-radius: 10px;
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1.2;
+  text-decoration: none;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+}
+
+.kk-graphic-banner-btn-primary {
+  background: linear-gradient(90deg, #1e9bff 0%, #b44cff 100%);
+  color: #ffffff;
+  box-shadow: 0 8px 26px rgba(120, 80, 255, 0.4);
+}
+
+.kk-graphic-banner-btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 32px rgba(120, 80, 255, 0.55);
+}
+
+.kk-graphic-banner-btn-outline {
+  background: rgba(255, 255, 255, 0.02);
+  color: #ffffff;
+  border-color: rgba(255, 255, 255, 0.4);
+}
+
+.kk-graphic-banner-btn-outline:hover {
+  transform: translateY(-2px);
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.7);
+}
+
+.kk-graphic-banner-play {
+  width: 26px;
+  height: 26px;
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding-left: 2px;
+  border: 1.5px solid #ffffff;
+  border-radius: 50%;
+  color: #ffffff;
+}
+
+
+/* ---------- TRUST ROW ---------- */
+
+.kk-graphic-trust {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.kk-graphic-trust-avatars {
+  display: flex;
+  align-items: center;
+}
+
+.kk-graphic-trust-avatar {
+  width: 44px;
+  height: 44px;
+  margin-left: -12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #f5b94a;
+  border-radius: 50%;
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.kk-graphic-trust-avatar:first-child {
+  margin-left: 0;
+}
+
+.kk-graphic-trust-text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.kk-graphic-trust-text strong {
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.kk-graphic-trust-text span {
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 14px;
+  line-height: 1.2;
+}
+
+
+/* ---------- RIGHT IMAGE ---------- */
+
+.kk-graphic-banner-visual {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.kk-graphic-banner-image {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  max-height: 640px;
+  margin: 0;
+  padding: 0;
+  object-fit: contain;
+  object-position: center center;
+  background: transparent;
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, #000 12%, #000 92%, transparent 100%);
+  mask-image: linear-gradient(to right, transparent 0%, #000 12%, #000 92%, transparent 100%);
+}
+
+
+/* =====================================================
+   STATS
+===================================================== */
+
+.kk-graphic-stats {
+  width: 100%;
+  padding: 48px 24px 0;
+  background: #f8fafc;
+}
+
+.kk-graphic-stats-grid {
+  width: 100%;
+  max-width: 1140px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.kk-graphic-stat {
+  position: relative;
+  min-height: 150px;
+  padding: 18px 18px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+  background: #ffffff;
+  border: 1px solid #e8edf6;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.05);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.kk-graphic-stat:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 34px rgba(15, 23, 42, 0.1);
+}
+
+.kk-graphic-stat-top {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.kk-graphic-stat-icon {
+  width: 56px;
+  height: 56px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 14px;
+}
+
+.kk-graphic-stat-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.kk-graphic-stat-info strong {
+  font-size: 26px;
+  line-height: 1.1;
+  font-weight: 800;
+  color: #0f172a;
+}
+
+.kk-graphic-stat-label {
+  font-size: 13px;
+  color: #475569;
+}
+
+.kk-graphic-stat-change {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  font-size: 12.5px;
+  font-weight: 700;
+  color: #16a34a;
+}
+
+.kk-graphic-spark {
+  display: block;
+  width: calc(100% + 36px);
+  height: 46px;
+  margin: 8px -18px 0;
+}
+
+
+/* =====================================================
+   SERVICES
+===================================================== */
+
+.kk-graphic-services {
+  width: 100%;
+  padding: 80px 24px;
+  background: #f8fafc;
+  scroll-margin-top: 20px;
+}
+
+/* services sits right under the stats row, so trim the top gap */
+.kk-graphic-stats + .kk-graphic-services {
+  padding-top: 64px;
+}
+
+.kk-graphic-services-grid {
+  width: 100%;
+  max-width: 1140px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.kk-graphic-service-card {
+  width: 100%;
+  padding: 18px 20px 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  background: #ffffff;
+  border: 1px solid #e6ebf5;
+  border-radius: 18px;
+  text-align: left;
+  cursor: pointer;
+  outline: none;
+  transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.kk-graphic-service-card:hover,
+.kk-graphic-service-card:focus-visible,
+.kk-graphic-service-card.kk-graphic-active {
+  transform: translateY(-4px);
+  border-color: #b9cdfc;
+  box-shadow: 0 18px 38px rgba(37, 99, 255, 0.14);
+}
+
+.kk-graphic-service-media {
+  width: 100%;
+  height: 160px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  background: radial-gradient(
+    ellipse at center,
+    var(--kk-glow, rgba(124, 92, 255, 0.18)) 0%,
+    transparent 70%
+  );
+}
+
+/* icon artwork: big gradient tile + 3 floating tiles */
+
+.kk-graphic-service-cluster {
+  position: relative;
+  width: 100%;
+  max-width: 260px;
+  height: 100%;
+}
+
+.kk-graphic-service-main {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 88px;
+  height: 88px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 24px;
+  color: #ffffff;
+  transform: translate(-50%, -50%) rotate(-6deg);
+  box-shadow: 0 16px 30px rgba(91, 94, 160, 0.35);
+  transition: transform 0.35s ease;
+}
+
+.kk-graphic-service-card:hover .kk-graphic-service-main {
+  transform: translate(-50%, -50%) rotate(0deg) scale(1.06);
+}
+
+.kk-graphic-float {
+  position: absolute;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 14px;
+  box-shadow: 0 10px 22px rgba(15, 23, 42, 0.14);
+  transition: transform 0.35s ease;
+}
+
+.kk-graphic-float-1 {
+  top: 16px;
+  left: calc(50% - 112px);
+  transform: rotate(-8deg);
+}
+
+.kk-graphic-float-2 {
+  top: 10px;
+  right: calc(50% - 112px);
+  transform: rotate(7deg);
+}
+
+.kk-graphic-float-3 {
+  bottom: 16px;
+  right: calc(50% - 98px);
+  transform: rotate(-5deg);
+}
+
+.kk-graphic-service-card:hover .kk-graphic-float-1 {
+  transform: rotate(0deg) translateY(-4px);
+}
+
+.kk-graphic-service-card:hover .kk-graphic-float-2 {
+  transform: rotate(0deg) translateY(-4px);
+}
+
+.kk-graphic-service-card:hover .kk-graphic-float-3 {
+  transform: rotate(0deg) translateY(4px);
+}
+
+.kk-graphic-service-body {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 14px;
+}
+
+.kk-graphic-service-text {
+  min-width: 0;
+  flex: 1;
+}
+
+.kk-graphic-service-card h3 {
+  margin: 0 0 6px;
+  font-size: 17px;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.kk-graphic-service-card p {
+  margin: 0;
+  font-size: 13.5px;
+  line-height: 1.6;
+  color: #64748b;
+}
+
+.kk-graphic-service-arrow {
+  width: 38px;
+  height: 38px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1.5px solid #2563ff;
+  border-radius: 50%;
+  background: #ffffff;
+  color: #2563ff;
+  transition: background 0.25s ease, color 0.25s ease, transform 0.25s ease;
+}
+
+.kk-graphic-service-arrow:hover {
+  background: #2563ff;
+  color: #ffffff;
+  transform: translateX(3px);
+}
+
+
+/* =====================================================
+   AWS CREATIVE DESIGN SECTION
+===================================================== */
+
+.kk-graphic-admin-design {
+  width: 100%;
+  padding: 80px 24px;
+  background: #ffffff;
+  scroll-margin-top: 20px;
+}
+
+.kk-graphic-admin-design-grid {
+  width: 100%;
+  max-width: 1140px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.kk-graphic-admin-design-card {
+  width: 100%;
+  overflow: hidden;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  box-shadow: 0 8px 25px rgba(15, 23, 42, 0.06);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.kk-graphic-admin-design-card:hover {
+  transform: translateY(-5px);
+  border-color: #d5d9ea;
+  box-shadow: 0 16px 35px rgba(15, 23, 42, 0.1);
+}
+
+.kk-graphic-admin-design-image {
+  position: relative;
+  width: 100%;
+  height: 240px;
+  overflow: hidden;
+  background: #f1f5f9;
+}
+
+.kk-graphic-admin-design-image img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.4s ease;
+}
+
+.kk-graphic-admin-design-card:hover .kk-graphic-admin-design-image img {
+  transform: scale(1.05);
+}
+
+.kk-graphic-admin-design-content {
+  width: 100%;
+  padding: 22px 20px 24px;
+}
+
+.kk-graphic-admin-design-category {
+  display: inline-block;
+  margin-bottom: 8px;
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 1.2;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #4338ca;
+}
+
+.kk-graphic-admin-design-content h3 {
+  margin: 0 0 9px;
+  font-size: 19px;
+  line-height: 1.35;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.kk-graphic-admin-design-content p {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.7;
+  color: #64748b;
+}
+
+
+/* =====================================================
+   PROCESS
+===================================================== */
+
+.kk-graphic-process {
+  width: 100%;
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 80px 24px;
+}
+
+
+
+/* =====================================================
+   WHY LIST (used in Capabilities)
+===================================================== */
+
+.kk-graphic-why-list {
+  width: 100%;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.kk-graphic-why-list li {
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 16px 18px;
+  background: #ffffff;
+  border: 1px solid #dfe5ee;
+  border-radius: 12px;
+  cursor: pointer;
+  outline: none;
+  transition: background 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease, transform 0.25s ease;
+}
+
+.kk-graphic-why-list li:hover {
+  background: #5b5ea0;
+  border-color: #5b5ea0;
+  box-shadow: 0 12px 28px rgba(91, 94, 160, 0.25);
+  transform: translateY(-2px);
+}
+
+.kk-graphic-why-bullet {
+  flex-shrink: 0;
+  width: 18px;
+  height: 18px;
+  margin-top: 2px;
+  color: #4338ca;
+  transition: color 0.25s ease;
+}
+
+.kk-graphic-why-list li:hover .kk-graphic-why-bullet {
+  color: #ffffff;
+}
+
+.kk-graphic-why-list li > div {
+  min-width: 0;
+  flex: 1;
+}
+
+.kk-graphic-why-list li h4 {
+  margin: 0 0 4px;
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1.4;
+  color: #0f172a;
+  transition: color 0.25s ease;
+}
+
+.kk-graphic-why-list li:hover h4 {
+  color: #ffffff;
+}
+
+.kk-graphic-why-list li p {
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.5;
+  color: #64748b;
+  transition: color 0.25s ease;
+}
+
+.kk-graphic-why-list li:hover p {
+  color: #e8e9ff;
+}
+
+.kk-graphic-why-list li:focus-visible {
+  background: #5b5ea0;
+  border-color: #5b5ea0;
+  box-shadow: 0 0 0 3px rgba(91, 94, 160, 0.22);
+}
+
+.kk-graphic-why-list li:focus-visible .kk-graphic-why-bullet {
+  color: #ffffff;
+}
+
+.kk-graphic-why-list li:focus-visible h4 {
+  color: #ffffff;
+}
+
+.kk-graphic-why-list li:focus-visible p {
+  color: #e8e9ff;
+}
+
+
+/* =====================================================
+   AWS WHY CHOOSE SECTION
+===================================================== */
+
+.kk-graphic-admin-why {
+  width: 100%;
+  padding: 80px 24px;
+  background: #f8fafc;
+}
+
+.kk-graphic-admin-why-grid {
+  width: 100%;
+  max-width: 1140px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.kk-graphic-admin-why-card {
+  width: 100%;
+  overflow: hidden;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  box-shadow: 0 8px 25px rgba(15, 23, 42, 0.05);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.kk-graphic-admin-why-card:hover {
+  transform: translateY(-5px);
+  border-color: #d5d9ea;
+  box-shadow: 0 16px 35px rgba(15, 23, 42, 0.1);
+}
+
+.kk-graphic-admin-why-image {
+  width: 100%;
+  height: 230px;
+  overflow: hidden;
+  background: #f1f5f9;
+}
+
+.kk-graphic-admin-why-image img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.4s ease;
+}
+
+.kk-graphic-admin-why-card:hover .kk-graphic-admin-why-image img {
+  transform: scale(1.05);
+}
+
+.kk-graphic-admin-why-content {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  width: 100%;
+  padding: 22px 20px 24px;
+}
+
+.kk-graphic-admin-why-icon {
+  flex-shrink: 0;
+  width: 38px;
+  height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: #eef2ff;
+  color: #4338ca;
+}
+
+.kk-graphic-admin-why-content h3 {
+  margin: 0 0 8px;
+  font-size: 18px;
+  line-height: 1.4;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.kk-graphic-admin-why-content p {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.7;
+  color: #64748b;
+}
+
+
+/* =====================================================
+   CAPABILITIES
+===================================================== */
+
+.kk-graphic-capabilities {
+  width: 100%;
+  padding: 80px 24px;
+  background: #f8fafc;
+}
+
+.kk-graphic-capabilities-grid {
+  width: 100%;
+  max-width: 1140px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  max-width: 760px;
+  gap: 32px;
+  align-items: start;
+}
+
+.kk-graphic-capabilities-list {
+  flex: none;
+}
+
+.kk-graphic-capabilities-list-alt {
+  list-style: none;
+  margin: 0;
+  padding: 28px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px 28px;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 14px;
+  font-size: 14px;
+  color: #334155;
+}
+
+.kk-graphic-capabilities-list-alt li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.kk-graphic-capabilities-list-alt li svg {
+  flex-shrink: 0;
+  color: var(--kk-sky-400);
+}
+
+
+/* =====================================================
+   DESIGN TOOLS
+===================================================== */
+
+
+
+/* =====================================================
+   DESIGN TOOLS
+===================================================== */
+
+.kk-graphic-tools {
+  width: 100%;
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 80px 24px;
+}
+
+.kk-graphic-tools-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 14px;
+}
+
+.kk-graphic-tool-card {
+  flex: 0 1 calc(12.5% - 12.25px);
+  min-width: 0;
+  padding: 20px 8px 18px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  text-align: center;
+  background: #ffffff;
+  border: 1px solid #e6ebf5;
+  border-radius: 14px;
+  box-shadow: 0 6px 18px rgba(15, 23, 42, 0.04);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.kk-graphic-tool-card:hover {
+  transform: translateY(-4px);
+  border-color: #cfdcfb;
+  box-shadow: 0 14px 28px rgba(37, 99, 255, 0.12);
+}
+
+.kk-graphic-tool-name {
+  font-size: 12.5px;
+  line-height: 1.35;
+  font-weight: 600;
+  color: #1e293b;
+}
+
+/* ---------- drawn logos ---------- */
+
+.kk-graphic-tool-logo {
+  width: 54px;
+  height: 54px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.kk-graphic-tool-adobe {
+  border: 2px solid;
+  border-radius: 12px;
+  font-size: 21px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.kk-graphic-tool-figma {
+  border-radius: 12px;
+  background: #1e1e1e;
+}
+
+.kk-graphic-tool-corel {
+  border-radius: 50%;
+  background: linear-gradient(135deg, #8fd14f, #0b8a3e);
+}
+
+.kk-graphic-tool-canva {
+  border-radius: 50%;
+  background: linear-gradient(135deg, #00c4cc, #7d2ae8);
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 800;
+  font-style: italic;
+}
+
+.kk-graphic-tool-affinity {
+  border-radius: 10px;
+  background: linear-gradient(135deg, #1b72be, #29b6f6);
+}
+
+/* =====================================================
+   CTA
+===================================================== */
+
+.kk-graphic-cta-wrap {
+  width: 100%;
+  padding: 0 24px 80px;
+}
+
+.kk-graphic-cta {
+  position: relative;
+  width: 100%;
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 56px 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+  flex-wrap: wrap;
+  overflow: hidden;
+  border-radius: 20px;
+  background: linear-gradient(120deg, #312e81 0%, #4338ca 55%, #6d28d9 100%);
+}
+
+.kk-graphic-cta::after {
+  content: "";
+  position: absolute;
+  width: 260px;
+  height: 260px;
+  top: -120px;
+  right: -60px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.kk-graphic-cta-content {
+  position: relative;
+  z-index: 1;
+  flex: 1;
+  min-width: 260px;
+}
+
+.kk-graphic-cta-content h2 {
+  margin: 0 0 10px;
+  font-size: 24px;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.kk-graphic-cta-content p {
+  max-width: 480px;
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #e0e7ff;
+}
+
+
+/* =====================================================
+   FAQ
+===================================================== */
+
+.kk-graphic-faq {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 24px 80px;
+}
+
+.kk-graphic-faq-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.kk-graphic-faq-item {
+  height: fit-content;
+  padding: 16px 20px;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.kk-graphic-faq-item:hover {
+  border-color: #cfd4e5;
+  box-shadow: 0 8px 20px rgba(15, 23, 42, 0.06);
+}
+
+.kk-graphic-faq-question {
+  width: 100%;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  border: none;
+  background: transparent;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  color: #0f172a;
+  cursor: pointer;
+  text-align: left;
+}
+
+.kk-graphic-faq-question span {
+  min-width: 0;
+}
+
+.kk-graphic-faq-question svg {
+  flex-shrink: 0;
+  color: #4338ca;
+}
+
+.kk-graphic-faq-answer {
+  margin: 12px 0 0;
+  font-size: 13px;
+  line-height: 1.6;
+  color: #64748b;
+}
+
+
+/* =====================================================
+   WHY CHOOSE (ADVANTAGE)
+===================================================== */
+
+.kk-graphic-section-head-wide {
+  max-width: 860px;
+}
+
+.kk-graphic-head-accent {
+  display: block;
+  background-image: linear-gradient(90deg, #2563ff 0%, #7c3aed 55%, #d946ef 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+}
+
+.kk-graphic-advantage {
+  width: 100%;
+  padding: 80px 24px 40px;
+  background: #ffffff;
+}
+
+.kk-graphic-adv-grid {
+  width: 100%;
+  max-width: 1180px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 18px;
+}
+
+.kk-graphic-adv-card {
+  flex: 0 1 calc(20% - 15px);
+  min-width: 0;
+  padding: 22px 18px 24px;
+  background: #ffffff;
+  border: 1px solid #e6ebf5;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.05);
+  text-align: left;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.kk-graphic-adv-card:hover {
+  transform: translateY(-4px);
+  border-color: #cfdcfb;
+  box-shadow: 0 16px 34px rgba(37, 99, 255, 0.12);
+}
+
+.kk-graphic-adv-icon {
+  width: 52px;
+  height: 52px;
+  margin-bottom: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 14px;
+}
+
+.kk-graphic-adv-card h3 {
+  margin: 0 0 8px;
+  font-size: 16px;
+  line-height: 1.35;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.kk-graphic-adv-card p {
+  margin: 0;
+  font-size: 13.5px;
+  line-height: 1.6;
+  color: #64748b;
+}
+
+
+/* =====================================================
+   PROCESS TIMELINE
+===================================================== */
+
+.kk-graphic-timeline {
+  position: relative;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+}
+
+/* the horizontal line, running through the centers of the glowing nodes */
+.kk-graphic-timeline::before {
+  content: "";
+  position: absolute;
+  top: 50px;
+  left: 10%;
+  right: 10%;
+  height: 2px;
+  transform: translateY(-1px);
+  background: linear-gradient(
+    90deg,
+    rgba(99, 102, 241, 0.08),
+    rgba(99, 102, 241, 0.4) 50%,
+    rgba(99, 102, 241, 0.08)
+  );
+}
+
+.kk-graphic-tl-step {
+  position: relative;
+  padding: 0 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+/* the small dot between two nodes */
+.kk-graphic-tl-step:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  top: 45px;
+  left: 100%;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #6366f1;
+  box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.15);
+  transform: translateX(-50%);
+}
+
+.kk-graphic-tl-node-wrap {
+  position: relative;
+  z-index: 1;
+  width: 100px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.kk-graphic-tl-node {
+  width: 64px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  color: #ffffff;
+  box-shadow:
+    0 0 0 8px rgba(var(--kk-rgb), 0.16),
+    0 0 0 18px rgba(var(--kk-rgb), 0.08),
+    0 12px 26px rgba(var(--kk-rgb), 0.38);
+  transition: transform 0.3s ease;
+}
+
+.kk-graphic-tl-step:hover .kk-graphic-tl-node {
+  transform: scale(1.08);
+}
+
+.kk-graphic-tl-stem {
+  width: 2px;
+  height: 18px;
+  background: rgba(99, 102, 241, 0.35);
+}
+
+.kk-graphic-tl-badge {
+  width: 26px;
+  height: 26px;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 700;
+  box-shadow: 0 6px 14px rgba(15, 23, 42, 0.18);
+}
+
+.kk-graphic-tl-step h4 {
+  margin: 0 0 8px;
+  font-size: 16px;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.kk-graphic-tl-step p {
+  max-width: 210px;
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.6;
+  color: #64748b;
+}
+
+
+/* =====================================================
+   LAPTOP 1100
+===================================================== */
+
+@media (max-width: 1100px) {
+
+  .kk-graphic-banner-inner {
+    min-height: 500px;
+    padding: calc(var(--kk-nav-offset) + 20px) 28px 48px;
+    gap: 16px;
+  }
+}
+
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 1024px) {
+
+  /* HERO - stacked: text first, image below */
+
+  .kk-graphic-banner {
+    --kk-nav-offset: 80px;
+  }
+
+  .kk-graphic-banner-inner {
+    grid-template-columns: minmax(0, 1fr);
+    min-height: 0;
+    padding: calc(var(--kk-nav-offset) + 20px) 24px 32px;
+    gap: 28px;
+  }
+
+  .kk-graphic-banner-content {
+    max-width: 100%;
+  }
+
+  .kk-graphic-banner-visual {
+    max-width: 720px;
+    margin: 0 auto;
+  }
+
+  .kk-graphic-banner-image {
+    max-height: none;
+    -webkit-mask-image: linear-gradient(to bottom, transparent 0%, #000 10%, #000 90%, transparent 100%);
+    mask-image: linear-gradient(to bottom, transparent 0%, #000 10%, #000 90%, transparent 100%);
+  }
+
+  /* STATS */
+
+  .kk-graphic-stats-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  /* SERVICES */
+
+  .kk-graphic-services-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  /* CREATIVE DESIGN */
+
+  .kk-graphic-admin-design {
+    padding: 70px 24px;
+  }
+
+  .kk-graphic-admin-design-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+  }
+
+  /* AWS WHY CHOOSE */
+
+  .kk-graphic-admin-why {
+    padding: 70px 24px;
+  }
+
+  .kk-graphic-admin-why-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+  }
+
+  /* CAPABILITIES */
+
+  .kk-graphic-capabilities-grid {
+    grid-template-columns: 1fr;
+  }
+
+
+  /* FAQ */
+
+  .kk-graphic-faq-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 768px) {
+
+  /* HERO */
+
+  .kk-graphic-banner {
+    --kk-nav-offset: 72px;
+  }
+
+  .kk-graphic-banner-inner {
+    padding: calc(var(--kk-nav-offset) + 18px) 18px 26px;
+    gap: 22px;
+  }
+
+  .kk-graphic-badge {
+    margin-bottom: 16px;
+    padding: 8px 16px;
+    font-size: 10.5px;
+    letter-spacing: 0.12em;
+  }
+
+  .kk-graphic-page .kk-graphic-heading {
+    font-size: 32px;
+    line-height: 1.12;
+    margin-bottom: 14px;
+  }
+
+  .kk-graphic-page .kk-graphic-subtext {
+    max-width: 100%;
+    margin-bottom: 22px;
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  .kk-graphic-banner-actions {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+    margin-bottom: 24px;
+  }
+
+  .kk-graphic-banner-btn {
+    width: 100%;
+    padding: 14px 20px;
+    font-size: 14px;
+  }
+
+  .kk-graphic-trust-avatar {
+    width: 40px;
+    height: 40px;
+    font-size: 14px;
+  }
+
+  .kk-graphic-trust-text strong {
+    font-size: 15px;
+  }
+
+  .kk-graphic-trust-text span {
+    font-size: 13px;
+  }
+
+  /* HEADINGS */
+
+  .kk-graphic-section-head h2 {
+    font-size: 24px;
+  }
+
+  .kk-graphic-process,
+  .kk-graphic-tools,
+  .kk-graphic-services,
+  .kk-graphic-capabilities {
+    padding: 56px 20px;
+  }
+
+  /* STATS - 2 x 2, every card stacked and centered */
+
+  .kk-graphic-stats {
+    padding: 36px 20px 0;
+  }
+
+  .kk-graphic-stats-grid {
+    gap: 14px;
+  }
+
+  .kk-graphic-stat {
+    min-height: 0;
+    padding: 18px 12px 0;
+    text-align: center;
+  }
+
+  .kk-graphic-stat-top {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .kk-graphic-stat-info {
+    align-items: center;
+  }
+
+  .kk-graphic-spark {
+    width: calc(100% + 24px);
+    margin: 10px -12px 0;
+  }
+
+  /* SERVICES - one column, image / text / arrow centered */
+
+  .kk-graphic-stats + .kk-graphic-services {
+    padding-top: 48px;
+  }
+
+  .kk-graphic-services-grid {
+    grid-template-columns: 1fr;
+    max-width: 440px;
+  }
+
+  .kk-graphic-service-card {
+    align-items: center;
+    text-align: center;
+  }
+
+  .kk-graphic-service-media {
+    height: 170px;
+  }
+
+  .kk-graphic-service-body {
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+  }
+
+  /* CREATIVE DESIGN */
+
+  .kk-graphic-admin-design {
+    padding: 56px 20px;
+  }
+
+  .kk-graphic-admin-design-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .kk-graphic-admin-design-image {
+    height: 240px;
+  }
+
+  /* WHY LIST */
+
+  .kk-graphic-why-list {
+    width: 100%;
+    gap: 12px;
+  }
+
+  .kk-graphic-why-list li {
+    padding: 15px 16px;
+    gap: 12px;
+    border-radius: 11px;
+    flex-direction: row;
+    align-items: flex-start;
+  }
+
+  .kk-graphic-why-list li h4 {
+    font-size: 14px;
+  }
+
+  .kk-graphic-why-list li p {
+    font-size: 12.5px;
+    line-height: 1.55;
+  }
+
+  /* AWS WHY CHOOSE */
+
+  .kk-graphic-admin-why {
+    padding: 56px 20px;
+  }
+
+  .kk-graphic-admin-why-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .kk-graphic-admin-why-image {
+    height: 240px;
+  }
+
+
+  /* CTA */
+
+  .kk-graphic-cta-wrap {
+    padding: 0 20px 56px;
+  }
+
+  .kk-graphic-cta {
+    padding: 40px 24px;
+    text-align: center;
+    justify-content: center;
+  }
+
+  .kk-graphic-cta-content p {
+    margin: 0 auto;
+  }
+
+  /* FAQ */
+
+  .kk-graphic-faq {
+    padding: 0 20px 56px;
+  }
+}
+
+
+/* =====================================================
+   SMALL MOBILE
+===================================================== */
+
+@media (max-width: 480px) {
+
+  /* HERO */
+
+  .kk-graphic-banner-inner {
+    padding: calc(var(--kk-nav-offset) + 14px) 14px 22px;
+  }
+
+  .kk-graphic-page .kk-graphic-heading {
+    font-size: 27px;
+  }
+
+  .kk-graphic-page .kk-graphic-subtext {
+    font-size: 13.5px;
+  }
+
+  .kk-graphic-trust {
+    gap: 12px;
+  }
+
+  .kk-graphic-trust-avatar {
+    width: 36px;
+    height: 36px;
+    margin-left: -10px;
+    font-size: 13px;
+  }
+
+  /* BUTTON */
+
+  .kk-graphic-btn {
+    padding: 12px 22px;
+    font-size: 13px;
+  }
+
+  /* HEADINGS */
+
+  .kk-graphic-section-head {
+    margin-bottom: 34px;
+    padding: 0 12px;
+  }
+
+  .kk-graphic-section-head h2 {
+    font-size: 20px;
+  }
+
+  .kk-graphic-section-head p {
+    font-size: 13px;
+  }
+
+  .kk-graphic-eyebrow {
+    font-size: 11px;
+    letter-spacing: 0.18em;
+  }
+
+  /* STATS */
+
+  .kk-graphic-stats {
+    padding: 32px 14px 0;
+  }
+
+  .kk-graphic-stats-grid {
+    gap: 12px;
+  }
+
+  .kk-graphic-stat-icon {
+    width: 48px;
+    height: 48px;
+  }
+
+  .kk-graphic-stat-info strong {
+    font-size: 22px;
+  }
+
+  .kk-graphic-stat-label {
+    font-size: 12px;
+  }
+
+  .kk-graphic-stat-change {
+    font-size: 12px;
+  }
+
+  /* SERVICE CARDS */
+
+  .kk-graphic-service-card {
+    padding: 16px 16px 20px;
+  }
+
+  .kk-graphic-service-media {
+    height: 150px;
+  }
+
+  .kk-graphic-service-card h3 {
+    font-size: 16px;
+  }
+
+  .kk-graphic-service-card p {
+    font-size: 13px;
+  }
+
+  /* CREATIVE DESIGN */
+
+  .kk-graphic-admin-design {
+    padding: 48px 14px;
+  }
+
+  .kk-graphic-admin-design-grid {
+    gap: 16px;
+  }
+
+  .kk-graphic-admin-design-image {
+    height: 210px;
+  }
+
+  .kk-graphic-admin-design-content {
+    padding: 18px 16px 20px;
+  }
+
+  .kk-graphic-admin-design-content h3 {
+    font-size: 17px;
+  }
+
+  .kk-graphic-admin-design-content p {
+    font-size: 13px;
+  }
+
+  /* WHY LIST */
+
+  .kk-graphic-why-list {
+    gap: 10px;
+  }
+
+  .kk-graphic-why-list li {
+    width: 100%;
+    padding: 14px;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 10px;
+    border-radius: 10px;
+  }
+
+  .kk-graphic-why-bullet {
+    width: 17px;
+    height: 17px;
+    flex-shrink: 0;
+  }
+
+  .kk-graphic-why-list li h4 {
+    font-size: 13.5px;
+    line-height: 1.4;
+  }
+
+  .kk-graphic-why-list li p {
+    font-size: 12px;
+    line-height: 1.5;
+  }
+
+  /* AWS WHY CHOOSE */
+
+  .kk-graphic-admin-why {
+    padding: 48px 14px;
+  }
+
+  .kk-graphic-admin-why-grid {
+    gap: 16px;
+  }
+
+  .kk-graphic-admin-why-image {
+    height: 210px;
+  }
+
+  .kk-graphic-admin-why-content {
+    gap: 10px;
+    padding: 18px 16px 20px;
+  }
+
+  .kk-graphic-admin-why-icon {
+    width: 34px;
+    height: 34px;
+  }
+
+  .kk-graphic-admin-why-content h3 {
+    font-size: 16px;
+  }
+
+  .kk-graphic-admin-why-content p {
+    font-size: 13px;
+  }
+
+
+  /* CTA */
+
+  .kk-graphic-cta {
+    padding: 34px 18px;
+    border-radius: 16px;
+  }
+
+  .kk-graphic-cta-content h2 {
+    font-size: 21px;
+  }
+
+  .kk-graphic-cta-content p {
+    font-size: 13px;
+  }
+
+  /* FAQ */
+
+  .kk-graphic-faq {
+    padding: 0 14px 48px;
+  }
+
+  .kk-graphic-faq-item {
+    padding: 14px 16px;
+  }
+
+  .kk-graphic-faq-question {
+    font-size: 13px;
+  }
+
+  .kk-graphic-faq-answer {
+    font-size: 12px;
+  }
+}
+
+
+/* =====================================================
+   VERY NARROW SCREENS
+===================================================== */
+
+@media (max-width: 340px) {
+
+  .kk-graphic-page .kk-graphic-heading {
+    font-size: 24px;
+  }
+
+  .kk-graphic-badge {
+    font-size: 9.5px;
+    padding: 7px 12px;
+  }
+
+  .kk-graphic-stat-info strong {
+    font-size: 20px;
+  }
+}
+
+
+/* =====================================================
+   WHY CHOOSE + TIMELINE RESPONSIVE
+===================================================== */
+
+@media (max-width: 1100px) {
+
+  .kk-graphic-adv-card {
+    flex: 0 1 calc(33.333% - 12px);
+  }
+}
+
+@media (max-width: 768px) {
+
+  /* WHY CHOOSE - 2 per row, everything centered */
+
+  .kk-graphic-advantage {
+    padding: 56px 20px 24px;
+  }
+
+  .kk-graphic-adv-grid {
+    gap: 14px;
+  }
+
+  .kk-graphic-adv-card {
+    flex: 0 1 calc(50% - 7px);
+    padding: 22px 14px 22px;
+    text-align: center;
+  }
+
+  .kk-graphic-adv-icon {
+    margin: 0 auto 14px;
+  }
+
+  /* TIMELINE - one column, centered, short line between steps */
+
+  .kk-graphic-timeline {
+    grid-template-columns: minmax(0, 1fr);
+    max-width: 420px;
+    margin: 0 auto;
+    row-gap: 46px;
+  }
+
+  .kk-graphic-timeline::before {
+    display: none;
+  }
+
+  .kk-graphic-tl-step:not(:last-child)::after {
+    top: calc(100% + 8px);
+    left: 50%;
+    width: 2px;
+    height: 30px;
+    border-radius: 2px;
+    background: linear-gradient(
+      to bottom,
+      rgba(99, 102, 241, 0.5),
+      rgba(99, 102, 241, 0.08)
+    );
+    box-shadow: none;
+    transform: translateX(-50%);
+  }
+
+  .kk-graphic-tl-step p {
+    max-width: 320px;
+  }
+
+  /* CAPABILITIES */
+
+  .kk-graphic-capabilities-list-alt {
+    grid-template-columns: minmax(0, 1fr);
+    padding: 22px 18px;
+    gap: 14px;
+  }
+
+  .kk-graphic-capabilities-list-alt li {
+    justify-content: center;
+    text-align: center;
+  }
+}
+
+@media (max-width: 560px) {
+
+  .kk-graphic-adv-card {
+    flex: 0 1 100%;
+    max-width: 380px;
+  }
+}
+
+@media (max-width: 480px) {
+
+  .kk-graphic-advantage {
+    padding: 48px 14px 16px;
+  }
+
+  .kk-graphic-adv-card h3 {
+    font-size: 15.5px;
+  }
+
+  .kk-graphic-tl-node-wrap {
+    width: 96px;
+    height: 96px;
+  }
+
+  .kk-graphic-tl-node {
+    width: 60px;
+    height: 60px;
+  }
+}
+
+
+/* =====================================================
+   TOOLS RESPONSIVE
+===================================================== */
+
+@media (max-width: 1100px) {
+
+  .kk-graphic-tool-card {
+    flex: 0 1 calc(25% - 10.5px);
+  }
+}
+
+@media (max-width: 768px) {
+
+  .kk-graphic-tools-grid {
+    gap: 12px;
+  }
+
+  .kk-graphic-tool-card {
+    flex: 0 1 calc(33.333% - 8px);
+    padding: 18px 8px 16px;
+  }
+}
+
+@media (max-width: 480px) {
+
+  .kk-graphic-tools-grid {
+    gap: 10px;
+  }
+
+  .kk-graphic-tool-card {
+    flex: 0 1 calc(50% - 5px);
+    gap: 12px;
+  }
+
+  .kk-graphic-tool-name {
+    font-size: 12px;
+  }
+}
+
+
+/* =====================================================
+   IMAGE LOADING / FALLBACK
+===================================================== */
+
+.kk-graphic-admin-design-image img,
+.kk-graphic-admin-why-image img {
+  background: #0f172a;
+  max-width: 100%;
+}
+
+
+/* =====================================================
+   REDUCE MOTION
+===================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .kk-graphic-page *,
+  .kk-graphic-page *::before,
+  .kk-graphic-page *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}

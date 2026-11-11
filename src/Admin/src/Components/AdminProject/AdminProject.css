@@ -1,0 +1,1295 @@
+/* =========================================================
+   ADMIN PROJECT PAGE
+========================================================= */
+
+.admin-project-page {
+  width: 100%;
+  min-height: 100vh;
+
+  padding: 24px;
+
+  box-sizing: border-box;
+
+  background: #f5f7fb;
+
+  font-family:
+    "Inter",
+    "Poppins",
+    "Segoe UI",
+    Arial,
+    sans-serif;
+
+  color: #101828;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.admin-project-header {
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 20px;
+
+  margin-bottom: 22px;
+}
+
+.admin-project-header h2 {
+  margin: 0;
+
+  font-size: 25px;
+  line-height: 1.3;
+
+  font-weight: 700;
+
+  color: #101828;
+}
+
+.admin-project-header p {
+  margin: 6px 0 0;
+
+  font-size: 14px;
+  line-height: 1.5;
+
+  color: #667085;
+}
+
+
+/* =========================================================
+   ADD IMAGE BUTTON
+========================================================= */
+
+.project-add-button {
+  min-height: 44px;
+
+  padding: 0 20px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 8px;
+
+  border: none;
+  border-radius: 7px;
+
+  background: #2166ed;
+  color: #ffffff;
+
+  font-family: inherit;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  white-space: nowrap;
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.project-add-button:hover {
+  background: #1557d3;
+
+  transform: translateY(-1px);
+
+  box-shadow:
+    0 4px 12px rgba(33, 102, 237, 0.2);
+}
+
+.project-add-button:active {
+  transform: translateY(0);
+}
+
+.project-add-button span {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 21px;
+  line-height: 1;
+
+  font-weight: 400;
+}
+
+
+/* =========================================================
+   FORM CARD
+========================================================= */
+
+.project-form-card {
+  width: 100%;
+
+  margin-bottom: 24px;
+
+  padding: 25px;
+
+  box-sizing: border-box;
+
+  background: #ffffff;
+
+  border: 1px solid #e4e7ec;
+
+  border-radius: 12px;
+
+  box-shadow:
+    0 3px 12px rgba(16, 24, 40, 0.05);
+}
+
+
+/* =========================================================
+   FORM HEADER
+========================================================= */
+
+.project-form-header {
+  width: 100%;
+
+  margin-bottom: 24px;
+
+  padding-bottom: 18px;
+
+  border-bottom: 1px solid #eaecf0;
+}
+
+.project-form-header h3 {
+  margin: 0;
+
+  font-size: 20px;
+  line-height: 1.4;
+
+  font-weight: 700;
+
+  color: #101828;
+}
+
+.project-form-header p {
+  margin: 6px 0 0;
+
+  font-size: 13px;
+  line-height: 1.5;
+
+  color: #667085;
+}
+
+
+/* =========================================================
+   FORM GROUP
+========================================================= */
+
+.project-form-group {
+  width: 100%;
+
+  margin-bottom: 20px;
+}
+
+.project-form-group:last-of-type {
+  margin-bottom: 0;
+}
+
+
+/* =========================================================
+   LABEL
+========================================================= */
+
+.project-form-group label {
+  display: flex;
+  align-items: center;
+
+  gap: 8px;
+
+  margin-bottom: 8px;
+
+  font-size: 14px;
+  line-height: 1.4;
+
+  font-weight: 600;
+
+  color: #344054;
+}
+
+.project-form-group label span {
+  font-size: 11px;
+
+  line-height: 1;
+
+  font-weight: 500;
+
+  color: #98a2b3;
+}
+
+
+/* =========================================================
+   INPUT
+========================================================= */
+
+.project-input {
+  width: 100%;
+
+  min-height: 46px;
+
+  padding: 0 14px;
+
+  box-sizing: border-box;
+
+  border: 1px solid #d0d5dd;
+
+  border-radius: 8px;
+
+  outline: none;
+
+  background: #ffffff;
+
+  color: #101828;
+
+  font-family: inherit;
+
+  font-size: 14px;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.project-input:hover {
+  border-color: #98a2b3;
+}
+
+.project-input:focus {
+  border-color: #2166ed;
+
+  box-shadow:
+    0 0 0 3px rgba(33, 102, 237, 0.1);
+}
+
+.project-input::placeholder {
+  color: #98a2b3;
+}
+
+
+/* =========================================================
+   SELECT
+========================================================= */
+
+select.project-input {
+  height: 46px;
+
+  padding-right: 40px;
+
+  cursor: pointer;
+
+  appearance: auto;
+}
+
+
+/* =========================================================
+   TEXTAREA
+========================================================= */
+
+.project-textarea {
+  width: 100%;
+
+  min-height: 110px;
+
+  height: auto;
+
+  padding-top: 12px;
+  padding-bottom: 12px;
+
+  line-height: 1.5;
+
+  resize: vertical;
+}
+
+
+/* =========================================================
+   IMAGE UPLOAD BOX
+========================================================= */
+
+.project-upload-box {
+  position: relative;
+
+  width: 100%;
+
+  min-height: 190px;
+
+  box-sizing: border-box;
+
+  overflow: hidden;
+
+  border: 1.5px dashed #b8c1d1;
+
+  border-radius: 10px;
+
+  background: #f8fafc;
+
+  transition:
+    border-color 0.2s ease,
+    background 0.2s ease;
+}
+
+.project-upload-box:hover {
+  border-color: #2166ed;
+}
+
+
+/* =========================================================
+   UPLOAD CONTENT
+========================================================= */
+
+.project-upload-content {
+  width: 100%;
+
+  min-height: 190px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  box-sizing: border-box;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease;
+}
+
+.project-upload-content:hover {
+  background: #f1f5ff;
+}
+
+
+/* =========================================================
+   UPLOAD PLUS
+========================================================= */
+
+.project-upload-plus {
+  width: 48px;
+  height: 48px;
+
+  margin-bottom: 10px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: #e8efff;
+
+  color: #2166ed;
+
+  font-size: 30px;
+  line-height: 1;
+
+  font-weight: 400;
+}
+
+
+/* =========================================================
+   UPLOAD TEXT
+========================================================= */
+
+.project-upload-content strong {
+  display: block;
+
+  font-size: 14px;
+  line-height: 1.4;
+
+  font-weight: 600;
+
+  color: #344054;
+}
+
+.project-upload-content span {
+  display: block;
+
+  margin-top: 5px;
+
+  font-size: 12px;
+  line-height: 1.4;
+
+  color: #98a2b3;
+}
+
+
+/* =========================================================
+   SELECTED IMAGE
+========================================================= */
+
+.project-selected-image {
+  position: relative;
+
+  width: 100%;
+  height: 230px;
+
+  overflow: hidden;
+
+  background: #f2f4f7;
+}
+
+.project-selected-image img {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+}
+
+
+/* =========================================================
+   REMOVE IMAGE
+========================================================= */
+
+.project-remove-image {
+  position: absolute;
+
+  top: 10px;
+  right: 10px;
+
+  width: 34px;
+  height: 34px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0;
+
+  border: none;
+
+  border-radius: 50%;
+
+  background: #ffffff;
+
+  color: #e11d48;
+
+  font-size: 23px;
+  line-height: 1;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 3px 12px rgba(0, 0, 0, 0.18);
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+.project-remove-image:hover {
+  background: #fff1f2;
+
+  transform: scale(1.05);
+}
+
+
+/* =========================================================
+   FORM ACTIONS
+========================================================= */
+
+.project-form-actions {
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+
+  gap: 12px;
+
+  margin-top: 28px;
+
+  padding-top: 20px;
+
+  border-top: 1px solid #eaecf0;
+}
+
+
+/* =========================================================
+   CANCEL BUTTON
+========================================================= */
+
+.project-cancel-button {
+  min-width: 100px;
+  height: 44px;
+
+  padding: 0 20px;
+
+  border: 1px solid #d0d5dd;
+
+  border-radius: 8px;
+
+  background: #ffffff;
+
+  color: #344054;
+
+  font-family: inherit;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.project-cancel-button:hover {
+  background: #f9fafb;
+
+  border-color: #98a2b3;
+}
+
+
+/* =========================================================
+   SAVE BUTTON
+========================================================= */
+
+.project-save-button {
+  min-width: 100px;
+  height: 44px;
+
+  padding: 0 20px;
+
+  border: 1px solid #2166ed;
+
+  border-radius: 8px;
+
+  background: #2166ed;
+
+  color: #ffffff;
+
+  font-family: inherit;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.project-save-button:hover {
+  background: #1557d3;
+
+  box-shadow:
+    0 4px 10px rgba(33, 102, 237, 0.2);
+}
+
+
+/* =========================================================
+   TABLE CARD
+========================================================= */
+
+.project-table-card {
+  width: 100%;
+
+  background: #ffffff;
+
+  border-radius: 12px;
+
+  overflow: hidden;
+
+  box-shadow:
+    0 3px 14px rgba(16, 24, 40, 0.06);
+}
+
+
+/* =========================================================
+   TABLE WRAPPER
+========================================================= */
+
+.project-table-wrapper {
+  width: 100%;
+
+  overflow-x: auto;
+
+  -webkit-overflow-scrolling: touch;
+}
+
+
+/* =========================================================
+   TABLE
+========================================================= */
+
+.project-table {
+  width: 100%;
+
+  min-width: 1150px;
+
+  border-collapse: collapse;
+
+  table-layout: fixed;
+}
+
+
+/* =========================================================
+   TABLE HEADER
+========================================================= */
+
+.project-table thead {
+  background: #2166ed;
+}
+
+.project-table th {
+  height: 51px;
+
+  padding: 0 16px;
+
+  box-sizing: border-box;
+
+  text-align: left;
+  vertical-align: middle;
+
+  color: #ffffff;
+
+  font-size: 14px;
+  line-height: 1.3;
+
+  font-weight: 700;
+
+  white-space: nowrap;
+}
+
+
+/* =========================================================
+   COLUMN WIDTHS
+========================================================= */
+
+.project-table th:nth-child(1) {
+  width: 6%;
+}
+
+.project-table th:nth-child(2) {
+  width: 12%;
+}
+
+.project-table th:nth-child(3) {
+  width: 11%;
+}
+
+.project-table th:nth-child(4) {
+  width: 18%;
+}
+
+.project-table th:nth-child(5) {
+  width: 21%;
+}
+
+.project-table th:nth-child(6) {
+  width: 13%;
+}
+
+.project-table th:nth-child(7) {
+  width: 11%;
+}
+
+.project-table th:nth-child(8) {
+  width: 8%;
+}
+
+
+/* =========================================================
+   TABLE BODY
+========================================================= */
+
+.project-table tbody tr {
+  border-bottom: 1px solid #e4e7ec;
+
+  background: #ffffff;
+
+  transition:
+    background 0.15s ease;
+}
+
+.project-table tbody tr:nth-child(even) {
+  background: #fbfcfe;
+}
+
+.project-table tbody tr:hover {
+  background: #f5f8ff;
+}
+
+.project-table tbody tr:last-child {
+  border-bottom: none;
+}
+
+
+/* =========================================================
+   TABLE CELLS
+========================================================= */
+
+.project-table td {
+  height: 114px;
+
+  padding: 12px 16px;
+
+  box-sizing: border-box;
+
+  vertical-align: middle;
+
+  color: #101828;
+
+  font-size: 14px;
+  line-height: 1.45;
+
+  overflow: hidden;
+
+  text-overflow: ellipsis;
+}
+
+
+/* =========================================================
+   NUMBER
+========================================================= */
+
+.project-table td:first-child {
+  color: #101828;
+
+  font-weight: 500;
+}
+
+
+/* =========================================================
+   PREVIEW
+========================================================= */
+
+.project-table-preview {
+  width: 90px;
+  height: 68px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  overflow: hidden;
+
+  border-radius: 8px;
+
+  background: #f2f4f7;
+}
+
+.project-table-preview img {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+}
+
+
+/* =========================================================
+   NO IMAGE
+========================================================= */
+
+.project-no-image {
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #98a2b3;
+
+  font-size: 14px;
+}
+
+
+/* =========================================================
+   DELETE BUTTON
+========================================================= */
+
+.project-delete-button {
+  min-width: 82px;
+
+  height: 36px;
+
+  padding: 0 15px;
+
+  border: none;
+
+  border-radius: 6px;
+
+  background: #ef1742;
+
+  color: #ffffff;
+
+  font-family: inherit;
+
+  font-size: 13px;
+  line-height: 1;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    transform 0.15s ease;
+}
+
+.project-delete-button:hover {
+  background: #d90f35;
+
+  transform: translateY(-1px);
+}
+
+.project-delete-button:active {
+  transform: translateY(0);
+}
+
+
+/* =========================================================
+   EMPTY TABLE
+========================================================= */
+
+.project-empty-cell {
+  height: 160px !important;
+
+  padding: 20px !important;
+
+  text-align: center !important;
+
+  vertical-align: middle !important;
+
+  color: #667085 !important;
+
+  font-size: 14px !important;
+}
+
+
+/* =========================================================
+   PAGINATION
+========================================================= */
+
+.project-pagination {
+  width: 100%;
+
+  min-height: 70px;
+
+  padding: 15px 20px;
+
+  box-sizing: border-box;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 15px;
+
+  border-top: 1px solid #e4e7ec;
+
+  background: #ffffff;
+}
+
+
+/* =========================================================
+   PAGINATION NUMBERS
+========================================================= */
+
+.pagination-numbers {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 6px;
+}
+
+.pagination-number {
+  width: 36px;
+  height: 36px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0;
+
+  border: 1px solid #d0d5dd;
+
+  border-radius: 6px;
+
+  background: #ffffff;
+
+  color: #344054;
+
+  font-family: inherit;
+
+  font-size: 13px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.pagination-number:hover {
+  background: #f2f4f7;
+
+  border-color: #98a2b3;
+}
+
+.pagination-number.active {
+  border-color: #2166ed;
+
+  background: #2166ed;
+
+  color: #ffffff;
+}
+
+
+/* =========================================================
+   PREVIOUS / NEXT
+========================================================= */
+
+.pagination-arrow {
+  min-width: 105px;
+
+  height: 38px;
+
+  padding: 0 15px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid #d0d5dd;
+
+  border-radius: 6px;
+
+  background: #ffffff;
+
+  color: #344054;
+
+  font-family: inherit;
+
+  font-size: 13px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.pagination-arrow:hover:not(:disabled) {
+  background: #f2f4f7;
+
+  border-color: #98a2b3;
+}
+
+.pagination-arrow:disabled {
+  opacity: 0.45;
+
+  cursor: not-allowed;
+}
+
+
+/* =========================================================
+   TABLE SCROLLBAR
+========================================================= */
+
+.project-table-wrapper::-webkit-scrollbar {
+  height: 7px;
+}
+
+.project-table-wrapper::-webkit-scrollbar-track {
+  background: #f2f4f7;
+}
+
+.project-table-wrapper::-webkit-scrollbar-thumb {
+  background: #c5cbd5;
+
+  border-radius: 10px;
+}
+
+.project-table-wrapper::-webkit-scrollbar-thumb:hover {
+  background: #98a2b3;
+}
+
+
+/* =========================================================
+   RESPONSIVE - 1200px
+========================================================= */
+
+@media (max-width: 1200px) {
+
+  .admin-project-page {
+    padding: 22px;
+  }
+
+  .project-table {
+    min-width: 1100px;
+  }
+}
+
+
+/* =========================================================
+   RESPONSIVE - 900px
+========================================================= */
+
+@media (max-width: 900px) {
+
+  .admin-project-page {
+    padding: 20px;
+  }
+
+  .admin-project-header {
+    align-items: flex-start;
+  }
+
+  .admin-project-header h2 {
+    font-size: 23px;
+  }
+
+  .project-form-card {
+    padding: 20px;
+  }
+
+  .project-table {
+    min-width: 1050px;
+  }
+}
+
+
+/* =========================================================
+   RESPONSIVE - 700px
+========================================================= */
+
+@media (max-width: 700px) {
+
+  .admin-project-page {
+    padding: 16px;
+  }
+
+  .admin-project-header {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .admin-project-header h2 {
+    font-size: 22px;
+  }
+
+  .project-add-button {
+    width: 100%;
+  }
+
+  .project-form-card {
+    padding: 18px;
+  }
+
+  .project-form-header h3 {
+    font-size: 18px;
+  }
+
+  .project-upload-box {
+    min-height: 170px;
+  }
+
+  .project-upload-content {
+    min-height: 170px;
+  }
+
+  .project-selected-image {
+    height: 210px;
+  }
+
+  .project-form-actions {
+    flex-direction: column-reverse;
+
+    align-items: stretch;
+  }
+
+  .project-cancel-button,
+  .project-save-button {
+    width: 100%;
+  }
+
+  .project-pagination {
+    padding: 14px;
+
+    flex-wrap: wrap;
+
+    justify-content: center;
+  }
+
+  .pagination-numbers {
+    width: 100%;
+
+    order: 1;
+  }
+
+  .pagination-arrow {
+    order: 2;
+  }
+}
+
+
+/* =========================================================
+   RESPONSIVE - 480px
+========================================================= */
+
+@media (max-width: 480px) {
+
+  .admin-project-page {
+    padding: 12px;
+  }
+
+  .admin-project-header h2 {
+    font-size: 20px;
+  }
+
+  .admin-project-header p {
+    font-size: 13px;
+  }
+
+  .project-form-card {
+    padding: 15px;
+
+    border-radius: 10px;
+  }
+
+  .project-form-group label {
+    font-size: 13px;
+  }
+
+  .project-input {
+    font-size: 13px;
+  }
+
+  .project-upload-box {
+    min-height: 150px;
+  }
+
+  .project-upload-content {
+    min-height: 150px;
+  }
+
+  .project-upload-plus {
+    width: 42px;
+    height: 42px;
+
+    font-size: 26px;
+  }
+
+  .project-selected-image {
+    height: 180px;
+  }
+
+  .project-pagination {
+    gap: 10px;
+  }
+
+  .pagination-arrow {
+    min-width: 95px;
+
+    padding: 0 10px;
+
+    font-size: 12px;
+  }
+
+  .pagination-number {
+    width: 34px;
+    height: 34px;
+  }
+}
+
+
+
+/* =========================================================
+   PROJECT TABLE FIXES: keep the Action / Delete column visible
+   ========================================================= */
+
+.project-table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.project-table {
+  width: 100%;
+  min-width: 1450px;
+  table-layout: auto;
+  border-collapse: collapse;
+}
+
+.project-table th,
+.project-table td {
+  overflow-wrap: anywhere;
+}
+
+.project-table th:last-child,
+.project-table td:last-child {
+  min-width: 125px;
+  width: 125px;
+  text-align: center;
+  white-space: nowrap;
+  overflow: visible;
+}
+
+.project-table td:last-child {
+  padding: 12px 18px;
+}
+
+.project-delete-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 82px;
+  min-height: 36px;
+  padding: 0 15px;
+  border: none;
+  border-radius: 6px;
+  background: #ef1742;
+  color: #ffffff;
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.15s ease;
+}
+
+.project-delete-button:hover:not(:disabled) {
+  background: #d90f35;
+  transform: translateY(-1px);
+}
+
+.project-delete-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.project-table td a {
+  color: #2166ed;
+  text-decoration: underline;
+  overflow-wrap: anywhere;
+}
+
+/* Helpful on smaller screens: swipe horizontally to reach Action/Delete. */
+@media (max-width: 700px) {
+  .project-table {
+    min-width: 1450px;
+  }
+}

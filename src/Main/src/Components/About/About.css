@@ -1,0 +1,493 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap");
+
+/* ─────────────────────────────────────────────
+   About.css — About section
+   Pairs with About.jsx
+   ───────────────────────────────────────────── */
+
+.kk-about-wrap {
+  --kk-blue: #1a63e8;
+  --kk-blue-dark: #1552c9;
+  --kk-navy: #0b1f4b;
+  --kk-text: #52618a;
+  --kk-tile: #dbe8ff;
+
+  position: relative;
+  overflow: hidden;
+  padding: 4.5rem 5% 3.5rem;
+  background: linear-gradient(135deg, #f4f8ff 0%, #dce9ff 100%);
+  font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, Helvetica, Arial, sans-serif;
+  box-sizing: border-box;
+}
+
+.kk-about-wrap *,
+.kk-about-wrap *::before,
+.kk-about-wrap *::after {
+  box-sizing: border-box;
+}
+
+/* ---------- Background decoration ---------- */
+
+.kk-about-wrap::before,
+.kk-about-wrap::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  background: radial-gradient(
+    circle at 40% 40%,
+    rgba(96, 165, 250, 0.45),
+    rgba(96, 165, 250, 0) 70%
+  );
+}
+
+.kk-about-wrap::before {
+  width: 30rem;
+  height: 30rem;
+  left: -12rem;
+  top: 3rem;
+}
+
+.kk-about-wrap::after {
+  width: 32rem;
+  height: 32rem;
+  right: -10rem;
+  bottom: -8rem;
+}
+
+.kk-decor {
+  position: absolute;
+  pointer-events: none;
+}
+
+.kk-decor--ring {
+  width: 24rem;
+  height: 24rem;
+  top: -12rem;
+  left: -5rem;
+  border: 1.5px solid rgba(26, 99, 232, 0.35);
+  border-radius: 50%;
+}
+
+.kk-decor--dots-top,
+.kk-decor--dots-left,
+.kk-decor--dots-right {
+  width: 6rem;
+  height: 6rem;
+  background-image: radial-gradient(#8fb4f5 1.6px, transparent 1.8px);
+  background-size: 16px 16px;
+}
+
+.kk-decor--dots-top {
+  top: 1.5rem;
+  left: 70%;
+}
+
+.kk-decor--dots-left {
+  left: 3%;
+  top: 48%;
+}
+
+.kk-decor--dots-right {
+  right: 2%;
+  top: 36%;
+}
+
+.kk-decor--orb {
+  width: 3.5rem;
+  height: 3.5rem;
+  right: 3%;
+  top: 62%;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 35%, #8fb9ff, #5b9bff);
+  opacity: 0.8;
+}
+
+/* ---------- Layout ---------- */
+
+.kk-about {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
+  gap: 3.5rem;
+  align-items: center;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+/* ---------- Left column ---------- */
+
+.kk-about__eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  color: var(--kk-blue);
+}
+
+.kk-about__eyebrow::after {
+  content: "";
+  width: 2.5rem;
+  height: 2px;
+  background: var(--kk-blue);
+}
+
+.kk-about__heading {
+  margin: 1rem 0 1.25rem;
+  font-size: clamp(2.1rem, 3.6vw, 3.1rem);
+  font-weight: 800;
+  line-height: 1.12;
+  color: var(--kk-navy);
+}
+
+.kk-about__heading-top {
+  display: block;
+}
+
+.kk-about__highlight {
+  color: var(--kk-blue);
+}
+
+.kk-about__text {
+  max-width: 41rem;
+  margin: 0 0 2rem;
+  font-size: 1rem;
+  line-height: 1.75;
+  color: var(--kk-text);
+}
+
+/* 2x2 feature grid */
+
+.kk-about__features {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.75rem 2rem;
+  max-width: 41rem;
+  margin-bottom: 2.25rem;
+}
+
+.kk-about__feature {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.kk-about__feature-icon {
+  flex: none;
+  width: 3.4rem;
+  height: 3.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 1rem;
+  background: var(--kk-tile);
+  color: var(--kk-blue);
+}
+
+.kk-about__feature-title {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--kk-navy);
+}
+
+.kk-about__feature-title::after {
+  content: "";
+  display: block;
+  width: 1.75rem;
+  height: 2px;
+  margin: 0.4rem 0 0.5rem;
+  background: var(--kk-blue);
+}
+
+.kk-about__feature-text {
+  margin: 0;
+  font-size: 0.875rem;
+  line-height: 1.55;
+  color: var(--kk-text);
+}
+
+/* Button */
+
+.kk-about__btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.95rem 2rem;
+  border-radius: 9999px;
+  background: var(--kk-blue);
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  box-shadow: 0 12px 26px rgba(26, 99, 232, 0.35);
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.kk-about__btn:hover {
+  background: var(--kk-blue-dark);
+  transform: translateY(-2px);
+}
+
+/* ---------- Right column: Mission / Vision ---------- */
+
+.kk-about__pillars {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.kk-about__pillar {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 2rem;
+  border-radius: 1.75rem;
+  background: rgba(255, 255, 255, 0.55);
+  border: 1px solid rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 18px 40px -20px rgba(26, 99, 232, 0.3);
+}
+
+.kk-about__pillar-icon {
+  flex: none;
+  width: 4.25rem;
+  height: 4.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 1.25rem;
+  background: #d3e3ff;
+  color: var(--kk-blue);
+}
+
+.kk-about__pillar-title {
+  margin: 0 0 0.6rem;
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--kk-navy);
+}
+
+.kk-about__pillar-title::before {
+  content: "";
+  display: block;
+  width: 1.75rem;
+  height: 2px;
+  margin-bottom: 0.75rem;
+  background: var(--kk-blue);
+}
+
+.kk-about__pillar-text {
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: var(--kk-text);
+}
+
+/* ---------- Stats bar ---------- */
+
+.kk-stats {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1280px;
+  margin: 3rem auto 0;
+  padding: 1.25rem 2rem;
+  border-radius: 9999px;
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 20px 45px -20px rgba(26, 99, 232, 0.35);
+}
+
+.kk-stats__item {
+  position: relative;
+  flex: 1 1 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding: 0 1rem;
+}
+
+.kk-stats__item + .kk-stats__item::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.35rem;
+  bottom: 0.35rem;
+  width: 1px;
+  background: rgba(26, 99, 232, 0.18);
+}
+
+.kk-stats__icon {
+  flex: none;
+  width: 3.6rem;
+  height: 3.6rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: var(--kk-tile);
+  color: var(--kk-blue);
+}
+
+.kk-stats__info {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.kk-stats__value {
+  font-size: 1.75rem;
+  font-weight: 800;
+  line-height: 1.1;
+  color: var(--kk-blue);
+}
+
+.kk-stats__label {
+  margin-top: 0.2rem;
+  font-size: 0.875rem;
+  color: var(--kk-text);
+}
+
+/* ---------- Small laptops: stats wrap ---------- */
+
+@media (max-width: 1100px) {
+  .kk-stats {
+    flex-wrap: wrap;
+    justify-content: center;
+    row-gap: 1.5rem;
+    padding: 1.5rem;
+    border-radius: 2rem;
+  }
+
+  .kk-stats__item {
+    flex: 0 0 33.333%;
+  }
+
+  .kk-stats__item + .kk-stats__item::before {
+    display: none;
+  }
+}
+
+/* ---------- Tablet: stack columns ---------- */
+
+@media (max-width: 1023px) {
+  .kk-about-wrap {
+    padding: 3.5rem 5% 3rem;
+  }
+
+  .kk-about {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .kk-about__text,
+  .kk-about__features {
+    max-width: none;
+  }
+
+  .kk-decor--dots-left,
+  .kk-decor--dots-right,
+  .kk-decor--orb {
+    display: none;
+  }
+}
+
+/* ---------- Mobile ---------- */
+
+@media (max-width: 640px) {
+  .kk-about-wrap {
+    padding: 3rem 1.25rem 2.5rem;
+  }
+
+  .kk-decor--dots-top,
+  .kk-decor--ring {
+    display: none;
+  }
+
+  .kk-about__eyebrow {
+    font-size: 0.75rem;
+  }
+
+  .kk-about__heading {
+    font-size: 2rem;
+    margin: 0.75rem 0 1rem;
+  }
+
+  .kk-about__text {
+    font-size: 0.92rem;
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+  }
+
+  .kk-about__features {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+    margin-bottom: 1.75rem;
+  }
+
+  .kk-about__btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .kk-about__pillar {
+    gap: 1rem;
+    padding: 1.25rem;
+    border-radius: 1.4rem;
+  }
+
+  .kk-about__pillar-icon {
+    width: 3.4rem;
+    height: 3.4rem;
+    border-radius: 1rem;
+  }
+
+  .kk-about__pillar-title {
+    font-size: 1.2rem;
+  }
+
+  .kk-about__pillar-text {
+    font-size: 0.875rem;
+    line-height: 1.6;
+  }
+
+  .kk-stats {
+    margin-top: 2rem;
+    padding: 1.25rem 0.5rem;
+    row-gap: 1.25rem;
+    border-radius: 1.5rem;
+  }
+
+  .kk-stats__item {
+    flex: 0 0 50%;
+    flex-direction: column;
+    gap: 0.6rem;
+    padding: 0 0.5rem;
+  }
+
+  .kk-stats__icon {
+    width: 3rem;
+    height: 3rem;
+  }
+
+  .kk-stats__info {
+    align-items: center;
+    text-align: center;
+  }
+
+  .kk-stats__value {
+    font-size: 1.4rem;
+  }
+
+  .kk-stats__label {
+    font-size: 0.78rem;
+  }
+}
